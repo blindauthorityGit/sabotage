@@ -3,9 +3,10 @@
   "version": "0.3.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+    "dev": "node scripts/run-cli.mjs next dev",
+    "build": "node scripts/run-cli.mjs next build",
+    "start": "node scripts/run-cli.mjs next start",
+    "seed:sanity": "node scripts/run-cli.mjs sanity exec scripts/seed-sanity.mjs --with-user-token"
   },
   "dependencies": {
     "next": "^15.5.0",

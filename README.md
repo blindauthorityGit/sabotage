@@ -1,31 +1,30 @@
-# SABOTAGE QCQC? — Next.js + Sanity v0.2
+# SABOTAGE QCQC? — Next.js + Sanity
 
 ## Was bereits funktioniert
 - Responsives Frontend in der bestehenden SABOTAGE-CI: `#E02040`, `#2E3130`, `#0C0906`, Weiß.
 - Originale hochgeladene Bildassets für Wortmarke und Emblem, keine generative Nachzeichnung.
-- CMS-Schemas für Releases, Editionen, Tracks, Archiv, News, Medien, Links, globale Einstellungen und Seiten.
-- Acht flexible Homepage-Module (Hero, Release-Feature, Release-Grid, Archive-Grid, News-Grid, Media-Grid, Statement, Link-Grid).
-- Module können in Sanity über die Array-Reihenfolge per Drag-and-drop sortiert, ein-/ausgeblendet und mit Referenzen, Bildern, Texten und Links befüllt werden.
+- Sanity-Schemas für Releases, Editionen, Tracks, Labels, Archiv, News, Medien und Homepage.
+- Releases werden nach Kategorie, Datum und optionaler Sortierung auf der Website angezeigt. Ein neuer Release braucht keine manuelle Referenz in der Homepage-Liste.
+- Die Homepage-Abschnitte können in Sanity sortiert, ein-/ausgeblendet und mit Texten und Links gepflegt werden.
 - DE/EN-Felder und Umschalter; keine erfundenen Streaming-Links oder Re-Release-Daten.
 - Ohne Sanity-Konfiguration erscheint ein ausdrücklich provisorischer Fallback-Inhalt.
 
 ## Lokal starten
 1. Node.js 20+ installieren.
 2. `npm install`
-3. `cp .env.example .env.local` und Sanity-Projekt-ID / Dataset ergänzen.
+3. `.env.example` nach `.env.local` kopieren. Die Projekt-ID und das Dataset sind bereits eingetragen.
 4. `npm run dev` und `http://localhost:3000` öffnen.
-5. Studio unter `http://localhost:3000/studio` öffnen.
+5. Studio unter derselben Adresse mit `/studio` öffnen. Wenn Port 3000 belegt ist, nimmt Next.js zum Beispiel Port 3001.
 
 ## Sanity einrichten
-1. Sanity-Projekt und Dataset `production` anlegen; die Project ID in `.env.local` eintragen.
-2. In Sanity CORS-Origin `http://localhost:3000` und später die echte Website-Domain freigeben.
-3. In `/studio` ein Dokument **Seiten / Inhaltsblöcke** mit Titel `Home` und Slug `home` anlegen.
-4. Module hinzufügen und mit veröffentlichten Release-Dokumenten verknüpfen. Reihenfolge im Array steuert die Reihenfolge auf der Website.
-5. Nur Inhalte mit bestätigten Links und korrektem Veröffentlichungsstatus auf der Website freigeben. Die Demo-Module werden durch die gespeicherte Homepage ersetzt.
-6. Für öffentlich lesbare Website-Inhalte kann das Dataset öffentlich konfiguriert werden. Für private Datasets muss ein serverseitiges Read-Token eingerichtet werden; diese Version enthält bewusst noch keine Tokenverwaltung.
+1. Das Projekt `cvif55we` und Dataset `production` sind in `.env.example` und `sanity.cli.ts` eingetragen.
+2. Das Dataset muss öffentlich lesbar sein, weil die Website veröffentlichte Inhalte ohne API-Token abruft. Im Studio anmelden und bei Bedarf die lokale CORS-Origin mit Credentials erlauben.
+3. Einmalig `npx sanity login` ausführen und danach `npm run seed:sanity`. Das legt die bisherigen Releases, Labels, Homepage-Texte, Links und Website-Einstellungen an. Bereits vorhandene Einträge werden vom Seed-Skript nicht überschrieben.
+4. Neue Releases unter **Releases** anlegen, veröffentlichen und **Auf Website anzeigen** aktivieren. Für das Highlight zusätzlich **Als aktuellen Highlight-Release verwenden** aktivieren.
+5. Die Homepage zeigt freigegebene Releases automatisch im passenden Release-Grid. Nur ein festes Release-Feature muss bei Bedarf explizit ausgewählt werden.
 
 ## Stand / noch offen
-- Kein produktiver Sanity-Account verbunden; CMS und Deployment sind noch nicht aktiviert.
+- Detailseiten pro Release, Preview-Modus und geplante automatische Veröffentlichung sind noch nicht umgesetzt.
 - Keine automatische Zeitsteuerung für geplante Releases, keine Live-Preview und kein Auth-geschütztes Draft-Preview. Diese Funktionen sind für die nächste Ausbaustufe vorgesehen.
 - Weitere Detailseiten und vollständige SEO-/Rechtsseiten fehlen noch.
 - Verlinkte Shop-Startseite ist **kein** bestätigter Preorder-Link.
@@ -33,7 +32,7 @@
 - Original-Wordmark-Asset stammt aus dem vorherigen Prototyp; endgültige Logo-Freigabe vor Go-live prüfen.
 
 ## Nächster Schritt
-Sanity-Projekt-ID verbinden, Homepage im Studio anlegen, echte Cover und geprüfte Links einpflegen, anschließend Build / Deployment testen.
+Echte Cover und geprüfte Release-Daten im Studio ergänzen. Für Deployments die Produktionsdomain als CORS-Origin eintragen.
 
 
 ## V0.3 — bestätigte Links und Inhalte (10.11.2026)
