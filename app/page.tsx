@@ -5,9 +5,7 @@ import {fallbackPage} from '../lib/fallback';
 export const dynamic = 'force-dynamic';
 
 function connectReleases(page: Page, releases: Awaited<ReturnType<typeof getReleases>>, useFallback: boolean): Page {
-  return {
-    ...page,
-    modules: page.modules.map((module): Module => {
+  const connectedModules = page.modules.map((module): Module => {
       if (module._type === 'module_releaseFeature') {
         if (module.releaseRef?.publishedOnSite) {
           return {...module, releaseRefs: [module.releaseRef]};
@@ -27,8 +25,12 @@ function connectReleases(page: Page, releases: Awaited<ReturnType<typeof getRele
       }
 
       return module;
-    }),
-  };
+    });
+  if (!connectedModules.some((module) => module._type === 'module_newsGrid')) {
+    const fallbackNews = fallbackPage.modules.find((module) => module._type === 'module_newsGrid');
+    if (fallbackNews) connectedModules.push(fallbackNews);
+  }
+  return {...page, modules: connectedModules};
 }
 
 export default async function Home() {
