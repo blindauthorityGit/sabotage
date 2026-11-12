@@ -7,8 +7,16 @@ function External({item}:{item:Link}){if(!item.enabled||!item.url)return null;re
 function Art({url,title}:{url?:string;title:string}){return url?<img className="cover" src={url} alt={title}/>:<div className="art-placeholder"><img src="/assets/sabotage-symbol.png" alt=""/><span>ARTWORK PENDING</span></div>}
 function releaseDate(release:Release){return release.digitalReReleaseDate||release.originalReleaseDate}
 const vinylPhotos = {
-  black: {height: 1250, alt: {en: 'Black vinyl edition', de: 'Schwarze Vinyl-Edition'}},
-  red: {height: 1500, alt: {en: 'Red vinyl edition', de: 'Rote Vinyl-Edition'}},
+  black: {
+    height: 1250,
+    alt: {en: 'Black vinyl edition', de: 'Schwarze Vinyl-Edition'},
+    description: {en: 'Black Vinyl with inlay', de: 'Schwarzes Vinyl mit Einleger'},
+  },
+  red: {
+    height: 1500,
+    alt: {en: 'Red vinyl edition', de: 'Rote Vinyl-Edition'},
+    description: {en: 'Red Vinyl, Inlay, T-Shirt, Buttons, Sticker-Set', de: 'Rotes Vinyl, Einleger, T-Shirt, Buttons, Sticker-Set'},
+  },
 };
 
 function ReleaseEditions({release, lang}: {release: Release; lang: 'en' | 'de'}) {
@@ -25,6 +33,7 @@ function ReleaseEditions({release, lang}: {release: Release; lang: 'en' | 'de'})
         return photo ? (
           <div className="vinyl-edition" key={index}>
             <span>{label}</span>
+            <p className="vinyl-edition-description">{photo.description[lang]}</p>
             <img
               src={`/assets/no-bottom-no-top-${color}-vinyl.webp`}
               alt={photo.alt[lang]}
@@ -53,6 +62,10 @@ if (type === 'linkGrid') {
   return (
     <section className="section connect" id={isWear ? 'wear' : 'connect'}>
       {header}
+      {isWear && (
+        <img className="wear-banner" src="/assets/sabotage-wear-banner.webp"
+          width={2400} height={600} loading="lazy" alt=""/>
+      )}
       <div className="linkgrid">
         {module.links?.map((link, i) => <External key={i} item={link}/>)}
       </div>
@@ -68,4 +81,4 @@ if (type === 'linkGrid') {
   );
 }
 return null}
-export default function Site({page,contactEmail}:{page:Page;contactEmail:string}){const [lang,setLang]=useState<'en'|'de'>('en');const modules=page.modules.filter(m=>m.enabled!==false);return <><header className="topbar"><a className="brand" href="#top" aria-label="SABOTAGE QCQC? home"><img src="/assets/sabotage-logo.png" alt="SABOTAGE QCQC?"/></a><nav><a href="#releases">RELEASES</a><a href="#catalogue">BACK CATALOGUE</a><a href="#archive">{lang==='de'?'ARCHIV':'ARCHIVE'}</a><a href="#news">NEWS</a><a href="#about">ABOUT</a><a href="#connect">CONNECT</a></nav><button id="lang" onClick={()=>setLang(lang==='en'?'de':'en')}>{lang==='en'?'DE':'EN'}</button></header><main className="site-content">{modules.map((m,i)=><Section key={m._key||i} module={m} index={i+1} lang={lang}/>)}</main><footer><span>© {new Date().getFullYear()} SABOTAGE QCQC?</span><span>QU'EST-CE QUE C'EST?</span><a href={'mailto:'+contactEmail}>{contactEmail}</a><a href="/impressum">{lang==='de'?'IMPRESSUM':'LEGAL NOTICE'}</a></footer></>}
+export default function Site({page,contactEmail}:{page:Page;contactEmail:string}){const [lang,setLang]=useState<'en'|'de'>('en');const modules=page.modules.filter(m=>m.enabled!==false);return <><header className="topbar"><a className="brand" href="#top" aria-label="SABOTAGE QCQC? home"><img src="/assets/sabotage-logo.png" alt="SABOTAGE QCQC?"/></a><nav><a href="#releases">RELEASES</a><a href="#catalogue">BACK CATALOGUE</a><a href="#archive">{lang==='de'?'ARCHIV':'ARCHIVE'}</a><a href="#news">NEWS</a><a href="#about">ABOUT</a><a href="#connect">CONNECT</a></nav><button id="lang" onClick={()=>setLang(lang==='en'?'de':'en')}>{lang==='en'?'DE':'EN'}</button></header><main className="site-content">{modules.map((m,i)=><Section key={m._key||i} module={m} index={i+1} lang={lang}/>)}</main><footer><span>© {new Date().getFullYear()} SABOTAGE QCQC?</span><span>QU'EST-CE QUE C'EST?</span><a href={'mailto:'+contactEmail}>{contactEmail}</a><a href="/impressum">{lang==='de'?'IMPRESSUM':'LEGAL NOTICE'}</a><a href="/impressum#disclaimer">DISCLAIMER</a></footer></>}
