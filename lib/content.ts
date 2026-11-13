@@ -7,6 +7,7 @@ export type Track = {number?: number; title: string; duration?: string};
 export type Release = {
   _id: string;
   title: string;
+  slug?: string;
   artist?: string;
   category?: string;
   label?: string;
@@ -56,6 +57,7 @@ const client = projectId
 const releaseFields = `
   _id,
   title,
+  "slug": slug.current,
   artist,
   category,
   "label": coalesce(labelRef->name, label),

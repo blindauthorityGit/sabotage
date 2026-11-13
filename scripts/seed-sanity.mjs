@@ -18,7 +18,7 @@ const labelSeeds = [
 
 const releaseSeeds = [
   {
-    title: 'NO BOTTOM – NO TOP', slug: 'no-bottom-no-top', category: 'current', releaseStatus: 'announced',
+    title: 'NO BOTTOM - NO TOP', slug: 'no-bottom-no-top', category: 'current', releaseStatus: 'announced',
     originalReleaseDate: '2027-01-15', label: 'EMMO.BIZ', featured: true, sortOrder: 1,
     editions: [
       {_type: 'edition', _key: 'vinyl-black', format: 'Vinyl', color: 'Black', quantity: 100},
@@ -58,7 +58,7 @@ const socialLinks = [
 const modules = [
   {
     _key: 'hero', _type: 'module_hero', enabled: true,
-    heading: localized('NO BOTTOM — NO TOP', 'NO BOTTOM — NO TOP'),
+    heading: localized('NO BOTTOM - NO TOP', 'NO BOTTOM - NO TOP'),
     intro: localized('NEUE VINYL-EP · 15. JAN 2027 · EMMO.BIZ', 'NEW VINYL EP · 15 JAN 2027 · EMMO.BIZ'),
   },
   {

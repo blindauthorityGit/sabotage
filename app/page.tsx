@@ -1,6 +1,7 @@
 import Site from '../components/Site';
 import {getHome, getReleases, getSettings, type Module, type Page} from '../lib/content';
 import {fallbackPage} from '../lib/fallback';
+import {withCoverFallback} from '../lib/release-artwork';
 
 export const dynamic = 'force-dynamic';
 
@@ -8,11 +9,11 @@ function connectReleases(page: Page, releases: Awaited<ReturnType<typeof getRele
   const connectedModules = page.modules.map((module): Module => {
       if (module._type === 'module_releaseFeature') {
         if (module.releaseRef?.publishedOnSite) {
-          return {...module, releaseRefs: [module.releaseRef]};
+          return {...module, releaseRefs: [withCoverFallback(module.releaseRef)]};
         }
 
         const featured = releases.find((release) => release.featured) ?? releases.find((release) => release.category === 'current');
-        return featured ? {...module, releaseRefs: [featured]} : module;
+        return featured ? {...module, releaseRefs: [withCoverFallback(featured)]} : module;
       }
 
       if (module._type === 'module_releaseGrid') {
@@ -21,7 +22,7 @@ function connectReleases(page: Page, releases: Awaited<ReturnType<typeof getRele
           ? source.filter((release) => release.category === module.releaseCategory)
           : source;
         const filtered = module.excludeFeatured ? categoryFiltered.filter((release) => !release.featured) : categoryFiltered;
-        return {...module, releaseRefs: filtered.slice(0, module.releaseLimit || undefined)};
+        return {...module, releaseRefs: filtered.slice(0, module.releaseLimit || undefined).map(withCoverFallback)};
       }
 
       return module;
