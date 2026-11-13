@@ -2,7 +2,7 @@ import {readLanguage} from '../lib/language';
 import Site from '../components/Site';
 import {getHome, getReleases, getSettings, type Module, type Page} from '../lib/content';
 import {fallbackPage} from '../lib/fallback';
-import {coldFragmentsNews, emmoBizNews, memeNews, monCoeurNews, orageRemixNews, secretTracksNews, subCultureNews} from '../lib/news';
+import {coldFragmentsNews, emmoBizNews, enOrdreNews, memeNews, monCoeurNews, orageRemixNews, secretTracksNews, subCultureNews} from '../lib/news';
 import {withCoverFallback} from '../lib/release-artwork';
 
 export const dynamic = 'force-dynamic';
@@ -37,7 +37,7 @@ function connectReleases(page: Page, releases: Awaited<ReturnType<typeof getRele
     if (module._type !== 'module_newsGrid') return module;
 
     const news = module.newsRefs ?? [];
-    const localNews = [orageRemixNews, subCultureNews, emmoBizNews, memeNews, monCoeurNews, coldFragmentsNews, secretTracksNews].filter(entry => !news.some(item =>
+    const localNews = [enOrdreNews, orageRemixNews, subCultureNews, emmoBizNews, memeNews, monCoeurNews, coldFragmentsNews, secretTracksNews].filter(entry => !news.some(item =>
       item._id === entry._id || (item.date === entry.date &&
         item.title.trim().replace(/:$/, '').toUpperCase() === entry.title.replace(/:$/, ''))
     ));

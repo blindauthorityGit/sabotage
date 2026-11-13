@@ -217,3 +217,124 @@ ${orageRemixUrl}
 **TURN IT UP. LET THE STORM BEGIN.**`,
   },
 };
+
+export const enOrdreNews: NewsItem = {
+  _id: 'en-ordre-2026-11-14',
+  title: 'SABOTAGE – EN ORDRE',
+  date: '2026-11-14',
+  imageUrl: '/assets/en-ordre-news.webp',
+  imageWidth: 1254,
+  imageHeight: 1254,
+  imageAlt: {
+    en: 'EN ORDRE cover with a blindfolded stone figure',
+    de: 'EN ORDRE-Cover mit einer Steinfigur mit verbundenen Augen',
+    fr: 'Pochette de EN ORDRE avec une statue aux yeux bandés',
+    es: 'Portada de EN ORDRE con una estatua con los ojos vendados',
+  },
+  body: {
+    en: `**NEW DIGITAL SINGLE | 14 NOVEMBER 2026**
+
+**BACK TO THE ROOTS. REWIRED FOR THE PRESENT.**
+
+Originally released on our debut *TUMULTE*, **EN ORDRE** returns more than three decades later — reconstructed, reinterpreted and pushed into new sonic territory.
+
+Three radically different interpretations of a SABOTAGE classic:
+
+**CLASH MIX** – Raw energy. Industrial aggression. Maximum impact.
+
+**SLOW DOWN MIX** – Slower, darker, heavier. A different kind of intensity.
+
+**ORCHESTRALE MIX** – A dramatic new dimension, where orchestral textures meet electronic tension.
+
+And there's more.
+
+The release also features **THE FLOOD (RIOT MIX)** — an alternative interpretation of our brand-new track THE FLOOD.
+
+Four mixes. Two generations of SABOTAGE. One uncompromising attitude.
+
+We don't believe in nostalgia. We believe in evolution.
+
+**EN ORDRE – OUT NOVEMBER 14, 2026**
+Available digitally.
+
+SOUND. RESISTANCE. DISORIENTATION. NO BORDERS.`,
+    de: `**NEW DIGITAL SINGLE | 14 NOVEMBER 2026**
+
+**BACK TO THE ROOTS. REWIRED FOR THE PRESENT.**
+
+Ursprünglich auf unserem Debüt *TUMULTE* erschienen, kehrt **EN ORDRE** nach mehr als drei Jahrzehnten zurück — neu aufgebaut, neu interpretiert und klanglich weitergetrieben.
+
+Drei grundverschiedene Interpretationen eines SABOTAGE-Klassikers:
+
+**CLASH MIX** – Rohe Energie. Industrielle Aggression. Maximale Wucht.
+
+**SLOW DOWN MIX** – Langsamer, dunkler, schwerer. Eine andere Art von Intensität.
+
+**ORCHESTRALE MIX** – Eine dramatische neue Dimension, in der orchestrale Texturen auf elektronische Spannung treffen.
+
+Und es gibt noch mehr.
+
+Mit dabei ist **THE FLOOD (RIOT MIX)** — eine alternative Interpretation unseres brandneuen Tracks THE FLOOD.
+
+Vier Mixe. Zwei Generationen SABOTAGE. Eine kompromisslose Haltung.
+
+Wir glauben nicht an Nostalgie. Wir glauben an Weiterentwicklung.
+
+**EN ORDRE – OUT NOVEMBER 14, 2026**
+Digital erhältlich.
+
+SOUND. RESISTANCE. DISORIENTATION. NO BORDERS.`,
+    fr: `**NEW DIGITAL SINGLE | 14 NOVEMBER 2026**
+
+**BACK TO THE ROOTS. REWIRED FOR THE PRESENT.**
+
+Paru à l’origine sur notre premier album *TUMULTE*, **EN ORDRE** revient plus de trois décennies plus tard, reconstruit, réinterprété et poussé vers de nouveaux territoires sonores.
+
+Trois interprétations radicalement différentes d’un classique de SABOTAGE :
+
+**CLASH MIX** – Énergie brute. Agressivité industrielle. Impact maximal.
+
+**SLOW DOWN MIX** – Plus lent, plus sombre, plus lourd. Une autre forme d’intensité.
+
+**ORCHESTRALE MIX** – Une nouvelle dimension dramatique, où les textures orchestrales rencontrent la tension électronique.
+
+Et ce n’est pas tout.
+
+La sortie comprend aussi **THE FLOOD (RIOT MIX)**, une autre interprétation de notre tout nouveau titre THE FLOOD.
+
+Quatre mixes. Deux générations de SABOTAGE. Une attitude sans compromis.
+
+Nous ne croyons pas à la nostalgie. Nous croyons à l’évolution.
+
+**EN ORDRE – OUT NOVEMBER 14, 2026**
+Disponible en numérique.
+
+SOUND. RESISTANCE. DISORIENTATION. NO BORDERS.`,
+    es: `**NEW DIGITAL SINGLE | 14 NOVEMBER 2026**
+
+**BACK TO THE ROOTS. REWIRED FOR THE PRESENT.**
+
+Publicado originalmente en nuestro debut *TUMULTE*, **EN ORDRE** regresa más de tres décadas después, reconstruido, reinterpretado y llevado a nuevos territorios sonoros.
+
+Tres interpretaciones radicalmente distintas de un clásico de SABOTAGE:
+
+**CLASH MIX** – Energía cruda. Agresividad industrial. Máximo impacto.
+
+**SLOW DOWN MIX** – Más lento, más oscuro, más pesado. Otra clase de intensidad.
+
+**ORCHESTRALE MIX** – Una nueva dimensión dramática, donde las texturas orquestales se encuentran con la tensión electrónica.
+
+Y hay más.
+
+El lanzamiento también incluye **THE FLOOD (RIOT MIX)**, una interpretación alternativa de nuestro nuevo tema THE FLOOD.
+
+Cuatro mezclas. Dos generaciones de SABOTAGE. Una actitud sin concesiones.
+
+No creemos en la nostalgia. Creemos en la evolución.
+
+**EN ORDRE – OUT NOVEMBER 14, 2026**
+Disponible en formato digital.
+
+SOUND. RESISTANCE. DISORIENTATION. NO BORDERS.`,
+  },
+};
