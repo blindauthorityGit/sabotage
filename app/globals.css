@@ -348,3 +348,19 @@ body > footer a {
   text-decoration: underline;
   overflow-wrap: anywhere;
 }
+
+.news-articles {
+  scroll-margin-top: 110px;
+}
+
+.news-index a[aria-current="true"] {
+  color: var(--red);
+  box-shadow: -2px 0 var(--red);
+  padding-inline-start: 10px;
+}
+
+@media (max-width: 760px) {
+  .news-articles {
+    scroll-margin-top: 150px;
+  }
+}
