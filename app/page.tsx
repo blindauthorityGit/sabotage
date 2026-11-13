@@ -48,6 +48,10 @@ function connectReleases(page: Page, releases: Awaited<ReturnType<typeof getRele
           : links.map((link, index) => index === existing ? {...link, ...partner} : link),
       };
     }
+    if (module._type === 'module_linkGrid' && module._key === 'links') {
+      const linkList = fallbackPage.modules.find(entry => entry._key === 'links');
+      return {...module, heading: linkList?.heading ?? module.heading, links: linkList?.links ?? module.links};
+    }
     if (module._type !== 'module_newsGrid') return module;
 
     const news = module.newsRefs ?? [];
