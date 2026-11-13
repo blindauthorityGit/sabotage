@@ -321,3 +321,30 @@ body > footer a {
   bottom: auto;
   top: 0;
 }
+
+.news-date {
+  display: block;
+  margin-bottom: .65rem;
+  color: var(--muted);
+  font-size: .75rem;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: .08em;
+  font-variant-numeric: tabular-nums;
+}
+
+.news-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 24px;
+}
+
+.news-body p {
+  white-space: pre-line;
+}
+
+.news-body a {
+  text-decoration: underline;
+  overflow-wrap: anywhere;
+}

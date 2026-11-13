@@ -90,7 +90,65 @@ if (type === 'hero') {
 if(type==='releaseFeature'){const r=releases[0];const date=r&&releaseDate(r);return <section className="section releases" id={module._key==='single'?'the-flood':'releases'}>{header}{r?<div className="feature"><div><Art url={r.coverUrl} title={normalizeReleaseTitle(r.title)}/><div className="inline-links">{r.links?.map((l,i)=><External key={i} item={l}/>)}</div></div><div><p className="eyebrow red">{r.labelUrl?<a href={r.labelUrl} target="_blank" rel="noopener noreferrer">{r.label} ↗</a>:r.label}{date?` / ${date}`:''}</p><h3>{normalizeReleaseTitle(r.title)}</h3><div className="release-description">{(local(r.description,lang)|| (lang==='de'?'Limitierte Vinyl-Edition.':'Limited vinyl edition.')).split('\n\n').map((paragraph,i)=><p key={i}>{paragraph.split('\n').map((line,j)=><span key={j}>{j>0&&<br/>}{line}</span>)}</p>)}</div><ReleaseEditions release={r} lang={lang}/></div></div>:<p>Release in Sanity auswählen oder Highlight aktivieren.</p>}</section>}
 if(type==='releaseGrid')return <section className="section catalogue" id="catalogue">{header}<div className="release-grid">{releases.map(r=><ReleaseCard key={r._id} release={r}/>)}</div></section>;
 if(type==='archiveGrid')return <section className="section archive" id="archive">{header}<div className="archive-title-list"><h3>RELEASES</h3><ul><li>ANNORLUNDA <span>1994</span></li><li>LES ENFANTS SAUVAGES <span>1995</span></li><li>TUMULTE <span>1993</span></li><li>DEUTSCHER HERBST ’77 <span>1996</span></li><li>NO BOTTOM - NO TOP <span>2027 · VINYL EP</span></li><li>THE FLOOD <span>2026 · DIGITAL SINGLE</span></li><li>LIBERTINAGE</li><li>SEXPLOITATION CINEMA</li><li>SCHLAGER</li><li>GODDESS</li><li>ACOUSTIC COSTUMES</li><li>CONCRETE</li></ul></div><div className="archive-tracklists"><h3>TRACK & COMPILATION ARCHIVE</h3><p className="archive-note">Trackpositionen aus dem Gesamtarchiv. Gleiche Titel auf verschiedenen Veröffentlichungen bleiben separat aufgeführt.</p>{Object.entries(archiveData.tracks.reduce<Record<string, typeof archiveData.tracks>>((groups,track)=>{(groups[track.release||'Weitere Titel']??=[]).push(track);return groups},{})).map(([release,tracks])=><details key={release}><summary>{release}<span>{tracks.length} Titel</span></summary><ol>{tracks.map((track,i)=><li key={`${release}-${i}`}><span>{track.title}{track.version?` — ${track.version}`:''}</span><small>{track.year}{track.position?` · Track ${track.position}`:''}</small></li>)}</ol></details>)}<details><summary>Sampler & Compilations<span>{archiveData.compilations.length} dokumentierte Einträge</span></summary><ol>{archiveData.compilations.map((item,i)=><li key={`comp-${i}`}><span>{item.title}{item.version?` — ${item.version}`:''}</span><small>{item.compilation}{item.year?` · ${item.year}`:''}</small></li>)}</ol></details></div><div className="archive-items">{module.archiveRefs?.map(a=><article key={a._id}><Art url={a.imageUrl} title={normalizeReleaseTitle(a.title)}/><h3>{normalizeReleaseTitle(a.title)}</h3></article>)}</div><div className="archive-discogs"><a href="https://www.discogs.com/artist/69880-Sabotage-QCQC?superFilter=Appearances&subFilter=Compilations" target="_blank" rel="noopener noreferrer">DISCOGS ↗</a></div></section>;
-if(type==='newsGrid')return <section className="section news" id="news">{header}<div className="news-layout"><div className="news-articles">{module.newsRefs?.map(n=><article className="news-article" id={`news-${n._id}`} key={n._id}><h3>{normalizeReleaseTitle(n.title)}</h3><div className="news-body">{local(n.body,lang).split('\n\n').map((para,i)=><p key={i}>{para}</p>)}</div></article>)}</div><aside className="news-index" aria-label="News headlines"><span className="eyebrow red">HEADLINES</span>{module.newsRefs?.map(n=><a key={n._id} href={`#news-${n._id}`}>{normalizeReleaseTitle(n.title)}</a>)}</aside></div></section>;
+if (type === 'newsGrid') {
+  const news = module.newsRefs?.map(item => {
+    const isoDate = item.title.trim().toUpperCase().endsWith('THE PAST RETURNS. THE FUTURE BEGINS.')
+      ? '2026-11-09'
+      : item.date;
+    const date = isoDate ? new Date(isoDate + 'T00:00:00Z') : null;
+    const validDate = date && !Number.isNaN(date.getTime()) ? date : null;
+    const shortDate = validDate ? isoDate?.slice(5, 7) + '/' + isoDate?.slice(0, 4) : null;
+    const fullDate = validDate && new Intl.DateTimeFormat(lang === 'de' ? 'de-DE' : 'en-GB', {
+      month: 'short', timeZone: 'UTC',
+    }).format(validDate).replace(/\.$/, '');
+
+    return {...item, isoDate, shortDate, fullDate: fullDate && `${isoDate?.slice(8, 10)}. ${fullDate}.${isoDate?.slice(0, 4)}`};
+  }).sort((a, b) => (b.isoDate ?? '').localeCompare(a.isoDate ?? ''));
+
+  return (
+    <section className="section news" id="news">
+      {header}
+      <div className="news-layout">
+        <div className="news-articles">
+          {news?.map(item => (
+            <article className="news-article" id={`news-${item._id}`} key={item._id}>
+              {item.shortDate && <time className="news-date" dateTime={item.isoDate}>{item.shortDate}</time>}
+              <h3>{normalizeReleaseTitle(item.title)}</h3>
+              {item.imageUrl && (
+                <img className="news-image" src={item.imageUrl} alt={local(item.imageAlt, lang)}
+                  width={item.imageWidth} height={item.imageHeight} loading="lazy"
+                  style={item.imageClipPath ? {clipPath: item.imageClipPath} : undefined}/>
+              )}
+              <div className="news-body">
+                {local(item.body, lang).split('\n\n').map((paragraph, i) => {
+                  const link = item.links?.find(link => link.enabled && link.url === paragraph);
+                  if (link) return <p key={i}><External item={link}/></p>;
+
+                  return <p key={i}>
+                    {paragraph.split(/(\*\*[^*]+\*\*|\*[^*]+\*)/g).map((text, j) => {
+                      if (j % 2 === 0) return text;
+                      if (text.startsWith('**')) return <strong key={j}>{text.slice(2, -2)}</strong>;
+                      return <em key={j}>{text.slice(1, -1)}</em>;
+                    })}
+                  </p>;
+                })}
+              </div>
+            </article>
+          ))}
+        </div>
+        <aside className="news-index" aria-label="News headlines">
+          <span className="eyebrow red">HEADLINES</span>
+          {news?.map(item => (
+            <a key={item._id} href={`#news-${item._id}`}>
+              {item.fullDate && <time className="news-date" dateTime={item.isoDate}>{item.fullDate}</time>}
+              {normalizeReleaseTitle(item.title)}
+            </a>
+          ))}
+        </aside>
+      </div>
+    </section>
+  );
+}
 if(type==='mediaGrid')return <section className="section" id="media">{header}<div className="linkgrid">{module.mediaRefs?.filter(m=>m.url).map(m=><a key={m._id} href={m.url} target="_blank" rel="noopener noreferrer">{normalizeReleaseTitle(m.title)} ↗</a>)}</div></section>;
 if(type==='statement')return <section className="section about" id="about">{header}<p className="statement">{intro}</p></section>;
 if (type === 'linkGrid') {

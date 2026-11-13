@@ -24,6 +24,18 @@ export type Release = {
   featured?: boolean;
   sortOrder?: number;
 };
+export type NewsItem = {
+  _id: string;
+  title: string;
+  date?: string;
+  body?: Localized;
+  imageUrl?: string;
+  imageWidth?: number;
+  imageHeight?: number;
+  imageAlt?: Localized;
+  imageClipPath?: string;
+  links?: Link[];
+};
 export type Module = {
   _key: string;
   _type: string;
@@ -38,7 +50,7 @@ export type Module = {
   releaseLimit?: number;
   excludeFeatured?: boolean;
   archiveRefs?: {_id: string; title: string; imageUrl?: string}[];
-  newsRefs?: {_id: string; title: string; body?: Localized}[];
+  newsRefs?: NewsItem[];
   mediaRefs?: {_id: string; title: string; url?: string}[];
 };
 export type Page = {title: string; modules: Module[]};
@@ -86,7 +98,12 @@ export async function getHome(): Promise<Page | null> {
           "imageUrl": image.asset->url,
           "releaseRef": releaseRef->{${releaseFields}},
           "archiveRefs": archiveRefs[]->{_id, title, "imageUrl": image.asset->url},
-          "newsRefs": newsRefs[]->{_id, title, body},
+          "newsRefs": newsRefs[]->{
+            _id, title, date, body,
+            "imageUrl": image.asset->url,
+            "imageWidth": image.asset->metadata.dimensions.width,
+            "imageHeight": image.asset->metadata.dimensions.height
+          },
           "mediaRefs": mediaRefs[]->{_id, title, url}
         }
       }
