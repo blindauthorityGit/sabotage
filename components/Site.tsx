@@ -49,8 +49,43 @@ function ReleaseEditions({release, lang}: {release: Release; lang: 'en' | 'de'})
 }
 
 function ReleaseCard({release}:{release:Release}){const date=releaseDate(release);return <article className="release-card"><Art url={release.coverUrl} title={release.title}/><div className="release-card-copy"><small>{release.artist||'SABOTAGE QCQC?'} / {release.releaseStatus||'pending'}{date?` / ${date}`:''}</small><h3>{release.title}</h3><p>{release.labelUrl?<a href={release.labelUrl} target="_blank" rel="noopener noreferrer">{release.label} ↗</a>:release.label||''}</p><div className="inline-links">{release.links?.map((l,i)=><External key={i} item={l}/>)}</div></div></article>}
-function Section({module,lang,index}:{module:Module;lang:'en'|'de';index:number}){const type=module._type.replace('module_','');const heading=local(module.heading,lang);const intro=local(module.intro,lang);const releases=module.releaseRefs||[];const header=<div className="section-head"><span className="index">{String(index).padStart(2,'0')} / {type.toUpperCase()}</span><h2>{heading}</h2>{intro&&type!=='statement'&&<p>{intro}</p>}</div>;
-if(type==='hero')return <section className="hero" id="top"><div className="hero-copy"><p className="eyebrow">SABOTAGE QCQC? <span className="red">/</span> 2026—2027</p><h1>{heading}</h1><p className="hero-label">{intro}</p><a className="btn primary" href="#releases">{lang==='de'?'RELEASE ENTDECKEN':'EXPLORE RELEASE'}</a></div><div className="hero-art"><img src="/assets/sabotage-symbol.png" alt="SABOTAGE emblem"/></div></section>;
+function Section({module, lang, index}: {module: Module; lang: 'en' | 'de'; index: number}) {
+  const type = module._type.replace('module_', '');
+  const heading = local(module.heading, lang);
+  const intro = local(module.intro, lang);
+  const releases = module.releaseRefs || [];
+  const wearTitle = type === 'linkGrid' ? heading.match(/^(SABOTAGE)\s+(WEAR)(\s*\/.*)?$/i) : null;
+  const isWear = module._key === 'wear' || wearTitle !== null;
+  const titleWithPrefix = heading.match(/^(THE|DAS|BACK|LATEST|AKTUELLER|CURRENT|AKTUELLE|LISTEN &|HÖREN &)\s+(.+)$/i);
+  const titleWithSuffix = heading.match(/^(.+?)\s+(\/\s*.+)$/);
+  const graphic = isWear
+    ? {src: '/assets/sabotage-fist.webp', width: 640, height: 827}
+    : type === 'statement'
+      ? {src: '/assets/sabotage-roundel.webp', width: 640, height: 681}
+      : null;
+  const header = (
+    <div className={graphic ? 'section-head section-head-illustrated' : 'section-head'}>
+      <span className="index">{String(index).padStart(2, '0')} / {type.toUpperCase()}</span>
+      <h2 className={wearTitle ? 'wear-title' : undefined}>
+        {wearTitle ? (
+          <>
+            {wearTitle[1]} <span className="wear-title-accent">{wearTitle[2]}</span>
+            {wearTitle[3] && <span className="wear-title-status">{wearTitle[3]}</span>}
+          </>
+        ) : titleWithPrefix ? (
+          <><span className="headline-prefix">{titleWithPrefix[1]}</span> {titleWithPrefix[2]}</>
+        ) : titleWithSuffix ? (
+          <>{titleWithSuffix[1]} <span className="headline-suffix">{titleWithSuffix[2]}</span></>
+        ) : heading}
+      </h2>
+      {graphic && <img className="section-head-mark" {...graphic} alt="" loading="lazy"/>}
+      {intro && type !== 'statement' && <p>{intro}</p>}
+    </div>
+  );
+if (type === 'hero') {
+  const titleLines = heading.match(/^(NO BOTTOM\s*[-–—])\s+(NO TOP)$/i);
+  return <section className="hero" id="top"><div className="hero-copy"><p className="eyebrow">SABOTAGE QCQC? <span className="red">/</span> 2026—2027</p><h1>{titleLines ? <>{titleLines[1]} <span className="hero-title-emphasis">{titleLines[2]}</span></> : heading}</h1><p className="hero-label">{intro}</p><a className="btn primary" href="#releases">{lang==='de'?'RELEASE ENTDECKEN':'EXPLORE RELEASE'}</a></div><div className="hero-art"><img src="/assets/sabotage-symbol.png" alt="SABOTAGE emblem"/></div></section>;
+}
 if(type==='releaseFeature'){const r=releases[0];const date=r&&releaseDate(r);return <section className="section releases" id={module._key==='single'?'the-flood':'releases'}>{header}{r?<div className="feature"><div><Art url={r.coverUrl} title={r.title}/><div className="inline-links">{r.links?.map((l,i)=><External key={i} item={l}/>)}</div></div><div><p className="eyebrow red">{r.labelUrl?<a href={r.labelUrl} target="_blank" rel="noopener noreferrer">{r.label} ↗</a>:r.label}{date?` / ${date}`:''}</p><h3>{r.title}</h3><div className="release-description">{(local(r.description,lang)|| (lang==='de'?'Limitierte Vinyl-Edition.':'Limited vinyl edition.')).split('\n\n').map((paragraph,i)=><p key={i}>{paragraph.split('\n').map((line,j)=><span key={j}>{j>0&&<br/>}{line}</span>)}</p>)}</div><ReleaseEditions release={r} lang={lang}/></div></div>:<p>Release in Sanity auswählen oder Highlight aktivieren.</p>}</section>}
 if(type==='releaseGrid')return <section className="section catalogue" id="catalogue">{header}<div className="release-grid">{releases.map(r=><ReleaseCard key={r._id} release={r}/>)}</div></section>;
 if(type==='archiveGrid')return <section className="section archive" id="archive">{header}<div className="archive-title-list"><h3>RELEASES</h3><ul><li>ANNORLUNDA <span>1994</span></li><li>LES ENFANTS SAUVAGES <span>1995</span></li><li>TUMULTE <span>1993</span></li><li>DEUTSCHER HERBST ’77 <span>1996</span></li><li>NO BOTTOM – NO TOP <span>2027 · VINYL EP</span></li><li>THE FLOOD <span>2026 · DIGITAL SINGLE</span></li><li>LIBERTINAGE</li><li>SEXPLOITATION CINEMA</li><li>SCHLAGER</li><li>GODDESS</li><li>ACOUSTIC COSTUMES</li><li>CONCRETE</li></ul></div><div className="archive-tracklists"><h3>TRACK & COMPILATION ARCHIVE</h3><p className="archive-note">Trackpositionen aus dem Gesamtarchiv. Gleiche Titel auf verschiedenen Veröffentlichungen bleiben separat aufgeführt.</p>{Object.entries(archiveData.tracks.reduce<Record<string, typeof archiveData.tracks>>((groups,track)=>{(groups[track.release||'Weitere Titel']??=[]).push(track);return groups},{})).map(([release,tracks])=><details key={release}><summary>{release}<span>{tracks.length} Titel</span></summary><ol>{tracks.map((track,i)=><li key={`${release}-${i}`}><span>{track.title}{track.version?` — ${track.version}`:''}</span><small>{track.year}{track.position?` · Track ${track.position}`:''}</small></li>)}</ol></details>)}<details><summary>Sampler & Compilations<span>{archiveData.compilations.length} dokumentierte Einträge</span></summary><ol>{archiveData.compilations.map((item,i)=><li key={`comp-${i}`}><span>{item.title}{item.version?` — ${item.version}`:''}</span><small>{item.compilation}{item.year?` · ${item.year}`:''}</small></li>)}</ol></details></div><div className="archive-items">{module.archiveRefs?.map(a=><article key={a._id}><Art url={a.imageUrl} title={a.title}/><h3>{a.title}</h3></article>)}</div><div className="archive-discogs"><a href="https://www.discogs.com/artist/69880-Sabotage-QCQC?superFilter=Appearances&subFilter=Compilations" target="_blank" rel="noopener noreferrer">DISCOGS ↗</a></div></section>;
@@ -58,14 +93,9 @@ if(type==='newsGrid')return <section className="section news" id="news">{header}
 if(type==='mediaGrid')return <section className="section" id="media">{header}<div className="linkgrid">{module.mediaRefs?.filter(m=>m.url).map(m=><a key={m._id} href={m.url} target="_blank" rel="noopener noreferrer">{m.title} ↗</a>)}</div></section>;
 if(type==='statement')return <section className="section about" id="about">{header}<p className="statement">{intro}</p></section>;
 if (type === 'linkGrid') {
-  const isWear = module._key === 'wear' || /^sabotage wear(?:\s*\/|$)/i.test(heading.trim());
   return (
     <section className="section connect" id={isWear ? 'wear' : 'connect'}>
       {header}
-      {isWear && (
-        <img className="wear-banner" src="/assets/sabotage-wear-banner.webp"
-          width={2400} height={600} loading="lazy" alt=""/>
-      )}
       <div className="linkgrid">
         {module.links?.map((link, i) => <External key={i} item={link}/>)}
       </div>

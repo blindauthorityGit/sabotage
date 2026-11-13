@@ -53,13 +53,6 @@
   height: auto;
 }
 
-.wear-banner {
-  display: block;
-  width: 100%;
-  height: auto;
-  margin-bottom: 24px;
-}
-
 .wear-photos {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -82,4 +75,249 @@
 
 .legal-page #disclaimer {
   scroll-margin-top: 24px;
+}
+
+:root {
+  --font-display: Impact, 'Arial Narrow', 'Arial Black', Arial, sans-serif;
+  --font-text: Arial, Helvetica, sans-serif;
+}
+
+body {
+  font-family: var(--font-text);
+}
+
+:where(.site-content, .legal-page) :is(h1, h2, h3, h4) {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -.018em;
+  line-height: 1.02;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
+}
+
+.site-content .hero h1 {
+  font-size: clamp(40px, 8.4vw, 148px);
+  line-height: .91;
+  letter-spacing: -.026em;
+  text-wrap: wrap;
+}
+
+.hero .btn {
+  display: inline-block;
+}
+
+.site-content .section h2,
+.legal-page h1 {
+  font-size: clamp(44px, 6.8vw, 108px);
+  line-height: .96;
+}
+
+.site-content .feature h3 {
+  font-size: clamp(36px, 5.2vw, 82px);
+  line-height: .98;
+}
+
+.site-content .news-article h3 {
+  font-size: clamp(29px, 3.75vw, 54px);
+}
+
+.site-content .release-card-copy h3,
+.site-content .archive-items h3 {
+  font-size: clamp(21px, 2vw, 32px);
+}
+
+.legal-page h2 {
+  font-size: clamp(26px, 3.1vw, 42px);
+}
+
+.site-content .statement {
+  font-size: clamp(24px, 3.1vw, 46px);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -.025em;
+  text-wrap: pretty;
+}
+
+.site-content :is(.section-head p, .release-description, .news-body),
+.legal-page p {
+  font-size: 1rem;
+  line-height: 1.6;
+  text-wrap: pretty;
+}
+
+.topbar nav a,
+.topbar button,
+.btn,
+.inline-links a,
+.archive-discogs a,
+.cookie-banner button {
+  font-size: .75rem;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: .065em;
+}
+
+.site-content :is(.eyebrow, .index, .hero-label),
+.release-card-copy small,
+.tags span {
+  font-size: .6875rem;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: .095em;
+}
+
+.linkgrid a,
+.news-index a,
+.archive-tracklists summary,
+body > footer a {
+  font-weight: 700;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.linkgrid a {
+  font-size: clamp(17px, 1.8vw, 26px);
+  letter-spacing: -.015em;
+}
+
+@media (max-width: 900px) {
+  .site-content .hero h1 {
+    font-size: clamp(38px, 13.2vw, 106px);
+  }
+}
+
+@media (max-width: 560px) {
+  .site-content .section h2,
+  .legal-page h1 {
+    font-size: clamp(36px, 10.5vw, 58px);
+  }
+}
+
+/* Horizontal rules align the typography with the emblem and the image edges. */
+.hero .hero-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hero .hero-label::after {
+  content: '';
+  flex: 0 1 76px;
+  min-width: 16px;
+  border-top: 2px solid var(--red);
+}
+
+#wear .section-head {
+  border-bottom: 1px solid var(--muted);
+  padding-bottom: 16px;
+}
+
+@media (min-width: 1100px) {
+  .hero-copy,
+  :is(#archive, #wear) .section-head {
+    position: relative;
+  }
+
+  .hero-copy > .eyebrow,
+  :is(#archive, #wear) .section-head > .index {
+    position: absolute;
+    top: 0;
+    right: calc(100% + clamp(14px, 2.1vw, 36px));
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    white-space: nowrap;
+    margin: 0;
+    border-inline-start: 2px solid currentColor;
+    padding-inline-start: 12px;
+  }
+}
+
+#wear .wear-title {
+  font-size: clamp(43px, 11vw, 156px);
+  line-height: .9;
+  letter-spacing: -.025em;
+}
+
+.wear-title-accent {
+  display: block;
+  margin-left: clamp(18px, 10vw, 152px);
+  color: var(--red);
+  letter-spacing: .055em;
+}
+
+@supports (-webkit-text-stroke: 1px var(--red)) {
+  .wear-title-accent {
+    color: transparent;
+    -webkit-text-stroke: clamp(1px, .23vw, 3px) var(--red);
+  }
+}
+
+.wear-title-status {
+  display: block;
+  margin-top: 14px;
+  font: 700 .75rem/1.4 var(--font-text);
+  letter-spacing: .095em;
+}
+
+.hero-title-emphasis {
+  display: block;
+  margin-left: clamp(14px, 3vw, 54px);
+  font-size: 1.24em;
+  letter-spacing: -.04em;
+}
+
+.headline-prefix,
+.headline-suffix {
+  display: block;
+  margin-bottom: .5em;
+  font: 700 clamp(15px, 2vw, 26px)/1 var(--font-text);
+  letter-spacing: .2em;
+}
+
+.headline-suffix {
+  margin: .65em 0 0;
+}
+
+.section-head .index {
+  display: flex;
+  align-items: center;
+  gap: .75em;
+}
+
+.section-head .index::after {
+  content: '';
+  inline-size: 2.5em;
+  border-block-start: 1px solid currentColor;
+}
+
+.site-content :is(.release-card-copy, .news-article, .archive-items) h3,
+.legal-page h2 {
+  letter-spacing: -.025em;
+  text-wrap: balance;
+}
+
+.section-head-illustrated {
+  position: relative;
+  min-height: clamp(80px, 12vw, 180px);
+  padding-inline-end: clamp(88px, 24vw, 320px);
+}
+
+.section-head-mark {
+  position: absolute;
+  inset-inline-end: clamp(0px, 2vw, 30px);
+  bottom: 0;
+  width: clamp(66px, 14vw, 190px);
+  height: auto;
+  pointer-events: none;
+}
+
+#wear .section-head-mark {
+  bottom: 16px;
+  transform: rotate(-9deg);
+}
+
+#about .section-head-mark {
+  width: clamp(72px, 13vw, 176px);
+  bottom: auto;
+  top: 0;
 }
