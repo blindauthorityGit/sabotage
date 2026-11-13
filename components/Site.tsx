@@ -2,10 +2,13 @@
 import {useEffect, useRef, useState} from 'react';
 import type {Page,Module,Release,Link,Localized,NewsItem} from '../lib/content';
 import {normalizeReleaseTitle, releaseArtworkKey} from '../lib/release-artwork';
+import LanguageSwitch from './LanguageSwitch';
+import {languageHref, locales, tr, type Language} from '../lib/language';
+import {translateText, newsTranslation} from '../lib/translations';
 import archiveData from '../lib/archive-data.json';
-const local=(value:Localized|undefined,lang:'en'|'de')=>normalizeReleaseTitle(value?.[lang]||value?.en||value?.de||'');
-function External({item}:{item:Link}){if(!item.enabled||!item.url)return null;return <a href={item.url} target={item.url.startsWith('mailto:')?undefined:'_blank'} rel="noopener noreferrer">{item.label} ↗</a>}
-function Art({url,title}:{url?:string;title:string}){return url?<img className="cover" src={url} alt={title}/>:<div className="art-placeholder"><img src="/assets/sabotage-symbol.png" alt=""/><span>ARTWORK PENDING</span></div>}
+const local=(value:Localized|undefined,lang:Language)=>normalizeReleaseTitle(value?.[lang] || translateText(lang, value?.en || value?.de || ''));
+function External({item, lang = 'en'}:{item:Link;lang?:Language}){if(!item.enabled||!item.url)return null;return <a href={item.url} target={item.url.startsWith('mailto:')?undefined:'_blank'} rel="noopener noreferrer">{translateText(lang, item.label)} ↗</a>}
+function Art({url,title,lang}:{url?:string;title:string;lang:Language}){return url?<img className="cover" src={url} alt={title}/>:<div className="art-placeholder"><img src="/assets/sabotage-symbol.png" alt=""/><span>{tr(lang,'ARTWORK PENDING','COVER FOLGT','POCHETTE À VENIR','PORTADA PENDIENTE')}</span></div>}
 function releaseDate(release:Release){return release.digitalReReleaseDate||release.originalReleaseDate}
 const vinylPhotos = {
   black: {
@@ -20,7 +23,7 @@ const vinylPhotos = {
   },
 };
 
-function ReleaseEditions({release, lang}: {release: Release; lang: 'en' | 'de'}) {
+function ReleaseEditions({release, lang}: {release: Release; lang: Language}) {
   const hasVinylPhotos = releaseArtworkKey(release) === 'no-bottom-no-top';
 
   return (
@@ -29,15 +32,19 @@ function ReleaseEditions({release, lang}: {release: Release; lang: 'en' | 'de'})
         const color = edition.color?.trim().toLowerCase();
         const photo = hasVinylPhotos && edition.format?.trim().toLowerCase() === 'vinyl'
           && (color === 'black' || color === 'red') ? vinylPhotos[color] : null;
-        const label = [edition.quantity, edition.color, edition.format].filter(Boolean).join(' ');
+        const colorName = color === 'black' ? tr(lang, 'Black', 'Schwarz', 'noir', 'negro')
+          : color === 'red' ? tr(lang, 'Red', 'Rot', 'rouge', 'rojo') : edition.color;
+        const format = edition.format?.toLowerCase() === 'vinyl' ? tr(lang,'Vinyl','Vinyl','vinyle','vinilo') : edition.format;
+        const label = (lang === 'fr' || lang === 'es'
+          ? [edition.quantity, format, colorName] : [edition.quantity, colorName, format]).filter(Boolean).join(' ');
 
         return photo ? (
           <div className="vinyl-edition" key={index}>
             <span>{label}</span>
-            <p className="vinyl-edition-description">{photo.description[lang]}</p>
+            <p className="vinyl-edition-description">{local(photo.description, lang)}</p>
             <img
               src={`/assets/no-bottom-no-top-${color}-vinyl.webp`}
-              alt={photo.alt[lang]}
+              alt={local(photo.alt, lang)}
               width={1000}
               height={photo.height}
               loading="lazy"
@@ -49,11 +56,11 @@ function ReleaseEditions({release, lang}: {release: Release; lang: 'en' | 'de'})
   );
 }
 
-function ReleaseCard({release}:{release:Release}){const date=releaseDate(release);return <article className="release-card"><Art url={release.coverUrl} title={normalizeReleaseTitle(release.title)}/><div className="release-card-copy"><small>{release.artist||'SABOTAGE QCQC?'} / {release.releaseStatus||'pending'}{date?` / ${date}`:''}</small><h3>{normalizeReleaseTitle(release.title)}</h3><p>{release.labelUrl?<a href={release.labelUrl} target="_blank" rel="noopener noreferrer">{release.label} ↗</a>:release.label||''}</p><div className="inline-links">{release.links?.map((l,i)=><External key={i} item={l}/>)}</div></div></article>}
+function ReleaseCard({release,lang}:{release:Release;lang:Language}){const date=releaseDate(release);return <article className="release-card"><Art url={release.coverUrl} title={normalizeReleaseTitle(release.title)} lang={lang}/><div className="release-card-copy"><small>{release.artist||'SABOTAGE QCQC?'} / {translateText(lang, release.releaseStatus || 'pending')}{date?` / ${date}`:''}</small><h3>{normalizeReleaseTitle(release.title)}</h3><p>{release.labelUrl?<a href={release.labelUrl} target="_blank" rel="noopener noreferrer">{release.label} ↗</a>:release.label||''}</p><div className="inline-links">{release.links?.map((l,i)=><External key={i} item={l} lang={lang}/>)}</div></div></article>}
 const emptyNews: NewsItem[] = [];
 
 function NewsSection({items, lang, header}: {
-  items: NewsItem[]; lang: 'en' | 'de'; header: React.ReactNode;
+  items: NewsItem[]; lang: Language; header: React.ReactNode;
 }) {
   const [selectedId, setSelectedId] = useState('');
   const panel = useRef<HTMLDivElement>(null);
@@ -77,7 +84,7 @@ function NewsSection({items, lang, header}: {
     const date = isoDate ? new Date(isoDate + 'T00:00:00Z') : null;
     const validDate = date && !Number.isNaN(date.getTime()) ? date : null;
     const shortDate = validDate ? isoDate?.slice(5, 7) + '/' + isoDate?.slice(0, 4) : null;
-    const fullDate = validDate && new Intl.DateTimeFormat(lang === 'de' ? 'de-DE' : 'en-GB', {
+    const fullDate = validDate && new Intl.DateTimeFormat(locales[lang], {
       month: 'short', timeZone: 'UTC',
     }).format(validDate).replace(/\.$/, '');
 
@@ -101,9 +108,9 @@ function NewsSection({items, lang, header}: {
                   style={item.imageClipPath ? {clipPath: item.imageClipPath} : undefined}/>
               )}
               <div className="news-body">
-                {local(item.body, lang).split('\n\n').map((paragraph, i) => {
+                {(item.body?.[lang] || newsTranslation(item._id, lang)?.body || local(item.body, lang)).split('\n\n').map((paragraph, i) => {
                   const link = item.links?.find(link => link.enabled && link.url === paragraph);
-                  if (link) return <p key={i}><External item={link}/></p>;
+                  if (link) return <p key={i}><External item={link} lang={lang}/></p>;
 
                   return <p key={i}>
                     {paragraph.split(/(\*\*[^*]+\*\*|\*[^*]+\*)/g).map((text, j) => {
@@ -117,7 +124,7 @@ function NewsSection({items, lang, header}: {
             </article>
           )}
         </div>
-        <aside className="news-index" aria-label="News headlines">
+        <aside className="news-index" aria-label={tr(lang,'News headlines','News-Überschriften','Titres des actualités','Titulares de noticias')}>
           <span className="eyebrow red">HEADLINES</span>
           {news.map(entry => (
             <a key={entry._id} href={`#news-${entry._id}`}
@@ -173,9 +180,9 @@ function sectionPosition(module: Module) {
   return fallback === -1 ? sections.length : fallback;
 }
 
-function Section({module, lang, index}: {module: Module; lang: 'en' | 'de'; index: number}) {
+function Section({module, lang, index}: {module: Module; lang: Language; index: number}) {
   const type = module._type.replace('module_', '');
-  const heading = local(module.heading, lang);
+  const heading = local(module.heading, 'en');
   const intro = local(module.intro, lang);
   const releases = module.releaseRefs || [];
   const wearTitle = type === 'linkGrid' ? heading.match(/^(SABOTAGE)\s+(WEAR)(\s*\/.*)?$/i) : null;
@@ -210,18 +217,18 @@ function Section({module, lang, index}: {module: Module; lang: 'en' | 'de'; inde
   );
 if (type === 'hero') {
   const titleLines = heading.match(/^(NO BOTTOM\s*[-–—])\s+(NO TOP)$/i);
-  return <section className="hero" id="top"><div className="hero-copy"><p className="eyebrow">01 SABOTAGE QCQC? <span className="red">/</span> 2026-2027</p><h1>{titleLines ? <>{titleLines[1]} <span className="hero-title-emphasis">{titleLines[2]}</span></> : heading}</h1><p className="hero-label">{intro}</p><a className="btn primary" href="#releases">{lang==='de'?'RELEASE ENTDECKEN':'EXPLORE RELEASE'}</a></div><div className="hero-art"><img src="/assets/sabotage-symbol.png" alt="SABOTAGE emblem"/></div></section>;
+  return <section className="hero" id="top"><div className="hero-copy"><p className="eyebrow">01 SABOTAGE QCQC? <span className="red">/</span> 2026-2027</p><h1>{titleLines ? <>{titleLines[1]} <span className="hero-title-emphasis">{titleLines[2]}</span></> : heading}</h1><p className="hero-label">{intro}</p><a className="btn primary" href="#releases">{tr(lang,'EXPLORE RELEASE','RELEASE ENTDECKEN','DÉCOUVRIR LA SORTIE','DESCUBRIR EL LANZAMIENTO')}</a></div><div className="hero-art"><img src="/assets/sabotage-symbol.png" alt="SABOTAGE emblem"/></div></section>;
 }
-if(type==='releaseFeature'){const r=releases[0];const date=r&&releaseDate(r);return <section className="section releases" id={module._key==='single'?'the-flood':'releases'}>{header}{r?<div className="feature"><div><Art url={r.coverUrl} title={normalizeReleaseTitle(r.title)}/><div className="inline-links">{r.links?.map((l,i)=><External key={i} item={l}/>)}</div></div><div><p className="eyebrow red">{r.labelUrl?<a href={r.labelUrl} target="_blank" rel="noopener noreferrer">{r.label} ↗</a>:r.label}{date?` / ${date}`:''}</p><h3>{normalizeReleaseTitle(r.title)}</h3><div className="release-description">{(local(r.description,lang)|| (lang==='de'?'Limitierte Vinyl-Edition.':'Limited vinyl edition.')).split('\n\n').map((paragraph,i)=><p key={i}>{paragraph.split('\n').map((line,j)=><span key={j}>{j>0&&<br/>}{line}</span>)}</p>)}</div><ReleaseEditions release={r} lang={lang}/></div></div>:<p>Release in Sanity auswählen oder Highlight aktivieren.</p>}</section>}
-if(type==='releaseGrid')return <section className="section catalogue" id="catalogue">{header}<div className="release-grid">{releases.map(r=><ReleaseCard key={r._id} release={r}/>)}</div></section>;
-if(type==='archiveGrid')return <section className="section archive" id="archive">{header}<div className="archive-title-list"><h3>RELEASES</h3><ul><li>ANNORLUNDA <span>1994</span></li><li>LES ENFANTS SAUVAGES <span>1995</span></li><li>TUMULTE <span>1993</span></li><li>DEUTSCHER HERBST ’77 <span>1996</span></li><li>NO BOTTOM - NO TOP <span>2027 · VINYL EP</span></li><li>THE FLOOD <span>2026 · DIGITAL SINGLE</span></li><li>LIBERTINAGE</li><li>SEXPLOITATION CINEMA</li><li>SCHLAGER</li><li>GODDESS</li><li>ACOUSTIC COSTUMES</li><li>CONCRETE</li></ul></div><div className="archive-tracklists"><h3>TRACK & COMPILATION ARCHIVE</h3><p className="archive-note">Trackpositionen aus dem Gesamtarchiv. Gleiche Titel auf verschiedenen Veröffentlichungen bleiben separat aufgeführt.</p>{Object.entries(archiveData.tracks.reduce<Record<string, typeof archiveData.tracks>>((groups,track)=>{(groups[track.release||'Weitere Titel']??=[]).push(track);return groups},{})).map(([release,tracks])=><details key={release}><summary>{release}<span>{tracks.length} Titel</span></summary><ol>{tracks.map((track,i)=><li key={`${release}-${i}`}><span>{track.title}{track.version?` — ${track.version}`:''}</span><small>{track.year}{track.position?` · Track ${track.position}`:''}</small></li>)}</ol></details>)}<details><summary>Sampler & Compilations<span>{archiveData.compilations.length} dokumentierte Einträge</span></summary><ol>{archiveData.compilations.map((item,i)=><li key={`comp-${i}`}><span>{item.title}{item.version?` — ${item.version}`:''}</span><small>{item.compilation}{item.year?` · ${item.year}`:''}</small></li>)}</ol></details></div><div className="archive-items">{module.archiveRefs?.map(a=><article key={a._id}><Art url={a.imageUrl} title={normalizeReleaseTitle(a.title)}/><h3>{normalizeReleaseTitle(a.title)}</h3></article>)}</div><div className="archive-discogs"><a href="https://www.discogs.com/artist/69880-Sabotage-QCQC?superFilter=Appearances&subFilter=Compilations" target="_blank" rel="noopener noreferrer">DISCOGS ↗</a></div></section>;
+if(type==='releaseFeature'){const r=releases[0];const date=r&&releaseDate(r);return <section className="section releases" id={module._key==='single'?'the-flood':'releases'}>{header}{r?<div className="feature"><div><Art url={r.coverUrl} title={normalizeReleaseTitle(r.title)} lang={lang}/><div className="inline-links">{r.links?.map((l,i)=><External key={i} item={l} lang={lang}/>)}</div></div><div><p className="eyebrow red">{r.labelUrl?<a href={r.labelUrl} target="_blank" rel="noopener noreferrer">{r.label} ↗</a>:r.label}{date?` / ${date}`:''}</p><h3>{normalizeReleaseTitle(r.title)}</h3><div className="release-description">{(local(r.description,lang)|| (tr(lang,'Limited vinyl edition.','Limitierte Vinyl-Edition.','Édition vinyle limitée.','Edición limitada en vinilo.'))).split('\n\n').map((paragraph,i)=><p key={i}>{paragraph.split('\n').map((line,j)=><span key={j}>{j>0&&<br/>}{line}</span>)}</p>)}</div><ReleaseEditions release={r} lang={lang}/></div></div>:<p>{tr(lang,'Release details will follow.','Details zur Veröffentlichung folgen.','Les détails de la sortie suivront.','Los detalles del lanzamiento se anunciarán más adelante.')}</p>}</section>}
+if(type==='releaseGrid')return <section className="section catalogue" id="catalogue">{header}<div className="release-grid">{releases.map(r=><ReleaseCard key={r._id} release={r} lang={lang}/>)}</div></section>;
+if(type==='archiveGrid')return <section className="section archive" id="archive">{header}<div className="archive-title-list"><h3>RELEASES</h3><ul><li>ANNORLUNDA <span>1994</span></li><li>LES ENFANTS SAUVAGES <span>1995</span></li><li>TUMULTE <span>1993</span></li><li>DEUTSCHER HERBST ’77 <span>1996</span></li><li>NO BOTTOM - NO TOP <span>2027 · VINYL EP</span></li><li>THE FLOOD <span>2026 · DIGITAL SINGLE</span></li><li>LIBERTINAGE</li><li>SEXPLOITATION CINEMA</li><li>SCHLAGER</li><li>GODDESS</li><li>ACOUSTIC COSTUMES</li><li>CONCRETE</li></ul></div><div className="archive-tracklists"><h3>TRACK & COMPILATION ARCHIVE</h3><p className="archive-note">{tr(lang,'Track positions from the complete archive. Tracks on different releases are listed separately.','Trackpositionen aus dem Gesamtarchiv. Gleiche Titel auf verschiedenen Veröffentlichungen bleiben separat aufgeführt.','Positions des titres dans les archives. Les titres parus sur différentes sorties sont indiqués séparément.','Posiciones de los temas en el archivo. Los temas que aparecen en distintos lanzamientos se enumeran por separado.')}</p>{Object.entries(archiveData.tracks.reduce<Record<string, typeof archiveData.tracks>>((groups,track)=>{(groups[track.release||tr(lang,'More tracks','Weitere Titel','Autres titres','Más temas')]??=[]).push(track);return groups},{})).map(([release,tracks])=><details key={release}><summary>{release}<span>{tracks.length} {tr(lang,'tracks','Titel','titres','temas')}</span></summary><ol>{tracks.map((track,i)=><li key={`${release}-${i}`}><span>{track.title}{track.version?` — ${track.version}`:''}</span><small>{track.year}{track.position?` · Track ${track.position}`:''}</small></li>)}</ol></details>)}<details><summary>Samplers & Compilations<span>{archiveData.compilations.length} {tr(lang,'documented entries','dokumentierte Einträge','entrées documentées','entradas documentadas')}</span></summary><ol>{archiveData.compilations.map((item,i)=><li key={`comp-${i}`}><span>{item.title}{item.version?` — ${item.version}`:''}</span><small>{item.compilation}{item.year?` · ${item.year}`:''}</small></li>)}</ol></details></div><div className="archive-items">{module.archiveRefs?.map(a=><article key={a._id}><Art url={a.imageUrl} title={normalizeReleaseTitle(a.title)} lang={lang}/><h3>{normalizeReleaseTitle(a.title)}</h3></article>)}</div><div className="archive-discogs"><a href="https://www.discogs.com/artist/69880-Sabotage-QCQC?superFilter=Appearances&subFilter=Compilations" target="_blank" rel="noopener noreferrer">DISCOGS ↗</a></div></section>;
 if (type === 'newsGrid') return <NewsSection items={module.newsRefs ?? emptyNews} lang={lang} header={header}/>;
 if(type==='mediaGrid')return <section className="section" id="media">{header}<div className="linkgrid">{module.mediaRefs?.filter(m=>m.url).map(m=><a key={m._id} href={m.url} target="_blank" rel="noopener noreferrer">{normalizeReleaseTitle(m.title)} ↗</a>)}</div></section>;
 if (type === 'statement') return (
   <section className="section about" id="about">
     {header}
     <p className="statement">{intro}</p>
-    <a className="btn primary manifesto-link" href="/manifesto">MANIFESTO ↗</a>
+    <a className="btn primary manifesto-link" href={languageHref("/manifesto", lang)}>MANIFESTO ↗</a>
     <small className="manifest-names">ISABELLE GERNAND, MARC WERNER, DETLEF WEINREICH, JOHANNES BUCHNER</small>
   </section>
 );
@@ -230,7 +237,7 @@ if (type === 'linkGrid') {
     <section className="section connect" id={isWear ? 'wear' : 'connect'}>
       {header}
       <div className="linkgrid">
-        {module.links?.map((link, i) => <External key={i} item={link}/>)}
+        {module.links?.map((link, i) => <External key={i} item={link} lang={lang}/>)}
       </div>
       {isWear && (
         <div className="wear-photos">
@@ -244,4 +251,12 @@ if (type === 'linkGrid') {
   );
 }
 return null}
-export default function Site({page,contactEmail}:{page:Page;contactEmail:string}){const [lang,setLang]=useState<'en'|'de'>('en');const modules=page.modules.filter(m=>m.enabled!==false).sort((a,b)=>sectionPosition(a)-sectionPosition(b));return <><header className="topbar"><a className="brand" href="#top" aria-label="SABOTAGE QCQC? home"><img src="/assets/sabotage-logo.png" alt="SABOTAGE QCQC?"/></a><nav><a href="#releases">RELEASES</a><a href="#catalogue">BACK CATALOGUE</a><a href="#archive">{lang==='de'?'ARCHIV':'ARCHIVE'}</a><a href="#news">NEWS</a><a href="#about">ABOUT</a><a href="/manifesto">MANIFESTO</a><a href="#connect">CONNECT</a></nav><button id="lang" onClick={()=>setLang(lang==='en'?'de':'en')}>{lang==='en'?'DE':'EN'}</button></header><main className="site-content">{modules.map((m,i)=><Section key={m._key||i} module={m} index={i+1} lang={lang}/>)}</main><footer><span>© {new Date().getFullYear()} SABOTAGE QCQC?</span><span>QU'EST-CE QUE C'EST?</span><a href={'mailto:'+contactEmail}>{contactEmail}</a><a href="/impressum">{lang==='de'?'IMPRESSUM':'LEGAL NOTICE'}</a><a href="/impressum#disclaimer">DISCLAIMER</a></footer></>}
+export default function Site({page,contactEmail,lang}:{page:Page;contactEmail:string;lang:Language}){const modules=page.modules.filter(m=>m.enabled!==false).sort((a,b)=>sectionPosition(a)-sectionPosition(b));return <div lang={lang} className="site-language"><header className="topbar"><a className="brand" href="#top" aria-label="SABOTAGE QCQC? home"><img src="/assets/sabotage-logo.png" alt="SABOTAGE QCQC?"/></a><nav>
+  <a href="#releases">RELEASES</a>
+  <a href="#catalogue">BACK CATALOGUE</a>
+  <a href="#archive">ARCHIVE</a>
+  <a href="#news">NEWS</a>
+  <a href="#about">ABOUT</a>
+  <a href={languageHref('/manifesto',lang)}>MANIFESTO</a>
+  <a href="#connect">CONNECT</a>
+</nav><LanguageSwitch lang={lang} path="/"/></header><main className="site-content">{modules.map((m,i)=><Section key={m._key||i} module={m} index={i+1} lang={lang}/>)}</main><footer><span>© {new Date().getFullYear()} SABOTAGE QCQC?</span><span>QU'EST-CE QUE C'EST?</span><a href={'mailto:'+contactEmail}>{contactEmail}</a><a href={languageHref("/impressum", lang)}>{tr(lang,'LEGAL NOTICE','IMPRESSUM','MENTIONS LÉGALES','AVISO LEGAL')}</a><a href={languageHref("/impressum#disclaimer", lang)}>{tr(lang,'DISCLAIMER','DISCLAIMER','RESPONSABILITÉ','RESPONSABILIDAD')}</a></footer></div>}

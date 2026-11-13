@@ -35,7 +35,69 @@ And made to move bodies as much as minds.
 
 SAME CITY. DIFFERENT WEATHER.
 WE HOLD YOU UP. YOU KEEP US DOWN.
-WITHOUT THE BOTTOM THERE IS NO TOP.`},links:[{label:'Apple Music',url:'https://music.apple.com/us/album/the-flood-without-bottom-no-top-single/6817367441',kind:'stream',enabled:true},{label:'Amazon Music',url:'https://www.amazon.com/gp/product/B0HLFWW1B8',kind:'stream',enabled:true},{label:'Spotify',url:'https://open.spotify.com/intl-de/album/0Tbkwur2HQT3SXiwrlszVM',kind:'stream',enabled:true},{label:'All digital platforms',url:'https://distrokid.com/hyperfollow/sabotageqcqc/the-flood-without-bottom-no-top',kind:'stream',enabled:true}]},...['ANNORLUNDA','LES ENFANTS SAUVAGES','TUMULTE','DEUTSCHER HERBST ’77'].map((title,i)=>({_id:'demo-'+i,title,artist:'SABOTAGE QCQC?',category:'backCatalogue',label:'SubCulture Records',releaseStatus:'pending',...(i===0?{coverUrl:'/assets/annorlunda.png'}:i===1?{coverUrl:'/assets/les-enfants-sauvages.png'}:i===2?{coverUrl:'/assets/tumulte.png'}:i===3?{coverUrl:'/assets/deutscher-herbst-77.png'}:{})}))];
+WITHOUT THE BOTTOM THERE IS NO TOP.`,fr:`En bas, tout devient inondation.
+
+Inspiré par l’architecture sociale de Parasite, THE FLOOD parle du haut et du bas, des privilèges et de la dépendance. De ceux qui profitent de la vue et de ceux dont le travail soutient toute la structure.
+
+NOUS VOUS SOUTENONS.
+VOUS NOUS MAINTENEZ EN BAS.
+
+À 130 BPM, THE FLOOD transforme cette pression en force physique : des taikos massifs heurtent des rythmes mécaniques secs, des percussions industrielles et des séquences qui avancent sans relâche.
+
+Le morceau ne vous accompagne pas.
+Il vous propulse.
+
+Jusqu’à ce que le rythme devienne pression.
+La pression devient résistance.
+Et la résistance monte.
+
+Car toute hiérarchie dépend de ce qu’elle place en dessous.
+
+SANS LE BAS, IL N’Y A PAS DE HAUT.
+
+L’inondation n’est pas une catastrophe naturelle. C’est le moment où ce qui a été maintenu en bas refuse d’y rester.
+
+C’est dans l’ADN de SABOTAGE : la musique électronique comme force qui bouscule la réalité sociale.
+
+Physique.
+Frontale.
+Inconfortable.
+Faite pour faire bouger les corps autant que les esprits.
+
+MÊME VILLE. AUTRE TEMPS.
+NOUS VOUS SOUTENONS. VOUS NOUS MAINTENEZ EN BAS.
+SANS LE BAS, IL N’Y A PAS DE HAUT.`,es:`Abajo, todo se convierte en una inundación.
+
+Inspirado en la arquitectura social de Parasite, THE FLOOD habla de arriba y abajo, del privilegio y la dependencia. De quienes disfrutan de las vistas y de quienes sostienen toda la estructura con su trabajo.
+
+NOSOTROS OS SOSTENEMOS.
+VOSOTROS NOS MANTENÉIS ABAJO.
+
+A 130 BPM, THE FLOOD convierte esa presión en fuerza física: enormes tambores taiko chocan con ritmos mecánicos secos, percusión industrial y secuencias que avanzan sin descanso.
+
+No te acompaña.
+Te empuja.
+
+Hasta que el ritmo se convierte en presión.
+La presión se convierte en resistencia.
+Y la resistencia empieza a subir.
+
+Porque toda jerarquía depende de lo que coloca debajo.
+
+SIN LO DE ABAJO, NO HAY NADA ARRIBA.
+
+La inundación no es un desastre natural. Es el momento en que lo que se ha mantenido abajo se niega a quedarse ahí.
+
+Está en el ADN de SABOTAGE: la música electrónica como una fuerza que se enfrenta a la realidad social.
+
+Física.
+Confrontativa.
+Incómoda.
+Hecha para mover tanto el cuerpo como la mente.
+
+MISMA CIUDAD. OTRO TIEMPO.
+NOSOTROS OS SOSTENEMOS. VOSOTROS NOS MANTENÉIS ABAJO.
+SIN LO DE ABAJO, NO HAY NADA ARRIBA.`},links:[{label:'Apple Music',url:'https://music.apple.com/us/album/the-flood-without-bottom-no-top-single/6817367441',kind:'stream',enabled:true},{label:'Amazon Music',url:'https://www.amazon.com/gp/product/B0HLFWW1B8',kind:'stream',enabled:true},{label:'Spotify',url:'https://open.spotify.com/intl-de/album/0Tbkwur2HQT3SXiwrlszVM',kind:'stream',enabled:true},{label:'All digital platforms',url:'https://distrokid.com/hyperfollow/sabotageqcqc/the-flood-without-bottom-no-top',kind:'stream',enabled:true}]},...['ANNORLUNDA','LES ENFANTS SAUVAGES','TUMULTE','DEUTSCHER HERBST ’77'].map((title,i)=>({_id:'demo-'+i,title,artist:'SABOTAGE QCQC?',category:'backCatalogue',label:'SubCulture Records',releaseStatus:'pending',...(i===0?{coverUrl:'/assets/annorlunda.png'}:i===1?{coverUrl:'/assets/les-enfants-sauvages.png'}:i===2?{coverUrl:'/assets/tumulte.png'}:i===3?{coverUrl:'/assets/deutscher-herbst-77.png'}:{})}))];
 export const fallbackPage:Page={title:'Home',modules:[{_key:'hero',_type:'module_hero',heading:{en:'NO BOTTOM - NO TOP',de:'NO BOTTOM - NO TOP'},intro:{en:'NEW VINYL EP · 15 JAN 2027 · EMMO.BIZ',de:'NEUE VINYL-EP · 15. JAN 2027 · EMMO.BIZ'},releaseRefs:[sampleReleases[0]],enabled:true},{_key:'feature',_type:'module_releaseFeature',heading:{en:'LATEST RELEASE',de:'AKTUELLER RELEASE'},releaseRefs:[sampleReleases[0]],enabled:true},{_key:'single',_type:'module_releaseFeature',heading:{en:'THE FLOOD / SINGLE',de:'THE FLOOD / SINGLE'},intro:{en:'Listen to the single',de:'Single anhören'},releaseRefs:[sampleReleases[1]],enabled:true},{_key:'catalogue',_type:'module_releaseGrid',heading:{en:'BACK CATALOGUE',de:'BACK CATALOGUE'},intro:{en:'Original releases and planned digital re-releases. Dates and links only when confirmed.',de:'Originalveröffentlichungen und geplante digitale Re-Releases. Termine und Links erst nach Bestätigung.'},releaseRefs:sampleReleases.slice(2),enabled:true},{_key:'archive',_type:'module_archiveGrid',heading:{en:'THE ARCHIVE',de:'DAS ARCHIV'},intro:{en:'Original artwork, flyers, photography and press material. More material will follow.',de:'Original-Artworks, Flyer, Fotografien und Presseberichte. Weitere Materialien folgen.'},enabled:true},{_key:'news',_type:'module_newsGrid',heading:{en:'NEWS',de:'NEWS'},newsRefs:[{_id:'record-deals-2027',date:'2026-11-09',title:'SABOTAGE QCQC? – THE PAST RETURNS. THE FUTURE BEGINS.',body:{en:`SABOTAGE QCQC? SIGN TWO RECORD DEALS – BACK CATALOGUE RETURNS AS NEW ALBUM TAKES SHAPE
 
 Two labels. Two countries. One new chapter.

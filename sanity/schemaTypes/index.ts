@@ -3,11 +3,13 @@ import {CogIcon, DocumentIcon, DocumentTextIcon, ImageIcon, LinkIcon, TagIcon} f
 
 const localizedText = defineType({
   name: 'localizedText',
-  title: 'Text Deutsch / Englisch',
+  title: 'Mehrsprachiger Text',
   type: 'object',
   fields: [
     defineField({name: 'de', title: 'Deutsch', type: 'text', rows: 3}),
     defineField({name: 'en', title: 'English', type: 'text', rows: 3}),
+    defineField({name: 'fr', title: 'Français', type: 'text', rows: 3}),
+    defineField({name: 'es', title: 'Español', type: 'text', rows: 3}),
   ],
 });
 

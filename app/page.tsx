@@ -1,3 +1,4 @@
+import {readLanguage} from '../lib/language';
 import Site from '../components/Site';
 import {getHome, getReleases, getSettings, type Module, type Page} from '../lib/content';
 import {fallbackPage} from '../lib/fallback';
@@ -45,11 +46,12 @@ function connectReleases(page: Page, releases: Awaited<ReturnType<typeof getRele
   return {...page, modules};
 }
 
-export default async function Home() {
+export default async function Home({searchParams}: {searchParams: Promise<{lang?: string}>}) {
   const [cmsPage, settings, releases] = await Promise.all([getHome(), getSettings(), getReleases()]);
   const basePage = cmsPage?.modules?.length ? cmsPage : fallbackPage;
   const useFallback = basePage === fallbackPage;
   const page = connectReleases(basePage, releases, useFallback);
 
-  return <Site page={page} contactEmail={settings?.contactEmail || 'contact@sabocon.com'} />;
+  const lang = readLanguage((await searchParams).lang);
+  return <Site lang={lang} page={page} contactEmail={settings?.contactEmail || 'contact@sabocon.com'} />;
 }

@@ -1,7 +1,7 @@
 import {createClient} from 'next-sanity';
 
 export type Link = {label: string; url?: string; kind?: string; enabled?: boolean};
-export type Localized = {de?: string; en?: string};
+export type Localized = {de?: string; en?: string; fr?: string; es?: string};
 export type Edition = {format?: string; color?: string; quantity?: number; date?: string; links?: Link[]};
 export type Track = {number?: number; title: string; duration?: string};
 export type Release = {
