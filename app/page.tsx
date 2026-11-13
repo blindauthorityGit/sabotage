@@ -34,6 +34,20 @@ function connectReleases(page: Page, releases: Awaited<ReturnType<typeof getRele
     if (fallbackNews) connectedModules.push(fallbackNews);
   }
   const modules = connectedModules.map(module => {
+    if (module._type === 'module_linkGrid' && module._key === 'labels') {
+      const partner = fallbackPage.modules.find(entry => entry._key === 'labels')
+        ?.links?.find(link => link.label === 'Sub Culture Records');
+      if (!partner) return module;
+
+      const links = module.links ?? [];
+      const existing = links.findIndex(link => link.label.toLowerCase().replace(/\s/g, '') === 'subculturerecords');
+      return {
+        ...module,
+        links: existing === -1
+          ? [...links, partner]
+          : links.map((link, index) => index === existing ? {...link, ...partner} : link),
+      };
+    }
     if (module._type !== 'module_newsGrid') return module;
 
     const news = module.newsRefs ?? [];
