@@ -36,6 +36,16 @@ export type NewsItem = {
   imageClipPath?: string;
   links?: Link[];
 };
+export type RandomItem = {
+  _id: string;
+  title: string;
+  imageUrl?: string;
+  width?: number;
+  height?: number;
+  fileUrl?: string;
+  description?: Localized;
+};
+
 export type Module = {
   _key: string;
   _type: string;
@@ -50,6 +60,7 @@ export type Module = {
   releaseLimit?: number;
   excludeFeatured?: boolean;
   archiveRefs?: {_id: string; title: string; imageUrl?: string}[];
+  randomRefs?: RandomItem[];
   newsRefs?: NewsItem[];
   mediaRefs?: {_id: string; title: string; url?: string}[];
 };
@@ -98,6 +109,17 @@ export async function getHome(): Promise<Page | null> {
           "imageUrl": image.asset->url,
           "releaseRef": releaseRef->{${releaseFields}},
           "archiveRefs": archiveRefs[]->{_id, title, "imageUrl": image.asset->url},
+          _type == "module_archiveGrid" => {
+            "randomRefs": *[_type == "archiveItem" && category == "random" && publishedOnSite == true
+              && (defined(image.asset->url) || defined(file.asset->url))]
+              | order(coalesce(date, _createdAt) desc, _id asc){
+                _id, title, description,
+                "imageUrl": image.asset->url,
+                "width": image.asset->metadata.dimensions.width,
+                "height": image.asset->metadata.dimensions.height,
+                "fileUrl": file.asset->url
+              }
+          },
           "newsRefs": newsRefs[]->{
             _id, title, date, body,
             "imageUrl": image.asset->url,

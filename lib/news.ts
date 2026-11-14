@@ -389,5 +389,113 @@ SABOTAGE QCQC? are back. Not to celebrate the past, but to confront the present.
 Available on all major digital streaming and download platforms.
 
 **SOUND. RESISTANCE. DISORIENTATION. NO BORDERS.**`,
+    de: `**FIRST NEW RELEASE OF 2026 | OUT OCTOBER 29, 2026**
+
+**SAME CITY. DIFFERENT WEATHER.**
+
+Am 29. Oktober 2026 veröffentlichten SABOTAGE QCQC? **THE FLOOD** auf allen großen digitalen Musikplattformen. Es ist ihre erste neue Veröffentlichung des Jahres und ein klares Signal, wofür sie stehen.
+
+Inspiriert von Bong Joon-hos gefeiertem Film *Parasite* erkundet THE FLOOD die wachsende Kluft zwischen Privileg und Armut, Macht und Abhängigkeit, zwischen denen ganz oben und denen, die darunter ums Überleben kämpfen.
+
+Eines der eindrücklichsten Bilder des Films war der Ausgangspunkt für den Song: Für die Wohlhabenden ist Starkregen kaum mehr als ein Ärgernis. Für die Menschen ganz unten wird er zur verheerenden Flut.
+
+**YOUR RAIN. MY FLOOD.**
+
+Dasselbe Ereignis. Zwei völlig unterschiedliche Wirklichkeiten.
+
+Für SABOTAGE ist das mehr als eine filmische Referenz. Es steht für eine Gesellschaft, in der sich Reichtum und Macht zunehmend an der Spitze konzentrieren, während diejenigen, die das System am Laufen halten, allzu oft übersehen, ausgebeutet oder zurückgelassen werden.
+
+**WE HOLD YOU UP. YOU KEEP US DOWN.**
+
+Musikalisch übersetzt THE FLOOD diese Spannung in kompromisslose elektronische Energie. Unerbittliche Sequencer-Muster, massive Industrial-Percussion, hämmernde Rhythmen und die körperliche Wucht klassischer Electronic Body Music treffen auf zeitgemäße Produktion.
+
+Damit setzt die Band die Haltung fort, die SABOTAGE QCQC? seit den frühen 1990ern prägt: Autorität hinterfragen, etablierte Strukturen herausfordern und Musik als Mittel des Widerstands einsetzen.
+
+THE FLOOD eröffnet zugleich ein neues kreatives Kapitel. Die kommenden Veröffentlichungen verbinden weiterhin aggressive elektronische Musik mit politischem Bewusstsein, Gesellschaftskritik und der Weigerung, die Welt einfach hinzunehmen, wie sie ist.
+
+Denn bei der Flut geht es eigentlich um etwas anderes als Wasser.
+
+Es geht um Druck. Ungleichheit. Widerstand. Und darum, was passiert, wenn die Menschen ganz unten sich weigern, dort zu bleiben.
+
+**WITHOUT THE BOTTOM THERE IS NO TOP.**
+
+SABOTAGE QCQC? sind zurück. Sie stellen sich der Gegenwart, statt die Vergangenheit zu feiern.
+
+**THE FLOOD – RELEASE OCTOBER 29, 2026**
+Auf allen großen digitalen Streaming- und Downloadplattformen erhältlich.
+
+**SOUND. RESISTANCE. DISORIENTATION. NO BORDERS.**`,
+    fr: `**FIRST NEW RELEASE OF 2026 | OUT OCTOBER 29, 2026**
+
+**SAME CITY. DIFFERENT WEATHER.**
+
+Le 29 octobre 2026, SABOTAGE QCQC? a sorti **THE FLOOD** sur les principales plateformes de musique numérique. Cette première nouveauté de l’année est aussi une déclaration d’intention.
+
+Inspiré de *Parasite*, le film salué de Bong Joon-ho, THE FLOOD explore le fossé grandissant entre privilège et pauvreté, pouvoir et dépendance, entre ceux qui occupent le sommet et ceux qui luttent pour survivre tout en bas.
+
+L’une des images les plus marquantes du film a donné naissance au morceau : une pluie torrentielle est à peine un désagrément pour les plus aisés, mais devient une inondation dévastatrice pour ceux qui vivent au bas de l’échelle sociale.
+
+**YOUR RAIN. MY FLOOD.**
+
+Un même événement. Deux réalités totalement différentes.
+
+Pour SABOTAGE, cette référence au cinéma traduit une réalité sociale : la richesse et le pouvoir se concentrent toujours plus au sommet, tandis que ceux qui font tourner le système sont trop souvent ignorés, exploités ou laissés pour compte.
+
+**WE HOLD YOU UP. YOU KEEP US DOWN.**
+
+Musicalement, THE FLOOD transforme cette tension en énergie électronique sans compromis. Des séquences implacables, des percussions industrielles massives, des rythmes martelés et l’intensité physique de l’Electronic Body Music classique se heurtent à une production contemporaine.
+
+Le morceau prolonge la démarche qui définit SABOTAGE QCQC? depuis le début des années 1990 : remettre l’autorité en question, bousculer les structures établies et faire de la musique un moyen de résistance.
+
+THE FLOOD ouvre aussi un nouveau chapitre créatif. Les prochaines sorties continueront de mêler musique électronique abrasive, conscience politique, critique sociale et refus d’accepter le monde tel qu’il est.
+
+Car au fond, cette inondation parle d’autre chose que d’eau.
+
+De pression. D’inégalités. De résistance. Et de ce qui se passe quand ceux d’en bas refusent d’y rester.
+
+**WITHOUT THE BOTTOM THERE IS NO TOP.**
+
+SABOTAGE QCQC? est de retour pour affronter le présent, loin de la célébration du passé.
+
+**THE FLOOD – RELEASE OCTOBER 29, 2026**
+Disponible sur les principales plateformes de streaming et de téléchargement.
+
+**SOUND. RESISTANCE. DISORIENTATION. NO BORDERS.**`,
+    es: `**FIRST NEW RELEASE OF 2026 | OUT OCTOBER 29, 2026**
+
+**SAME CITY. DIFFERENT WEATHER.**
+
+El 29 de octubre de 2026, SABOTAGE QCQC? publicó **THE FLOOD** en las principales plataformas de música digital. Es su primer lanzamiento nuevo del año y una clara declaración de intenciones.
+
+Inspirado en la aclamada película *Parasite*, de Bong Joon-ho, THE FLOOD explora la brecha creciente entre privilegio y pobreza, poder y dependencia, entre quienes están en lo más alto y quienes luchan por sobrevivir abajo.
+
+Una de las imágenes más impactantes de la película dio origen al tema: para los ricos, la lluvia torrencial apenas supone una molestia, pero para quienes viven en lo más bajo de la sociedad se convierte en una inundación devastadora.
+
+**YOUR RAIN. MY FLOOD.**
+
+Un mismo suceso. Dos realidades completamente distintas.
+
+Para SABOTAGE, la referencia cinematográfica refleja una sociedad en la que la riqueza y el poder se concentran cada vez más arriba, mientras quienes sostienen el sistema quedan demasiadas veces ignorados, explotados o abandonados a su suerte.
+
+**WE HOLD YOU UP. YOU KEEP US DOWN.**
+
+Musicalmente, THE FLOOD convierte esa tensión en energía electrónica sin concesiones. Secuencias implacables, percusión industrial masiva, ritmos contundentes y la intensidad física del Electronic Body Music clásico chocan con una producción contemporánea.
+
+El tema prolonga la actitud que define a SABOTAGE QCQC? desde principios de los noventa: cuestionar la autoridad, desafiar las estructuras establecidas y utilizar la música como medio de resistencia.
+
+THE FLOOD también abre un nuevo capítulo creativo. Los próximos lanzamientos seguirán combinando electrónica agresiva con conciencia política, crítica social y la negativa a aceptar el mundo tal como es.
+
+Porque en el fondo esta inundación habla de algo más que del agua.
+
+Habla de presión. Desigualdad. Resistencia. Y de lo que ocurre cuando quienes están abajo se niegan a permanecer ahí.
+
+**WITHOUT THE BOTTOM THERE IS NO TOP.**
+
+SABOTAGE QCQC? ha vuelto para enfrentarse al presente, lejos de celebrar el pasado.
+
+**THE FLOOD – RELEASE OCTOBER 29, 2026**
+Disponible en las principales plataformas digitales de streaming y descarga.
+
+**SOUND. RESISTANCE. DISORIENTATION. NO BORDERS.**`,
   },
 };

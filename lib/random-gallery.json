@@ -1,0 +1,86 @@
+[
+  {
+    "_id": "floating",
+    "title": "Floating",
+    "imageUrl": "/assets/random/floating.webp",
+    "width": 1440,
+    "height": 960
+  },
+  {
+    "_id": "the-cold",
+    "title": "The Cold",
+    "imageUrl": "/assets/random/the-cold.webp",
+    "width": 1440,
+    "height": 960
+  },
+  {
+    "_id": "hiroshima-hoyerswerda",
+    "title": "Hiroshima / Hoyerswerda",
+    "imageUrl": "/assets/random/hiroshima-hoyerswerda.webp",
+    "width": 1440,
+    "height": 960
+  },
+  {
+    "_id": "heidenangst",
+    "title": "Heidenangst",
+    "imageUrl": "/assets/random/heidenangst.webp",
+    "width": 1440,
+    "height": 960
+  },
+  {
+    "_id": "who-am-i",
+    "title": "Who Am I?",
+    "imageUrl": "/assets/random/who-am-i.webp",
+    "width": 1440,
+    "height": 960
+  },
+  {
+    "_id": "wilde-kinder-freiheit",
+    "title": "Wilde Kinder / Freiheit",
+    "imageUrl": "/assets/random/wilde-kinder-freiheit.webp",
+    "width": 1440,
+    "height": 960
+  },
+  {
+    "_id": "wilde-kinder-herzen",
+    "title": "Wilde Kinder / Unsere Herzen",
+    "imageUrl": "/assets/random/wilde-kinder-herzen.webp",
+    "width": 1440,
+    "height": 960
+  },
+  {
+    "_id": "nichts-ohne-dich",
+    "title": "Nichts ohne dich",
+    "imageUrl": "/assets/random/nichts-ohne-dich.webp",
+    "width": 1440,
+    "height": 960
+  },
+  {
+    "_id": "souvenir",
+    "title": "Souvenir",
+    "imageUrl": "/assets/random/souvenir.webp",
+    "width": 1440,
+    "height": 960
+  },
+  {
+    "_id": "where",
+    "title": "Where",
+    "imageUrl": "/assets/random/where.webp",
+    "width": 1440,
+    "height": 960
+  },
+  {
+    "_id": "kinder-untamed",
+    "title": "Kinder (Untamed)",
+    "imageUrl": "/assets/random/kinder-untamed.webp",
+    "width": 1440,
+    "height": 960
+  },
+  {
+    "_id": "je-taime",
+    "title": "Je t’aime",
+    "imageUrl": "/assets/random/je-taime.webp",
+    "width": 1440,
+    "height": 960
+  }
+]

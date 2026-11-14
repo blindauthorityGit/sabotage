@@ -1,10 +1,11 @@
 "use client";
 import {useEffect, useRef, useState} from 'react';
-import type {Page,Module,Release,Link,Localized,NewsItem} from '../lib/content';
+import type {Page,Module,Release,Link,Localized,NewsItem,RandomItem} from '../lib/content';
 import {normalizeReleaseTitle, releaseArtworkKey} from '../lib/release-artwork';
 import LanguageSwitch from './LanguageSwitch';
 import {languageHref, locales, tr, type Language} from '../lib/language';
 import {translateText, newsTranslation} from '../lib/translations';
+import randomGallery from '../lib/random-gallery.json';
 import archiveData from '../lib/archive-data.json';
 const local=(value:Localized|undefined,lang:Language)=>normalizeReleaseTitle(value?.[lang] || translateText(lang, value?.en || value?.de || ''));
 function External({item, lang = 'en'}:{item:Link;lang?:Language}){if(!item.enabled||!item.url)return null;return <a href={item.url} target={item.url.startsWith('mailto:')?undefined:'_blank'} rel="noopener noreferrer">{translateText(lang, item.label)} ↗</a>}
@@ -180,6 +181,130 @@ function sectionPosition(module: Module) {
   return fallback === -1 ? sections.length : fallback;
 }
 
+function RandomGallery({items, lang}: {items?: RandomItem[]; lang: Language}) {
+  const gallery = [...(items ?? []), ...randomGallery];
+  return (
+    <section className="random-gallery" id="random" aria-labelledby="random-title">
+      <h3 id="random-title">RANDOM</h3>
+      <ul className="random-gallery-grid">
+        {gallery.map((item: RandomItem) => (
+          <li key={item._id}>
+            <a href={item.fileUrl || item.imageUrl} target="_blank" rel="noopener noreferrer">
+              {item.imageUrl && (
+                <img src={item.imageUrl} alt="" width={item.width} height={item.height} loading="lazy"/>
+              )}
+              <span>{item.title} ↗</span>
+            </a>
+            {item.description && <p>{local(item.description, lang)}</p>}
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}
+
+const wearPhotos = [
+  {
+    "src": "/assets/wear-vintage.webp",
+    "width": 700,
+    "height": 771,
+    "alt": {
+      "en": "Vintage T-shirt, back print",
+      "de": "Vintage-T-Shirt mit Rückendruck",
+      "fr": "T-shirt vintage, imprimé au dos",
+      "es": "Camiseta vintage con estampado en la espalda"
+    }
+  },
+  {
+    "src": "/assets/wear-oversize.webp",
+    "width": 700,
+    "height": 782,
+    "alt": {
+      "en": "Black oversized T-shirt",
+      "de": "Schwarzes Oversize-T-Shirt",
+      "fr": "T-shirt oversize noir",
+      "es": "Camiseta oversize negra"
+    }
+  },
+  {
+    "src": "/assets/wear-tank.webp",
+    "width": 700,
+    "height": 1061,
+    "alt": {
+      "en": "Black NO BOTTOM NO TOP tank top",
+      "de": "Schwarzes NO BOTTOM NO TOP Tanktop",
+      "fr": "Débardeur noir NO BOTTOM NO TOP",
+      "es": "Camiseta de tirantes negra NO BOTTOM NO TOP"
+    }
+  },
+  {
+    "src": "/assets/wear-sweatshirt.webp",
+    "width": 700,
+    "height": 840,
+    "alt": {
+      "en": "Grey SABOTAGE sweatshirt",
+      "de": "Graues SABOTAGE-Sweatshirt",
+      "fr": "Sweat-shirt gris SABOTAGE",
+      "es": "Sudadera gris SABOTAGE"
+    }
+  },
+  {
+    "src": "/assets/wear-distressed.webp",
+    "width": 700,
+    "height": 820,
+    "alt": {
+      "en": "Distressed black SABOTAGE T-shirt",
+      "de": "Schwarzes SABOTAGE-T-Shirt im Distressed-Look",
+      "fr": "T-shirt noir SABOTAGE effet usé",
+      "es": "Camiseta negra SABOTAGE con efecto desgastado"
+    }
+  },
+  {
+    "src": "/assets/wear-grunge.webp",
+    "width": 700,
+    "height": 896,
+    "alt": {
+      "en": "Fitted black NO BOTTOM NO TOP T-shirt",
+      "de": "Tailliertes schwarzes NO BOTTOM NO TOP T-Shirt",
+      "fr": "T-shirt noir cintré NO BOTTOM NO TOP",
+      "es": "Camiseta negra entallada NO BOTTOM NO TOP"
+    }
+  },
+  {
+    "src": "/assets/wear-chest-logo.webp",
+    "width": 700,
+    "height": 925,
+    "alt": {
+      "en": "Black T-shirt with NO BOTTOM NO TOP chest print",
+      "de": "Schwarzes T-Shirt mit NO BOTTOM NO TOP Brustdruck",
+      "fr": "T-shirt noir avec imprimé NO BOTTOM NO TOP sur la poitrine",
+      "es": "Camiseta negra con estampado NO BOTTOM NO TOP en el pecho"
+    }
+  },
+  {
+    "src": "/assets/wear-raglan.webp",
+    "width": 700,
+    "height": 604,
+    "alt": {
+      "en": "White cropped raglan T-shirt with black sleeves",
+      "de": "Weißes Crop-Raglan-Shirt mit schwarzen Ärmeln",
+      "fr": "T-shirt raglan court blanc à manches noires",
+      "es": "Camiseta raglán corta blanca con mangas negras"
+    }
+  },
+  {
+    "src": "/assets/wear-grey-shirt.webp",
+    "width": 700,
+    "height": 933,
+    "alt": {
+      "en": "Grey SABOTAGE T-shirt",
+      "de": "Graues SABOTAGE-T-Shirt",
+      "fr": "T-shirt gris SABOTAGE",
+      "es": "Camiseta gris SABOTAGE"
+    }
+  }
+];
+
 function Section({module, lang, index}: {module: Module; lang: Language; index: number}) {
   const type = module._type.replace('module_', '');
   const heading = local(module.heading, 'en');
@@ -221,7 +346,7 @@ if (type === 'hero') {
 }
 if(type==='releaseFeature'){const r=releases[0];const date=r&&releaseDate(r);return <section className="section releases" id={module._key==='single'?'the-flood':'releases'}>{header}{r?<div className="feature"><div><Art url={r.coverUrl} title={normalizeReleaseTitle(r.title)} lang={lang}/><div className="inline-links">{r.links?.map((l,i)=><External key={i} item={l} lang={lang}/>)}</div></div><div><p className="eyebrow red">{r.labelUrl?<a href={r.labelUrl} target="_blank" rel="noopener noreferrer">{r.label} ↗</a>:r.label}{date?` / ${date}`:''}</p><h3>{normalizeReleaseTitle(r.title)}</h3><div className="release-description">{(local(r.description,lang)|| (tr(lang,'Limited vinyl edition.','Limitierte Vinyl-Edition.','Édition vinyle limitée.','Edición limitada en vinilo.'))).split('\n\n').map((paragraph,i)=><p key={i}>{paragraph.split('\n').map((line,j)=><span key={j}>{j>0&&<br/>}{line}</span>)}</p>)}</div><ReleaseEditions release={r} lang={lang}/></div></div>:<p>{tr(lang,'Release details will follow.','Details zur Veröffentlichung folgen.','Les détails de la sortie suivront.','Los detalles del lanzamiento se anunciarán más adelante.')}</p>}</section>}
 if(type==='releaseGrid')return <section className="section catalogue" id="catalogue">{header}<div className="release-grid">{releases.map(r=><ReleaseCard key={r._id} release={r} lang={lang}/>)}</div></section>;
-if(type==='archiveGrid')return <section className="section archive" id="archive">{header}<div className="archive-title-list"><h3>RELEASES</h3><ul><li>ANNORLUNDA <span>1994</span></li><li>LES ENFANTS SAUVAGES <span>1995</span></li><li>TUMULTE <span>1993</span></li><li>DEUTSCHER HERBST ’77 <span>1996</span></li><li>NO BOTTOM - NO TOP <span>2027 · VINYL EP</span></li><li>THE FLOOD <span>2026 · DIGITAL SINGLE</span></li><li>LIBERTINAGE</li><li>SEXPLOITATION CINEMA</li><li>SCHLAGER</li><li>GODDESS</li><li>ACOUSTIC COSTUMES</li><li>CONCRETE</li></ul></div><div className="archive-tracklists"><h3>TRACK & COMPILATION ARCHIVE</h3><p className="archive-note">{tr(lang,'Track positions from the complete archive. Tracks on different releases are listed separately.','Trackpositionen aus dem Gesamtarchiv. Gleiche Titel auf verschiedenen Veröffentlichungen bleiben separat aufgeführt.','Positions des titres dans les archives. Les titres parus sur différentes sorties sont indiqués séparément.','Posiciones de los temas en el archivo. Los temas que aparecen en distintos lanzamientos se enumeran por separado.')}</p>{Object.entries(archiveData.tracks.reduce<Record<string, typeof archiveData.tracks>>((groups,track)=>{(groups[track.release||tr(lang,'More tracks','Weitere Titel','Autres titres','Más temas')]??=[]).push(track);return groups},{})).map(([release,tracks])=><details key={release}><summary>{release}<span>{tracks.length} {tr(lang,'tracks','Titel','titres','temas')}</span></summary><ol>{tracks.map((track,i)=><li key={`${release}-${i}`}><span>{track.title}{track.version?` — ${track.version}`:''}</span><small>{track.year}{track.position?` · Track ${track.position}`:''}</small></li>)}</ol></details>)}<details><summary>Samplers & Compilations<span>{archiveData.compilations.length} {tr(lang,'documented entries','dokumentierte Einträge','entrées documentées','entradas documentadas')}</span></summary><ol>{archiveData.compilations.map((item,i)=><li key={`comp-${i}`}><span>{item.title}{item.version?` — ${item.version}`:''}</span><small>{item.compilation}{item.year?` · ${item.year}`:''}</small></li>)}</ol></details></div><div className="archive-items">{module.archiveRefs?.map(a=><article key={a._id}><Art url={a.imageUrl} title={normalizeReleaseTitle(a.title)} lang={lang}/><h3>{normalizeReleaseTitle(a.title)}</h3></article>)}</div><div className="archive-discogs"><a href="https://www.discogs.com/artist/69880-Sabotage-QCQC?superFilter=Appearances&subFilter=Compilations" target="_blank" rel="noopener noreferrer">DISCOGS ↗</a></div></section>;
+if(type==='archiveGrid')return <section className="section archive" id="archive">{header}<div className="archive-title-list"><h3>RELEASES</h3><ul><li>ANNORLUNDA <span>1994</span></li><li>LES ENFANTS SAUVAGES <span>1995</span></li><li>TUMULTE <span>1993</span></li><li>DEUTSCHER HERBST ’77 <span>1996</span></li><li>NO BOTTOM - NO TOP <span>2027 · VINYL EP</span></li><li>THE FLOOD <span>2026 · DIGITAL SINGLE</span></li><li>LIBERTINAGE</li><li>SEXPLOITATION CINEMA</li><li>SCHLAGER</li><li>GODDESS</li><li>ACOUSTIC COSTUMES</li><li>CONCRETE</li></ul></div><div className="archive-tracklists"><h3>TRACK & COMPILATION ARCHIVE</h3><p className="archive-note">{tr(lang,'Track positions from the complete archive. Tracks on different releases are listed separately.','Trackpositionen aus dem Gesamtarchiv. Gleiche Titel auf verschiedenen Veröffentlichungen bleiben separat aufgeführt.','Positions des titres dans les archives. Les titres parus sur différentes sorties sont indiqués séparément.','Posiciones de los temas en el archivo. Los temas que aparecen en distintos lanzamientos se enumeran por separado.')}</p>{Object.entries(archiveData.tracks.reduce<Record<string, typeof archiveData.tracks>>((groups,track)=>{(groups[track.release||tr(lang,'More tracks','Weitere Titel','Autres titres','Más temas')]??=[]).push(track);return groups},{})).map(([release,tracks])=><details key={release}><summary>{release}<span>{tracks.length} {tr(lang,'tracks','Titel','titres','temas')}</span></summary><ol>{tracks.map((track,i)=><li key={`${release}-${i}`}><span>{track.title}{track.version?` — ${track.version}`:''}</span><small>{track.year}{track.position?` · Track ${track.position}`:''}</small></li>)}</ol></details>)}<details><summary>Samplers & Compilations<span>{archiveData.compilations.length} {tr(lang,'documented entries','dokumentierte Einträge','entrées documentées','entradas documentadas')}</span></summary><ol>{archiveData.compilations.map((item,i)=><li key={`comp-${i}`}><span>{item.title}{item.version?` — ${item.version}`:''}</span><small>{item.compilation}{item.year?` · ${item.year}`:''}</small></li>)}</ol></details></div><div className="archive-items">{module.archiveRefs?.map(a=><article key={a._id}><Art url={a.imageUrl} title={normalizeReleaseTitle(a.title)} lang={lang}/><h3>{normalizeReleaseTitle(a.title)}</h3></article>)}</div><div className="archive-discogs"><a href="https://www.discogs.com/artist/69880-Sabotage-QCQC?superFilter=Appearances&subFilter=Compilations" target="_blank" rel="noopener noreferrer">DISCOGS ↗</a></div><RandomGallery items={module.randomRefs} lang={lang}/></section>;
 if (type === 'newsGrid') return <NewsSection items={module.newsRefs ?? emptyNews} lang={lang} header={header}/>;
 if(type==='mediaGrid')return <section className="section" id="media">{header}<div className="linkgrid">{module.mediaRefs?.filter(m=>m.url).map(m=><a key={m._id} href={m.url} target="_blank" rel="noopener noreferrer">{normalizeReleaseTitle(m.title)} ↗</a>)}</div></section>;
 if (type === 'statement') return (
@@ -241,10 +366,9 @@ if (type === 'linkGrid') {
       </div>
       {isWear && (
         <div className="wear-photos">
-          <img src="/assets/sabotage-wear-alley.webp" width={900} height={1599} loading="lazy"
-            alt={lang === 'de' ? 'SABOTAGE-Shirts in einer nächtlichen Gasse' : 'SABOTAGE shirts in an alley at night'}/>
-          <img src="/assets/sabotage-wear-rain.webp" width={900} height={1599} loading="lazy"
-            alt={lang === 'de' ? 'SABOTAGE-Shirts bei einem Nachtprotest im Regen' : 'SABOTAGE shirts at a nighttime protest in the rain'}/>
+          {wearPhotos.map(({src, width, height, alt}) => (
+            <img key={src} src={src} width={width} height={height} loading="lazy" alt={alt[lang]}/>
+          ))}
         </div>
       )}
     </section>

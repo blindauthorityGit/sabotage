@@ -204,6 +204,7 @@ const archiveItem = defineType({
         {title: 'Foto', value: 'photo'}, {title: 'Flyer', value: 'flyer'},
         {title: 'Presse', value: 'press'}, {title: 'Dokument', value: 'document'},
         {title: 'Video', value: 'video'}, {title: 'Sonstiges', value: 'other'},
+        {title: 'RANDOM', value: 'random'},
       ]},
     }),
     defineField({name: 'date', title: 'Datum', type: 'date'}),
