@@ -38,7 +38,15 @@ function connectReleases(page: Page, releases: Awaited<ReturnType<typeof getRele
   const flood = cmsFlood ? {
     ...withCoverFallback(cmsFlood),
     coverUrl: cmsFlood.coverUrl || fallbackFlood.coverUrl,
-    links: cmsFlood.links?.some(link => link.enabled && link.url) ? cmsFlood.links : fallbackFlood.links,
+    links: [
+      ...(fallbackFlood.links ?? []),
+      ...(cmsFlood.links ?? []).filter(link => {
+        const label = link.label.trim().toLowerCase();
+        return label !== 'spotify' && !fallbackFlood.links?.some(platform =>
+          platform.label.toLowerCase() === label || platform.url === link.url,
+        );
+      }),
+    ],
   } : fallbackFlood;
   const connectedModules = sourceModules.map((module): Module => {
       if (module._type === 'module_releaseFeature') {
