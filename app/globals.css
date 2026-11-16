@@ -718,3 +718,15 @@ body > footer a {
     grid-template-columns: 1fr;
   }
 }
+
+.promo-contact {
+  font-style: normal;
+  line-height: 1.6;
+}
+
+.promo-contact a {
+  display: inline-block;
+  margin-top: 16px;
+  text-transform: none;
+  overflow-wrap: anywhere;
+}
