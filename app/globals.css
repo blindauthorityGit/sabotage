@@ -694,3 +694,27 @@ body > footer a {
 .random-gallery-grid a:focus-visible {
   outline: 2px solid white;
 }
+
+.forthcoming-announcement {
+  display: grid;
+  grid-template-columns: minmax(0, 62ch) minmax(120px, 1fr);
+  align-items: center;
+  gap: clamp(24px, 6vw, 96px);
+  line-height: 1.6;
+}
+
+.forthcoming-announcement h3 {
+  font-size: clamp(28px, 4vw, 58px);
+}
+
+.forthcoming-mark {
+  color: var(--red);
+  font: 700 clamp(120px, 22vw, 340px)/.85 var(--font-display);
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .forthcoming-announcement {
+    grid-template-columns: 1fr;
+  }
+}

@@ -6,6 +6,8 @@ const covers: Readonly<Record<string, string>> = {
   'annorlunda': 'annorlunda.png',
   'les-enfants-sauvages': 'les-enfants-sauvages.png',
   'tumulte': 'tumulte.png',
+  schlager: 'schlager.webp',
+  goddess: 'goddess.webp',
   'deutscher-herbst-77': 'deutscher-herbst-77.png',
 };
 

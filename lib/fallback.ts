@@ -98,6 +98,35 @@ Hecha para mover tanto el cuerpo como la mente.
 MISMA CIUDAD. OTRO TIEMPO.
 NOSOTROS OS SOSTENEMOS. VOSOTROS NOS MANTENÉIS ABAJO.
 SIN LO DE ABAJO, NO HAY NADA ARRIBA.`},links:[{label:'Apple Music',url:'https://music.apple.com/us/album/the-flood-without-bottom-no-top-single/6817367441',kind:'stream',enabled:true},{label:'Amazon Music',url:'https://www.amazon.com/gp/product/B0HLFWW1B8',kind:'stream',enabled:true},{label:'Spotify',url:'https://open.spotify.com/intl-de/album/0Tbkwur2HQT3SXiwrlszVM',kind:'stream',enabled:true},{label:'All digital platforms',url:'https://distrokid.com/hyperfollow/sabotageqcqc/the-flood-without-bottom-no-top',kind:'stream',enabled:true}]},...['ANNORLUNDA','LES ENFANTS SAUVAGES','TUMULTE','DEUTSCHER HERBST ’77'].map((title,i)=>({_id:'demo-'+i,title,artist:'SABOTAGE QCQC?',category:'backCatalogue',label:'SubCulture Records',releaseStatus:'pending',...(i===0?{coverUrl:'/assets/annorlunda.png'}:i===1?{coverUrl:'/assets/les-enfants-sauvages.png'}:i===2?{coverUrl:'/assets/tumulte.png'}:i===3?{coverUrl:'/assets/deutscher-herbst-77.png'}:{})}))];
+export const enOrdreRelease: Release = {
+  _id: 'local-en-ordre',
+  slug: 'en-ordre',
+  title: 'EN ORDRE',
+  category: 'current',
+  releaseStatus: 'available',
+  originalReleaseDate: '2026-11-14',
+  coverUrl: '/assets/en-ordre-news.webp',
+  links: [
+    {label: 'Apple Music', url: 'https://music.apple.com/de/album/en-ordre-rework-ep/6834607493', kind: 'stream', enabled: true},
+    {label: 'Spotify', url: 'https://open.spotify.com/intl-de/album/4Cm9OWUy45rN1UfcWTyFBx', kind: 'stream', enabled: true},
+    {label: 'Amazon Music', url: 'https://amazon.de/music/player/albums/B0HRNW6FHQ?marketplaceId=A1PA6795UKMFR9&musicTerritory=DE&ref=dm_sh_xfiKjBzDM83l1tFOttAMd2XdB', kind: 'stream', enabled: true},
+  ],
+};
+
+export const additionalCatalogueReleases: Release[] = [
+  { _id: 'local-schlager', slug: 'schlager', title: 'SCHLAGER', category: 'backCatalogue', releaseStatus: 'pending' },
+  { _id: 'local-goddess', slug: 'goddess', title: 'GODDESS', category: 'backCatalogue', releaseStatus: 'pending' },
+];
+
+export const currentReleasesModule: Page['modules'][number] = {
+  _key: 'current-releases',
+  _type: 'module_releaseGrid',
+  heading: {en: 'CURRENT RELEASES'},
+  releaseCategory: 'current',
+  excludeFeatured: true,
+  enabled: true,
+};
+
 export const fallbackPage:Page={title:'Home',modules:[{_key:'hero',_type:'module_hero',heading:{en:'NO BOTTOM - NO TOP',de:'NO BOTTOM - NO TOP'},intro:{en:'NEW VINYL EP · 15 JAN 2027 · EMMO.BIZ',de:'NEUE VINYL-EP · 15. JAN 2027 · EMMO.BIZ'},releaseRefs:[sampleReleases[0]],enabled:true},{_key:'feature',_type:'module_releaseFeature',heading:{en:'LATEST RELEASE',de:'AKTUELLER RELEASE'},releaseRefs:[sampleReleases[0]],enabled:true},{_key:'single',_type:'module_releaseFeature',heading:{en:'THE FLOOD / SINGLE',de:'THE FLOOD / SINGLE'},intro:{en:'Listen to the single',de:'Single anhören'},releaseRefs:[sampleReleases[1]],enabled:true},{_key:'catalogue',_type:'module_releaseGrid',heading:{en:'BACK CATALOGUE',de:'BACK CATALOGUE'},intro:{en:'Original releases and planned digital re-releases. Dates and links only when confirmed.',de:'Originalveröffentlichungen und geplante digitale Re-Releases. Termine und Links erst nach Bestätigung.'},releaseRefs:sampleReleases.slice(2),enabled:true},{_key:'archive',_type:'module_archiveGrid',heading:{en:'THE ARCHIVE',de:'DAS ARCHIV'},intro:{en:'Original artwork, flyers, photography and press material. More material will follow.',de:'Original-Artworks, Flyer, Fotografien und Presseberichte. Weitere Materialien folgen.'},enabled:true},{_key:'news',_type:'module_newsGrid',heading:{en:'NEWS',de:'NEWS'},newsRefs:[{_id:'record-deals-2027',date:'2026-11-09',title:'SABOTAGE QCQC? – THE PAST RETURNS. THE FUTURE BEGINS.',body:{en:`SABOTAGE QCQC? SIGN TWO RECORD DEALS – BACK CATALOGUE RETURNS AS NEW ALBUM TAKES SHAPE
 
 Two labels. Two countries. One new chapter.

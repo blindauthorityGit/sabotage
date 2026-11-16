@@ -155,9 +155,10 @@ const sections = [
   {key: 'hero', label: '01 SABOTAGE QCQC? / 2026-2027'},
   {key: 'statement', label: '02 STATEMENT / MANIFEST'},
   {key: 'news', label: '03 NEWS GRID'},
-  {key: 'feature', label: '04 LATEST RELEASES'},
-  {key: 'current-releases', label: '05 FORTHCOMING RELEASES'},
-  {key: 'catalogue', label: '06 DIGITAL BACK CATALOGUE'},
+  {key: 'feature', label: "04 WHAT'S NEXT"},
+  {key: 'forthcoming-releases', label: '05 FORTHCOMING RELEASES'},
+  {key: 'current-releases', label: '06 LATEST NEW RELEASES'},
+  {key: 'catalogue', label: '07 DIGITAL BACK CATALOGUE'},
   {key: 'wear', label: '08 SABOTAGE PROTEST WEAR'},
   {key: 'archive', label: '09 ARCHIVE GRID'},
   {key: 'labels', label: '10 LINKGRID LABELS'},
@@ -307,7 +308,9 @@ const wearPhotos = [
 
 function Section({module, lang, index}: {module: Module; lang: Language; index: number}) {
   const type = module._type.replace('module_', '');
-  const heading = local(module.heading, 'en');
+  const heading = module._type === 'module_releaseFeature' && module._key !== 'single'
+    ? "LET'S GET PHYSICAL"
+    : local(module.heading, 'en');
   const intro = local(module.intro, lang);
   const releases = module.releaseRefs || [];
   const wearTitle = type === 'linkGrid' ? heading.match(/^(SABOTAGE)\s+(WEAR)(\s*\/.*)?$/i) : null;
@@ -323,7 +326,7 @@ function Section({module, lang, index}: {module: Module; lang: Language; index: 
       : null;
   const header = (
     <div className={graphic ? 'section-head section-head-illustrated' : 'section-head'}>
-      <span className="index">{sectionLabel}</span>
+      {module._key !== 'single' && <span className="index">{sectionLabel}</span>}
       <h2 className={wearTitle ? 'wear-title' : undefined}>
         {wearTitle ? (
           <>
@@ -345,7 +348,43 @@ if (type === 'hero') {
   return <section className="hero" id="top"><div className="hero-copy"><p className="eyebrow">01 SABOTAGE QCQC? <span className="red">/</span> 2026-2027</p><h1>{titleLines ? <>{titleLines[1]} <span className="hero-title-emphasis">{titleLines[2]}</span></> : heading}</h1><p className="hero-label">{intro}</p><a className="btn primary" href="#releases">{tr(lang,'EXPLORE RELEASE','RELEASE ENTDECKEN','DÉCOUVRIR LA SORTIE','DESCUBRIR EL LANZAMIENTO')}</a></div><div className="hero-art"><img src="/assets/sabotage-symbol.png" alt="SABOTAGE emblem"/></div></section>;
 }
 if(type==='releaseFeature'){const r=releases[0];const date=r&&releaseDate(r);return <section className="section releases" id={module._key==='single'?'the-flood':'releases'}>{header}{r?<div className="feature"><div><Art url={r.coverUrl} title={normalizeReleaseTitle(r.title)} lang={lang}/><div className="inline-links">{r.links?.map((l,i)=><External key={i} item={l} lang={lang}/>)}</div></div><div><p className="eyebrow red">{r.labelUrl?<a href={r.labelUrl} target="_blank" rel="noopener noreferrer">{r.label} ↗</a>:r.label}{date?` / ${date}`:''}</p><h3>{normalizeReleaseTitle(r.title)}</h3><div className="release-description">{(local(r.description,lang)|| (tr(lang,'Limited vinyl edition.','Limitierte Vinyl-Edition.','Édition vinyle limitée.','Edición limitada en vinilo.'))).split('\n\n').map((paragraph,i)=><p key={i}>{paragraph.split('\n').map((line,j)=><span key={j}>{j>0&&<br/>}{line}</span>)}</p>)}</div><ReleaseEditions release={r} lang={lang}/></div></div>:<p>{tr(lang,'Release details will follow.','Details zur Veröffentlichung folgen.','Les détails de la sortie suivront.','Los detalles del lanzamiento se anunciarán más adelante.')}</p>}</section>}
-if(type==='releaseGrid')return <section className="section catalogue" id="catalogue">{header}<div className="release-grid">{releases.map(r=><ReleaseCard key={r._id} release={r} lang={lang}/>)}</div></section>;
+if (module._key === 'forthcoming-releases') return (
+  <section className="section catalogue" id="forthcoming-releases">
+    {header}
+    <div className="forthcoming-announcement">
+      <div>
+        <h3>SABOTAGE QCQC? – MORE TO COME!</h3>
+        <p><strong>2026 IS FAR FROM OVER!</strong></p>
+        <p>{tr(lang,
+          'With their latest release “EN ORDRE”, SABOTAGE QCQC? continue their long-awaited comeback. Several more singles are scheduled before the end of the year, offering a taste of what’s to come in 2027.',
+          'Mit ihrer jüngsten Veröffentlichung „EN ORDRE“ setzen SABOTAGE QCQC? ihr lang erwartetes Comeback fort. Bis Jahresende sind weitere Singles geplant, die einen Vorgeschmack auf 2027 geben.',
+          'Avec leur dernière sortie « EN ORDRE », SABOTAGE QCQC? poursuivent leur retour tant attendu. Plusieurs singles sont prévus d’ici la fin de l’année et donnent un avant-goût de 2027.',
+          'Con su último lanzamiento, «EN ORDRE», SABOTAGE QCQC? continúan su esperado regreso. Hay varios sencillos previstos antes de que acabe el año, como anticipo de lo que llegará en 2027.'
+        )}</p>
+        <p>{tr(lang,
+          'Blending uncompromising EBM, driving industrial beats, electro clash and electronic experimentation, the band continues to push its distinctive sound forward without losing sight of its roots.',
+          'Mit kompromisslosem EBM, treibenden Industrial-Beats, Electroclash und elektronischen Experimenten entwickelt die Band ihren unverwechselbaren Sound weiter, ohne ihre Wurzeln aus dem Blick zu verlieren.',
+          'En mêlant EBM sans compromis, rythmes industriels entraînants, electroclash et expérimentation électronique, le groupe fait évoluer son son singulier tout en gardant ses racines en vue.',
+          'Entre EBM sin concesiones, ritmos industriales contundentes, electroclash y experimentación electrónica, la banda sigue desarrollando su sonido inconfundible sin perder de vista sus raíces.'
+        )}</p>
+        <p><strong>{tr(lang,
+          'A brand-new full-length album is set to follow in 2027.',
+          'Für 2027 ist ein komplett neues Album geplant.',
+          'Un tout nouvel album est prévu pour 2027.',
+          'En 2027 está previsto un álbum completamente nuevo.'
+        )}</strong> {tr(lang,
+          'New music, new energy, same attitude: provocative, direct and uncompromising.',
+          'Neue Musik, neue Energie, dieselbe Haltung: provokant, direkt und kompromisslos.',
+          'Nouvelle musique, nouvelle énergie, même attitude : provocatrice, directe et sans compromis.',
+          'Nueva música, nueva energía, la misma actitud: provocadora, directa y sin concesiones.'
+        )}</p>
+        <p><strong>SABOTAGE QCQC? IS BACK. AND THIS IS JUST THE BEGINNING.</strong></p>
+      </div>
+      <div className="forthcoming-mark" aria-hidden="true">?</div>
+    </div>
+  </section>
+);
+if(type==='releaseGrid')return <section className="section catalogue" id={module._key === 'current-releases' || module.releaseCategory === 'current' ? 'current-releases' : 'catalogue'}>{header}<div className="release-grid">{releases.map(r=><ReleaseCard key={r._id} release={r} lang={lang}/>)}</div></section>;
 if(type==='archiveGrid')return <section className="section archive" id="archive">{header}<div className="archive-title-list"><h3>RELEASES</h3><ul><li>ANNORLUNDA <span>1994</span></li><li>LES ENFANTS SAUVAGES <span>1995</span></li><li>TUMULTE <span>1993</span></li><li>DEUTSCHER HERBST ’77 <span>1996</span></li><li>NO BOTTOM - NO TOP <span>2027 · VINYL EP</span></li><li>THE FLOOD <span>2026 · DIGITAL SINGLE</span></li><li>LIBERTINAGE</li><li>SEXPLOITATION CINEMA</li><li>SCHLAGER</li><li>GODDESS</li><li>ACOUSTIC COSTUMES</li><li>CONCRETE</li></ul></div><div className="archive-tracklists"><h3>TRACK & COMPILATION ARCHIVE</h3><p className="archive-note">{tr(lang,'Track positions from the complete archive. Tracks on different releases are listed separately.','Trackpositionen aus dem Gesamtarchiv. Gleiche Titel auf verschiedenen Veröffentlichungen bleiben separat aufgeführt.','Positions des titres dans les archives. Les titres parus sur différentes sorties sont indiqués séparément.','Posiciones de los temas en el archivo. Los temas que aparecen en distintos lanzamientos se enumeran por separado.')}</p>{Object.entries(archiveData.tracks.reduce<Record<string, typeof archiveData.tracks>>((groups,track)=>{(groups[track.release||tr(lang,'More tracks','Weitere Titel','Autres titres','Más temas')]??=[]).push(track);return groups},{})).map(([release,tracks])=><details key={release}><summary>{release}<span>{tracks.length} {tr(lang,'tracks','Titel','titres','temas')}</span></summary><ol>{tracks.map((track,i)=><li key={`${release}-${i}`}><span>{track.title}{track.version?` — ${track.version}`:''}</span><small>{track.year}{track.position?` · Track ${track.position}`:''}</small></li>)}</ol></details>)}<details><summary>Samplers & Compilations<span>{archiveData.compilations.length} {tr(lang,'documented entries','dokumentierte Einträge','entrées documentées','entradas documentadas')}</span></summary><ol>{archiveData.compilations.map((item,i)=><li key={`comp-${i}`}><span>{item.title}{item.version?` — ${item.version}`:''}</span><small>{item.compilation}{item.year?` · ${item.year}`:''}</small></li>)}</ol></details></div><div className="archive-items">{module.archiveRefs?.map(a=><article key={a._id}><Art url={a.imageUrl} title={normalizeReleaseTitle(a.title)} lang={lang}/><h3>{normalizeReleaseTitle(a.title)}</h3></article>)}</div><div className="archive-discogs"><a href="https://www.discogs.com/artist/69880-Sabotage-QCQC?superFilter=Appearances&subFilter=Compilations" target="_blank" rel="noopener noreferrer">DISCOGS ↗</a></div><RandomGallery items={module.randomRefs} lang={lang}/></section>;
 if (type === 'newsGrid') return <NewsSection items={module.newsRefs ?? emptyNews} lang={lang} header={header}/>;
 if(type==='mediaGrid')return <section className="section" id="media">{header}<div className="linkgrid">{module.mediaRefs?.filter(m=>m.url).map(m=><a key={m._id} href={m.url} target="_blank" rel="noopener noreferrer">{normalizeReleaseTitle(m.title)} ↗</a>)}</div></section>;
