@@ -50,7 +50,7 @@ export const credits = [
   ['CONTEMPO / SEBASTIAN “SEBI” KOCH', 'PANKOW / LASSIGUE BENDTHAUS / CLOCK DVA', 'introductions'],
   ['PANKOW / SABOTAGE QCQC?', '', 'tour'],
   ['DIVE / TEMPLEBEAT', 'Florence', 'sessions'],
-  ['MICK MAGIC (UK)', '', 'tape'],
+  ['MICK MAGIC (UK) / MUSIC & ELSEWHERE', '', 'tape'],
   ['LORD LITTER', '', 'tape'],
   ['BETON TAPES', '', 'tape'],
   ['FRONT 242 / ART & STRATEGY', 'SABOTAGE QCQC?', 'management'],
