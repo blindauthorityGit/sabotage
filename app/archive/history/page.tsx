@@ -43,6 +43,16 @@ export default async function History({searchParams}: {searchParams: Promise<{la
           <p><small>{tr(lang, 'From the band’s account', 'Aus der Bandgeschichte', 'D’après le récit du groupe', 'Según el relato de la banda')}</small></p>
           {tapeHistory[lang].map(paragraph => <p key={paragraph}>{paragraph}</p>)}
           <p><strong>{tapeHistoryClosing[lang]}</strong></p>
+          <figure className="history-promocard">
+            <img src="/assets/tumulte-danse-macabre-promocard.webp" width={1448} height={1086} loading="lazy"
+              alt={tr(lang,
+                'Black-and-white band portrait of Marc Werner, Isabelle Gernand and Detlef Weinreich, photographed by Bettina Walther.',
+                'Schwarz-Weiß-Bandfoto von Marc Werner, Isabelle Gernand und Detlef Weinreich, aufgenommen von Bettina Walther.',
+                'Portrait du groupe en noir et blanc avec Marc Werner, Isabelle Gernand et Detlef Weinreich, photographiés par Bettina Walther.',
+                'Retrato del grupo en blanco y negro con Marc Werner, Isabelle Gernand y Detlef Weinreich, fotografiados por Bettina Walther.'
+              )}/>
+            <figcaption lang="en">PromoCard Danse Macabre for TUMULTE release</figcaption>
+          </figure>
         </div>
       </section>
       <section className="manifesto-chapter" aria-labelledby="collaborations">

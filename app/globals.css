@@ -823,3 +823,19 @@ body > footer a {
   margin-block: .5rem;
   text-transform: none;
 }
+
+.history-promocard {
+  margin: 2rem 0 0;
+}
+
+.history-promocard img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.history-promocard figcaption {
+  margin-top: .5rem;
+  font-size: .875rem;
+  text-transform: none;
+}
