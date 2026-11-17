@@ -50,10 +50,10 @@ export const collaborations: Chapter[] = [
     }},
   ]},
   {title: 'REMIXES FOR OTHER ARTISTS', intro: {
-    en: 'SABOTAGE has brought its electronic sound to recordings by artists across industrial and contemporary electronic music.',
-    de: 'SABOTAGE hat den eigenen elektronischen Sound in Aufnahmen aus der Industrial-Szene und der zeitgenössischen elektronischen Musik eingebracht.',
-    fr: 'SABOTAGE a apporté son son électronique à des enregistrements issus de la scène industrielle et de l’électronique contemporaine.',
-    es: 'SABOTAGE ha llevado su sonido electrónico a grabaciones de la escena industrial y de la música electrónica contemporánea.',
+    en: 'SABOTAGE has brought its electronic sound to recordings by artists across industrial and contemporary electronic music. The band has also created unofficial remixes of tracks by GRAUZONE, ZAHO DE SAGAZAN, QUEEN, BONEY M. and many others.',
+    de: 'SABOTAGE hat den eigenen elektronischen Sound in Aufnahmen aus der Industrial-Szene und der zeitgenössischen elektronischen Musik eingebracht. Die Band hat auch inoffizielle Remixes von Stücken von GRAUZONE, ZAHO DE SAGAZAN, QUEEN, BONEY M. und vielen anderen gemacht.',
+    fr: 'SABOTAGE a apporté son son électronique à des enregistrements issus de la scène industrielle et de l’électronique contemporaine. Le groupe a également réalisé des remixes non officiels de morceaux de GRAUZONE, ZAHO DE SAGAZAN, QUEEN, BONEY M. et de bien d’autres artistes.',
+    es: 'SABOTAGE ha llevado su sonido electrónico a grabaciones de la escena industrial y de la música electrónica contemporánea. La banda también ha creado remezclas no oficiales de temas de GRAUZONE, ZAHO DE SAGAZAN, QUEEN, BONEY M. y muchos otros artistas.',
   }, entries: [
     {title: 'KRIEG-B', copy: 'COLD FRAGMENTS — SABOTAGE remix'},
     {title: 'ALMA MINUIT', copy: 'MON CŒUR — AUBE Mix\nMÉMÉ (feat. SALVA V.) — Dance Version\nPARIS N’EST PAS À VENDRE — ORAGE Remix'},
