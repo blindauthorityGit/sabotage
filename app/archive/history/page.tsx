@@ -52,10 +52,9 @@ export default async function History({searchParams}: {searchParams: Promise<{la
           <p><strong>DECADES OF CREATIVE CONNECTIONS.</strong></p>
           <p>{collaborationsIntro[lang]}</p>
         </div>
-        {collaborations.map(({title, intro, entries}) => (
+        {collaborations.map(({title, outro, entries}) => (
           <section className="history-collaborations manifesto-prose" key={title}>
             <h3>{title}</h3>
-            {intro && <p>{intro[lang]}</p>}
             <dl>
               {entries.map(({title, copy}) => (
                 <div key={title}>
@@ -64,6 +63,7 @@ export default async function History({searchParams}: {searchParams: Promise<{la
                 </div>
               ))}
             </dl>
+            {outro && <p>{outro[lang]}</p>}
           </section>
         ))}
       </section>
