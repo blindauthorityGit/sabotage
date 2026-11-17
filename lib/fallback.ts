@@ -116,6 +116,20 @@ export const enOrdreRelease: Release = {
 export const additionalCatalogueReleases: Release[] = [
   { _id: 'local-schlager', slug: 'schlager', title: 'SCHLAGER', category: 'backCatalogue', releaseStatus: 'pending' },
   { _id: 'local-goddess', slug: 'goddess', title: 'GODDESS', category: 'backCatalogue', releaseStatus: 'pending' },
+  {
+    _id: 'local-sexploitation-cinema',
+    slug: 'sexploitation-cinema',
+    title: 'SEXPLOITATION CINEMA',
+    category: 'backCatalogue',
+    releaseStatus: 'pending',
+  },
+  {
+    _id: 'local-sexploitation-cinema-limited-edition',
+    slug: 'sexploitation-cinema-limited-edition',
+    title: 'SEXPLOITATION CINEMA (LIMITED EDITION)',
+    category: 'backCatalogue',
+    releaseStatus: 'pending',
+  },
 ];
 
 export const currentReleasesModule: Page['modules'][number] = {
