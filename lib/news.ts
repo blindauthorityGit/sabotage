@@ -499,3 +499,189 @@ Disponible en las principales plataformas digitales de streaming y descarga.
 **SOUND. RESISTANCE. DISORIENTATION. NO BORDERS.**`,
   },
 };
+
+const goddessReleaseDetails = `**GODDESS**
+**DIGITAL RE-RELEASE — 20.11.2026**
+**SUB CULTURE RECORDS**
+
+**THE PAST IS NOT DEAD. IT'S JUST GETTING LOUDER.**
+
+#SABOTAGEQCQC #Goddess #SubCultureRecords #Front242 #DanielBressanutti #NUDE #TehoTeardo #WilfridMoulin #MauroChiarotto #EBM #ElectronicBodyMusic #IndustrialMusic`;
+
+export const goddessNews: NewsItem = {
+  _id: 'goddess-2026-11-20',
+  title: 'SABOTAGE QCQC? – GODDESS',
+  date: '2026-11-20',
+  imageUrl: '/assets/goddess-news.webp',
+  imageWidth: 1122,
+  imageHeight: 1402,
+  imageAlt: {
+    en: 'GODDESS digital re-release poster, November 20, 2026',
+    de: 'Poster zur digitalen Wiederveröffentlichung von GODDESS am 20. November 2026',
+    fr: 'Affiche de la réédition numérique de GODDESS du 20 novembre 2026',
+    es: 'Cartel de la reedición digital de GODDESS del 20 de noviembre de 2026',
+  },
+  body: {
+    en: `**THE ARCHIVE RETURNS.**
+
+Another chapter in the history of German electronic pioneers **SABOTAGE QCQC?** returns to the digital world.
+
+On **November 20, 2026**, *GODDESS* is digitally re-released through **Sub Culture Records (Norway)**.
+
+Like *SEXPLOITATION CINEMA* and *SCHLAGER*, *GODDESS* emerged during a remarkable period in the band's history, when Belgian EBM pioneers **FRONT 242** had taken over the management of SABOTAGE.
+
+The recordings were produced in Belgium in close collaboration with **Daniel Bressanutti (FRONT 242)**, marking an important creative connection between the German and Belgian electronic music scenes.
+
+The visual concept continued the distinctive artistic approach of this period, featuring photography by **Wilfrid Moulin** and illustrations by **Mauro Chiarotto**. Guest contributors to this production era included Italian experimental musician **Teho Teardo**.
+
+The collaboration with Daniel Bressanutti would also have a lasting impact beyond SABOTAGE: it eventually led to the formation of **NUDE**, a subsequent electronic music project in which Bressanutti was involved during its early stages.
+
+More than three decades later, *GODDESS* offers another opportunity to rediscover this fascinating period of European electronic music history.
+
+${goddessReleaseDetails}`,
+    de: `**THE ARCHIVE RETURNS.**
+
+Ein weiteres Kapitel aus der Geschichte der deutschen Elektronikpioniere **SABOTAGE QCQC?** kehrt in die digitale Welt zurück.
+
+Am **20. November 2026** erscheint *GODDESS* digital bei **Sub Culture Records (Norwegen)**.
+
+Wie *SEXPLOITATION CINEMA* und *SCHLAGER* entstand *GODDESS* in einer besonderen Phase der Bandgeschichte, als die belgischen EBM-Pioniere **FRONT 242** das Management von SABOTAGE übernommen hatten.
+
+Die Aufnahmen wurden in Belgien in enger Zusammenarbeit mit **Daniel Bressanutti (FRONT 242)** produziert. Damit entstand eine wichtige kreative Verbindung zwischen der deutschen und der belgischen Elektronikszene.
+
+Das visuelle Konzept führte die eigenständige künstlerische Linie jener Zeit mit Fotografien von **Wilfrid Moulin** und Illustrationen von **Mauro Chiarotto** fort. Zu den Gästen dieser Produktionsphase gehörte der italienische Experimental-Musiker **Teho Teardo**.
+
+Die Zusammenarbeit mit Daniel Bressanutti wirkte über SABOTAGE hinaus. Aus ihr ging später das Elektronikprojekt **NUDE** hervor, an dem Bressanutti in der Anfangsphase mitwirkte.
+
+Mehr als drei Jahrzehnte später bietet *GODDESS* die Gelegenheit, diese Phase der europäischen elektronischen Musikgeschichte wiederzuentdecken.
+
+${goddessReleaseDetails}`,
+    fr: `**THE ARCHIVE RETURNS.**
+
+Un nouveau chapitre de l’histoire des pionniers allemands de la musique électronique **SABOTAGE QCQC?** revient au format numérique.
+
+Le **20 novembre 2026**, *GODDESS* ressort en numérique chez **Sub Culture Records (Norvège)**.
+
+Comme *SEXPLOITATION CINEMA* et *SCHLAGER*, *GODDESS* est né à une époque marquante de l’histoire du groupe, quand les pionniers belges de l’EBM **FRONT 242** avaient repris le management de SABOTAGE.
+
+Les enregistrements ont été produits en Belgique en étroite collaboration avec **Daniel Bressanutti (FRONT 242)**, créant un lien artistique important entre les scènes électroniques allemande et belge.
+
+Le concept visuel prolongeait la démarche artistique de cette période, avec des photographies de **Wilfrid Moulin** et des illustrations de **Mauro Chiarotto**. Le musicien expérimental italien **Teho Teardo** figurait parmi les invités de cette période de production.
+
+La collaboration avec Daniel Bressanutti a eu des effets durables au-delà de SABOTAGE. Elle a débouché sur la création de **NUDE**, un projet de musique électronique auquel Bressanutti a participé à ses débuts.
+
+Plus de trois décennies après, *GODDESS* offre l’occasion de redécouvrir cette période de l’histoire de la musique électronique européenne.
+
+${goddessReleaseDetails}`,
+    es: `**THE ARCHIVE RETURNS.**
+
+Otro capítulo de la historia de **SABOTAGE QCQC?**, pioneros alemanes de la música electrónica, regresa en formato digital.
+
+El **20 de noviembre de 2026**, *GODDESS* se reedita en formato digital a través de **Sub Culture Records (Noruega)**.
+
+Como *SEXPLOITATION CINEMA* y *SCHLAGER*, *GODDESS* nació en una etapa singular de la historia de la banda, cuando los pioneros belgas del EBM **FRONT 242** habían asumido la representación de SABOTAGE.
+
+Las grabaciones se produjeron en Bélgica en estrecha colaboración con **Daniel Bressanutti (FRONT 242)**, lo que estableció un vínculo creativo importante entre las escenas electrónicas alemana y belga.
+
+El concepto visual siguió la línea artística de aquella época, con fotografías de **Wilfrid Moulin** e ilustraciones de **Mauro Chiarotto**. Entre los invitados de aquella etapa de producción estaba el músico experimental italiano **Teho Teardo**.
+
+La colaboración con Daniel Bressanutti tuvo un impacto duradero más allá de SABOTAGE. Dio lugar a **NUDE**, un proyecto posterior de música electrónica en el que Bressanutti participó durante sus primeros pasos.
+
+Más de tres décadas después, *GODDESS* ofrece la oportunidad de redescubrir esta etapa de la historia de la música electrónica europea.
+
+${goddessReleaseDetails}`,
+  },
+};
+
+const sexploitationCinemaReleaseDetails = `**SEXPLOITATION CINEMA**
+**DIGITAL RE-RELEASE — 23.11.2026**
+**SUB CULTURE RECORDS**
+
+**THE PAST IS NOT DEAD. IT'S JUST GETTING LOUDER.**
+
+#SABOTAGEQCQC #SexploitationCinema #SubCultureRecords #Front242 #DanielBressanutti #TehoTeardo #WilfridMoulin #MauroChiarotto #EBM #ElectronicBodyMusic #IndustrialMusic #ElectroPunk`;
+
+export const sexploitationCinemaNews: NewsItem = {
+  _id: 'sexploitation-cinema-2026-11-23',
+  title: 'SABOTAGE QCQC? – SEXPLOITATION CINEMA',
+  date: '2026-11-23',
+  imageUrl: '/assets/sexploitation-cinema-news.webp',
+  imageWidth: 1086,
+  imageHeight: 1448,
+  imageAlt: {
+    en: 'SEXPLOITATION CINEMA digital re-release poster, November 23, 2026',
+    de: 'Poster zur digitalen Wiederveröffentlichung von SEXPLOITATION CINEMA am 23. November 2026',
+    fr: 'Affiche de la réédition numérique de SEXPLOITATION CINEMA du 23 novembre 2026',
+    es: 'Cartel de la reedición digital de SEXPLOITATION CINEMA del 23 de noviembre de 2026',
+  },
+  body: {
+    en: `**THE ARCHIVE RETURNS.**
+
+On **November 23, 2026**, another chapter of European electronic music history returns: *SEXPLOITATION CINEMA* by **SABOTAGE QCQC?**, digitally re-released through **Sub Culture Records (Norway)**.
+
+The album originates from a particularly fascinating period in the band's history, when Belgian EBM pioneers **FRONT 242** had taken over the management of SABOTAGE.
+
+During this era, the band worked in Belgium alongside **Daniel Bressanutti (FRONT 242)**, producing *SEXPLOITATION CINEMA*, *GODDESS* and *SCHLAGER* — three releases reflecting the creative exchange between the German and Belgian electronic music scenes.
+
+The visual identity was equally distinctive. As with *LES ENFANTS SAUVAGES*, photography was contributed by **Wilfrid Moulin**, while the striking illustrations were created by **Mauro Chiarotto**.
+
+The recordings also featured guest musicians, including Italian experimental artist **Teho Teardo**.
+
+Provocative, unconventional and rooted in the experimental spirit of the 1990s, *SEXPLOITATION CINEMA* documents an important period in SABOTAGE's musical evolution.
+
+More than three decades later, the album becomes available to a new generation of listeners.
+
+${sexploitationCinemaReleaseDetails}`,
+    de: `**THE ARCHIVE RETURNS.**
+
+Am **23. November 2026** kehrt ein weiteres Kapitel europäischer Elektronikgeschichte zurück: *SEXPLOITATION CINEMA* von **SABOTAGE QCQC?** wird bei **Sub Culture Records (Norwegen)** digital wiederveröffentlicht.
+
+Das Album stammt aus einer besonderen Phase der Bandgeschichte, als die belgischen EBM-Pioniere **FRONT 242** das Management von SABOTAGE übernommen hatten.
+
+In dieser Zeit arbeitete die Band in Belgien mit **Daniel Bressanutti (FRONT 242)** zusammen. Dabei entstanden *SEXPLOITATION CINEMA*, *GODDESS* und *SCHLAGER*. Die drei Veröffentlichungen spiegeln den kreativen Austausch zwischen der deutschen und der belgischen Elektronikszene wider.
+
+Ebenso eigenständig war die visuelle Gestaltung. Wie bei *LES ENFANTS SAUVAGES* stammen die Fotografien von **Wilfrid Moulin**, die markanten Illustrationen von **Mauro Chiarotto**.
+
+An den Aufnahmen wirkten auch Gastmusiker mit, darunter der italienische Experimental-Musiker **Teho Teardo**.
+
+Provokant, unkonventionell und im experimentellen Geist der 1990er verwurzelt, dokumentiert *SEXPLOITATION CINEMA* eine wichtige Phase in der musikalischen Entwicklung von SABOTAGE.
+
+Mehr als drei Jahrzehnte später wird das Album einer neuen Generation von Hörerinnen und Hörern zugänglich.
+
+${sexploitationCinemaReleaseDetails}`,
+    fr: `**THE ARCHIVE RETURNS.**
+
+Le **23 novembre 2026**, un autre chapitre de l’histoire de la musique électronique européenne refait surface : *SEXPLOITATION CINEMA* de **SABOTAGE QCQC?** ressort en numérique chez **Sub Culture Records (Norvège)**.
+
+L’album remonte à une période marquante de l’histoire du groupe, quand les pionniers belges de l’EBM **FRONT 242** avaient repris le management de SABOTAGE.
+
+À cette époque, le groupe a travaillé en Belgique aux côtés de **Daniel Bressanutti (FRONT 242)** pour produire *SEXPLOITATION CINEMA*, *GODDESS* et *SCHLAGER*. Ces trois sorties témoignent des échanges créatifs entre les scènes électroniques allemande et belge.
+
+L’identité visuelle était tout aussi singulière. Comme pour *LES ENFANTS SAUVAGES*, les photographies sont signées **Wilfrid Moulin** et les illustrations marquantes sont l’œuvre de **Mauro Chiarotto**.
+
+Les enregistrements ont également accueilli des musiciens invités, dont l’artiste expérimental italien **Teho Teardo**.
+
+Provocateur, atypique et ancré dans l’esprit expérimental des années 1990, *SEXPLOITATION CINEMA* témoigne d’une période importante dans l’évolution musicale de SABOTAGE.
+
+Plus de trois décennies plus tard, une nouvelle génération peut découvrir l’album.
+
+${sexploitationCinemaReleaseDetails}`,
+    es: `**THE ARCHIVE RETURNS.**
+
+El **23 de noviembre de 2026** regresa otro capítulo de la historia de la música electrónica europea: *SEXPLOITATION CINEMA*, de **SABOTAGE QCQC?**, se reedita en formato digital a través de **Sub Culture Records (Noruega)**.
+
+El álbum nació en una etapa singular de la historia de la banda, cuando los pioneros belgas del EBM **FRONT 242** habían asumido la representación de SABOTAGE.
+
+En aquella época, la banda trabajó en Bélgica junto a **Daniel Bressanutti (FRONT 242)** en la producción de *SEXPLOITATION CINEMA*, *GODDESS* y *SCHLAGER*. Los tres lanzamientos reflejan el intercambio creativo entre las escenas electrónicas alemana y belga.
+
+La identidad visual era igual de singular. Como en *LES ENFANTS SAUVAGES*, las fotografías son de **Wilfrid Moulin** y las llamativas ilustraciones, de **Mauro Chiarotto**.
+
+En las grabaciones también participaron músicos invitados, entre ellos el artista experimental italiano **Teho Teardo**.
+
+Provocador, poco convencional y arraigado en el espíritu experimental de los noventa, *SEXPLOITATION CINEMA* documenta una etapa importante en la evolución musical de SABOTAGE.
+
+Más de tres décadas después, el álbum queda al alcance de una nueva generación de oyentes.
+
+${sexploitationCinemaReleaseDetails}`,
+  },
+};

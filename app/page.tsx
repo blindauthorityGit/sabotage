@@ -2,7 +2,7 @@ import {readLanguage} from '../lib/language';
 import Site from '../components/Site';
 import {getHome, getReleases, getSettings, type Link, type Module, type Page} from '../lib/content';
 import {additionalCatalogueReleases, currentReleasesModule, enOrdreRelease, fallbackPage, sampleReleases} from '../lib/fallback';
-import {coldFragmentsNews, emmoBizNews, enOrdreNews, memeNews, monCoeurNews, orageRemixNews, secretTracksNews, subCultureNews, theFloodNews} from '../lib/news';
+import {coldFragmentsNews, emmoBizNews, enOrdreNews, goddessNews, memeNews, monCoeurNews, orageRemixNews, secretTracksNews, sexploitationCinemaNews, subCultureNews, theFloodNews} from '../lib/news';
 import {releaseArtworkKey, withCoverFallback} from '../lib/release-artwork';
 
 export const dynamic = 'force-dynamic';
@@ -126,7 +126,7 @@ function connectReleases(page: Page, releases: Awaited<ReturnType<typeof getRele
     if (module._type !== 'module_newsGrid') return module;
 
     const news = module.newsRefs ?? [];
-    const localNews = [enOrdreNews, orageRemixNews, subCultureNews, emmoBizNews, theFloodNews, memeNews, monCoeurNews, coldFragmentsNews, secretTracksNews].filter(entry => !news.some(item =>
+    const localNews = [sexploitationCinemaNews, goddessNews, enOrdreNews, orageRemixNews, subCultureNews, emmoBizNews, theFloodNews, memeNews, monCoeurNews, coldFragmentsNews, secretTracksNews].filter(entry => !news.some(item =>
       item._id === entry._id || (item.date === entry.date &&
         item.title.trim().replace(/:$/, '').toUpperCase() === entry.title.replace(/:$/, ''))
     ));
