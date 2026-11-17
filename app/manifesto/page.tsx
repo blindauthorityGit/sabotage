@@ -5,8 +5,13 @@ import {manifestoTitles} from './translations';
 import manifesto from './text.json';
 import localized from './localized-text.json';
 import covers from './covers.json';
+import {releasePath} from '../../lib/detail-paths';
 
-export const metadata = {title: 'Manifesto — SABOTAGE QCQC?'};
+import {siteMetadata, type SearchProps} from '../../lib/seo';
+
+export async function generateMetadata({searchParams}: SearchProps) {
+  return siteMetadata('manifesto', readLanguage((await searchParams).lang));
+}
 
 const keywords = /\b(friction|rhythm|electronic underground|transformation|freedom|diversity|curiosity|resistance|Reibung|Rhythmus|Freiheit|Vielfalt|Neugier|Widerstand|Veränderung|rythme|liberté|diversité|curiosité|résistance|underground électronique|fricción|ritmo|libertad|diversidad|curiosidad|resistencia|transformación|underground electrónico)\b/gi;
 
@@ -60,11 +65,16 @@ export default async function Manifesto({searchParams}: {searchParams: Promise<{
             <img className="manifesto-voice" src="/assets/manifesto-voice.webp" alt="SABOTAGE poster reading Use your own voice. Disrupt the system. Ignore the narrative." width={1199} height={1312} loading="lazy"/>
           )}
           {index === 1 && (
-            <div className="manifesto-archive">
-              {covers.map(({src, title, width, height}) => (
-                <img key={src} src={src} alt={title} width={width} height={height} loading="lazy"/>
-              ))}
-            </div>
+            <>
+              <div className="manifesto-archive">
+                {covers.map(({src, title, width, height}) => (
+                  <Link key={src} href={languageHref(releasePath({_id: src, title}), lang)}>
+                    <img src={src} alt={title} width={width} height={height} loading="lazy"/>
+                  </Link>
+                ))}
+              </div>
+              <p className="archive-entry"><Link className="btn primary" href={languageHref('/archive/history', lang)}>HISTORY ↗</Link></p>
+            </>
           )}
           {index === 5 && (
             <img className="manifesto-cover" src="/assets/no-bottom-no-top.png" alt="No Bottom - No Top cover" loading="lazy"/>

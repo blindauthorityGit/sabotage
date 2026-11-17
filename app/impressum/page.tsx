@@ -2,7 +2,11 @@ import Link from 'next/link';
 import LanguageSwitch from '../../components/LanguageSwitch';
 import {languageHref, readLanguage, tr} from '../../lib/language';
 
-export const metadata = {title: 'Impressum — SABOTAGE QCQC?'};
+import {siteMetadata, type SearchProps} from '../../lib/seo';
+
+export async function generateMetadata({searchParams}: SearchProps) {
+  return siteMetadata('legal', readLanguage((await searchParams).lang));
+}
 
 export default async function Impressum({searchParams}: {searchParams: Promise<{lang?: string}>}) {
   const lang = readLanguage((await searchParams).lang);

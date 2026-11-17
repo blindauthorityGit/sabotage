@@ -730,3 +730,96 @@ body > footer a {
   text-transform: none;
   overflow-wrap: anywhere;
 }
+
+.archive-entry .btn,
+.network-archive .btn {
+  display: inline-block;
+}
+
+.archive-search,
+.archive-credits {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  margin: 24px 0;
+}
+
+.archive-search label,
+.archive-credits li {
+  display: grid;
+  gap: 8px;
+}
+
+.archive-search input,
+.archive-search select {
+  width: 100%;
+  padding: 10px;
+  font: inherit;
+  color: var(--white);
+  background: var(--black);
+  border: 1px solid var(--muted);
+}
+
+.archive-credits {
+  padding: 0;
+  list-style: none;
+}
+
+.archive-credits li {
+  align-content: start;
+  padding: 16px;
+  background: var(--black);
+  border-top: 2px solid var(--red);
+  overflow-wrap: anywhere;
+}
+
+.archive-credits small {
+  color: var(--muted);
+}
+
+.history-collaborations {
+  margin-top: 2.5rem;
+}
+
+.history-collaborations dl {
+  display: grid;
+  gap: 1rem;
+}
+
+.history-collaborations dt {
+  font-weight: 900;
+  overflow-wrap: anywhere;
+}
+
+.history-collaborations dd {
+  margin: 0.25rem 0 0;
+  white-space: pre-line;
+  text-transform: none;
+}
+
+.detail-page .manifesto-header h1 {
+  white-space: normal;
+  overflow-wrap: anywhere;
+  font-size: clamp(2.5rem, 7vw, 7rem);
+}
+
+.detail-page .news-image,
+.release-detail-cover {
+  display: block;
+  width: min(100%, 28rem);
+  height: auto;
+  margin-block: 1rem;
+}
+
+.release-detail section {
+  margin-block: 2rem;
+}
+
+.release-detail h2 {
+  font-size: clamp(1.5rem, 3vw, 2.75rem);
+}
+
+.release-detail li {
+  margin-block: .5rem;
+  text-transform: none;
+}

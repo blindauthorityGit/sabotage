@@ -1,3 +1,4 @@
+import {sexploitationCinemaArticle} from './sexploitation-cinema-article';
 import type {NewsItem} from './content';
 
 export const subCultureNews: NewsItem = {
@@ -631,7 +632,9 @@ Provocative, unconventional and rooted in the experimental spirit of the 1990s, 
 
 More than three decades later, the album becomes available to a new generation of listeners.
 
-${sexploitationCinemaReleaseDetails}`,
+${sexploitationCinemaReleaseDetails}
+
+${sexploitationCinemaArticle.en}`,
     de: `**THE ARCHIVE RETURNS.**
 
 Am **23. November 2026** kehrt ein weiteres Kapitel europäischer Elektronikgeschichte zurück: *SEXPLOITATION CINEMA* von **SABOTAGE QCQC?** wird bei **Sub Culture Records (Norwegen)** digital wiederveröffentlicht.
@@ -648,7 +651,9 @@ Provokant, unkonventionell und im experimentellen Geist der 1990er verwurzelt, d
 
 Mehr als drei Jahrzehnte später wird das Album einer neuen Generation von Hörerinnen und Hörern zugänglich.
 
-${sexploitationCinemaReleaseDetails}`,
+${sexploitationCinemaReleaseDetails}
+
+${sexploitationCinemaArticle.de}`,
     fr: `**THE ARCHIVE RETURNS.**
 
 Le **23 novembre 2026**, un autre chapitre de l’histoire de la musique électronique européenne refait surface : *SEXPLOITATION CINEMA* de **SABOTAGE QCQC?** ressort en numérique chez **Sub Culture Records (Norvège)**.
@@ -665,7 +670,9 @@ Provocateur, atypique et ancré dans l’esprit expérimental des années 1990, 
 
 Plus de trois décennies plus tard, une nouvelle génération peut découvrir l’album.
 
-${sexploitationCinemaReleaseDetails}`,
+${sexploitationCinemaReleaseDetails}
+
+${sexploitationCinemaArticle.fr}`,
     es: `**THE ARCHIVE RETURNS.**
 
 El **23 de noviembre de 2026** regresa otro capítulo de la historia de la música electrónica europea: *SEXPLOITATION CINEMA*, de **SABOTAGE QCQC?**, se reedita en formato digital a través de **Sub Culture Records (Noruega)**.
@@ -682,6 +689,8 @@ Provocador, poco convencional y arraigado en el espíritu experimental de los no
 
 Más de tres décadas después, el álbum queda al alcance de una nueva generación de oyentes.
 
-${sexploitationCinemaReleaseDetails}`,
+${sexploitationCinemaReleaseDetails}
+
+${sexploitationCinemaArticle.es}`,
   },
 };
