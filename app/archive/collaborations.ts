@@ -1,7 +1,7 @@
 import type {Language} from '../../lib/language';
 
 type Copy = Record<Language, string>;
-type Chapter = {title: string; outro?: Copy; entries: {title: string; copy: Copy | string}[]};
+type Chapter = {title: string; outro?: Copy; entries: {title: string; copy: Copy | string; id?: string; releases?: string[]}[]};
 
 export const collaborationsIntro: Copy = {
   en: 'From the European electronic underground of the early 1990s to contemporary productions, SABOTAGE QCQC? has worked with musicians, producers, remixers, photographers and visual artists. Connections from Belgian EBM and the Italian electronic underground to Chicago industrial and contemporary electronic music have shaped the band’s sound and visual identity for more than three decades.',
@@ -12,13 +12,13 @@ export const collaborationsIntro: Copy = {
 
 export const collaborations: Chapter[] = [
   {title: 'PRODUCTIONS & COLLABORATIONS', entries: [
-    {title: 'FRONT 242 / DANIEL BRESSANUTTI', copy: {
-      en: 'FRONT 242 took over the band’s management through ART & STRATEGY. SABOTAGE worked with DANIEL BRESSANUTTI in Belgium on SEXPLOITATION CINEMA, GODDESS and SCHLAGER. BRESSANUTTI and PATRICK CODENYS produced SEXPLOITATION CINEMA in Aarschot. The relationship later contributed to the formation of NUDE, with BRESSANUTTI involved in its early stages. SABOTAGE QCQC? toured Europe with FRONT 242. TIM KROKER, then the drummer in SABOTAGE QCQC?, went on to play live drums for FRONT 242 through their final show in Brussels on 25 January 2025.',
-      de: 'FRONT 242 übernahmen das Management der Band über ART & STRATEGY. In Belgien arbeiteten SABOTAGE mit DANIEL BRESSANUTTI an SEXPLOITATION CINEMA, GODDESS und SCHLAGER. BRESSANUTTI und PATRICK CODENYS produzierten SEXPLOITATION CINEMA in Aarschot. Aus dieser Verbindung ging später auch NUDE hervor, an dessen Anfangsphase BRESSANUTTI beteiligt war. SABOTAGE QCQC? gingen mit FRONT 242 auf Europatour. TIM KROKER, damals Schlagzeuger bei SABOTAGE QCQC?, spielte anschließend bis zum Abschiedskonzert am 25. Januar 2025 in Brüssel live Schlagzeug bei FRONT 242.',
-      fr: 'FRONT 242 a pris en charge le management du groupe via ART & STRATEGY. En Belgique, SABOTAGE a travaillé avec DANIEL BRESSANUTTI sur SEXPLOITATION CINEMA, GODDESS et SCHLAGER. BRESSANUTTI et PATRICK CODENYS ont produit SEXPLOITATION CINEMA à Aarschot. Cette relation a ensuite contribué à la naissance de NUDE, auquel BRESSANUTTI a participé à ses débuts. SABOTAGE QCQC? a sillonné l’Europe en tournée avec FRONT 242. TIM KROKER, alors batteur de SABOTAGE QCQC?, a ensuite joué de la batterie sur scène avec FRONT 242 jusqu’à leur dernier concert, le 25 janvier 2025 à Bruxelles.',
-      es: 'FRONT 242 asumió la representación de la banda a través de ART & STRATEGY. En Bélgica, SABOTAGE trabajó con DANIEL BRESSANUTTI en SEXPLOITATION CINEMA, GODDESS y SCHLAGER. BRESSANUTTI y PATRICK CODENYS produjeron SEXPLOITATION CINEMA en Aarschot. La relación contribuyó más tarde a la formación de NUDE, con BRESSANUTTI en sus primeras etapas. SABOTAGE QCQC? salió de gira por Europa con FRONT 242. TIM KROKER, entonces batería de SABOTAGE QCQC?, pasó a tocar la batería en directo con FRONT 242 hasta su último concierto, el 25 de enero de 2025 en Bruselas.',
+    {title: 'FRONT 242 / DANIEL BRESSANUTTI', id: 'front-242', releases: ['sexploitation-cinema', 'goddess'], copy: {
+      en: 'FRONT 242 took over the band’s management through ART & STRATEGY. SABOTAGE QCQC? worked with DANIEL BRESSANUTTI in Belgium on SEXPLOITATION CINEMA, GODDESS and SCHLAGER. BRESSANUTTI and PATRICK CODENYS produced SEXPLOITATION CINEMA in Aarschot. The relationship later contributed to the formation of NUDE, with BRESSANUTTI involved in its early stages. SABOTAGE QCQC? toured Europe with FRONT 242. TIM KROKER, then the drummer in SABOTAGE QCQC?, went on to play live drums for FRONT 242 through their final show in Brussels on 25 January 2025.',
+      de: 'FRONT 242 übernahmen das Management der Band über ART & STRATEGY. In Belgien arbeiteten SABOTAGE QCQC? mit DANIEL BRESSANUTTI an SEXPLOITATION CINEMA, GODDESS und SCHLAGER. BRESSANUTTI und PATRICK CODENYS produzierten SEXPLOITATION CINEMA in Aarschot. Aus dieser Verbindung ging später auch NUDE hervor, an dessen Anfangsphase BRESSANUTTI beteiligt war. SABOTAGE QCQC? gingen mit FRONT 242 auf Europatour. TIM KROKER, damals Schlagzeuger bei SABOTAGE QCQC?, spielte anschließend bis zum Abschiedskonzert am 25. Januar 2025 in Brüssel live Schlagzeug bei FRONT 242.',
+      fr: 'FRONT 242 a pris en charge le management du groupe via ART & STRATEGY. En Belgique, SABOTAGE QCQC? a travaillé avec DANIEL BRESSANUTTI sur SEXPLOITATION CINEMA, GODDESS et SCHLAGER. BRESSANUTTI et PATRICK CODENYS ont produit SEXPLOITATION CINEMA à Aarschot. Cette relation a ensuite contribué à la naissance de NUDE, auquel BRESSANUTTI a participé à ses débuts. SABOTAGE QCQC? a sillonné l’Europe en tournée avec FRONT 242. TIM KROKER, alors batteur de SABOTAGE QCQC?, a ensuite joué de la batterie sur scène avec FRONT 242 jusqu’à leur dernier concert, le 25 janvier 2025 à Bruxelles.',
+      es: 'FRONT 242 asumió la representación de la banda a través de ART & STRATEGY. En Bélgica, SABOTAGE QCQC? trabajó con DANIEL BRESSANUTTI en SEXPLOITATION CINEMA, GODDESS y SCHLAGER. BRESSANUTTI y PATRICK CODENYS produjeron SEXPLOITATION CINEMA en Aarschot. La relación contribuyó más tarde a la formación de NUDE, con BRESSANUTTI en sus primeras etapas. SABOTAGE QCQC? salió de gira por Europa con FRONT 242. TIM KROKER, entonces batería de SABOTAGE QCQC?, pasó a tocar la batería en directo con FRONT 242 hasta su último concierto, el 25 de enero de 2025 en Bruselas.',
     }},
-    {title: 'PANKOW', copy: {
+    {title: 'PANKOW', id: 'pankow', releases: ['annorlunda', 'les-enfants-sauvages'], copy: {
       en: 'PANKOW and SABOTAGE QCQC? played several tours and shows together. Their production work in Florence at BLUE VELVET STUDIO included TUMULTE, ANNORLUNDA and LES ENFANTS SAUVAGES. PANKOW later remixed HEIDENANGST for SEXPLOITATION CINEMA (Limited Edition).',
       de: 'PANKOW und SABOTAGE QCQC? spielten mehrere gemeinsame Touren und Konzerte. Im BLUE VELVET STUDIO in Florenz entstanden TUMULTE, ANNORLUNDA und LES ENFANTS SAUVAGES in Zusammenarbeit mit PANKOW. Später remixten PANKOW HEIDENANGST für SEXPLOITATION CINEMA (Limited Edition).',
       fr: 'PANKOW et SABOTAGE QCQC? ont partagé plusieurs tournées et concerts. Leur travail de production au BLUE VELVET STUDIO, à Florence, a donné naissance à TUMULTE, ANNORLUNDA et LES ENFANTS SAUVAGES. PANKOW a ensuite remixé HEIDENANGST pour SEXPLOITATION CINEMA (Limited Edition).',
@@ -43,19 +43,19 @@ export const collaborations: Chapter[] = [
       es: 'El exintegrante de YELLO participó en la producción de LIBERTINAGE, un capítulo controvertido en la historia discográfica de la banda.',
     }},
     {title: 'DIE WARZAU', copy: {
-      en: 'Work involving JIM MARCUS and VAN CHRISTIE linked SABOTAGE to Chicago’s industrial scene. The archive records DIE WARZAU’s contributions to HEARTS & BOMBS and FREIHEIT.',
-      de: 'Die Arbeit mit JIM MARCUS und VAN CHRISTIE verband SABOTAGE mit der Industrial-Szene in Chicago. Das Archiv verzeichnet Beiträge von DIE WARZAU zu HEARTS & BOMBS und FREIHEIT.',
-      fr: 'Le travail avec JIM MARCUS et VAN CHRISTIE a relié SABOTAGE à la scène industrielle de Chicago. Les archives recensent les contributions de DIE WARZAU à HEARTS & BOMBS et FREIHEIT.',
-      es: 'El trabajo con JIM MARCUS y VAN CHRISTIE conectó a SABOTAGE con la escena industrial de Chicago. El archivo recoge las aportaciones de DIE WARZAU a HEARTS & BOMBS y FREIHEIT.',
+      en: 'Work involving JIM MARCUS and VAN CHRISTIE linked SABOTAGE QCQC? to Chicago’s industrial scene. The archive records DIE WARZAU’s contributions to HEARTS & BOMBS and FREIHEIT.',
+      de: 'Die Arbeit mit JIM MARCUS und VAN CHRISTIE verband SABOTAGE QCQC? mit der Industrial-Szene in Chicago. Das Archiv verzeichnet Beiträge von DIE WARZAU zu HEARTS & BOMBS und FREIHEIT.',
+      fr: 'Le travail avec JIM MARCUS et VAN CHRISTIE a relié SABOTAGE QCQC? à la scène industrielle de Chicago. Les archives recensent les contributions de DIE WARZAU à HEARTS & BOMBS et FREIHEIT.',
+      es: 'El trabajo con JIM MARCUS y VAN CHRISTIE conectó a SABOTAGE QCQC? con la escena industrial de Chicago. El archivo recoge las aportaciones de DIE WARZAU a HEARTS & BOMBS y FREIHEIT.',
     }},
   ]},
   {title: 'REMIXES FOR OTHER ARTISTS', outro: {
-    en: 'SABOTAGE has brought its electronic sound to recordings by artists across industrial and contemporary electronic music. The band has also created unofficial remixes of tracks by GRAUZONE, ZAHO DE SAGAZAN, QUEEN, BONEY M., DORIS TROY, GRANDMASTER FLASH & FURIOUS FIVE and many others.',
-    de: 'SABOTAGE hat den eigenen elektronischen Sound in Aufnahmen aus der Industrial-Szene und der zeitgenössischen elektronischen Musik eingebracht. Die Band hat auch inoffizielle Remixes von Stücken von GRAUZONE, ZAHO DE SAGAZAN, QUEEN, BONEY M., DORIS TROY, GRANDMASTER FLASH & FURIOUS FIVE und vielen anderen gemacht.',
-    fr: 'SABOTAGE a apporté son son électronique à des enregistrements issus de la scène industrielle et de l’électronique contemporaine. Le groupe a également réalisé des remixes non officiels de morceaux de GRAUZONE, ZAHO DE SAGAZAN, QUEEN, BONEY M., DORIS TROY, GRANDMASTER FLASH & FURIOUS FIVE et de bien d’autres artistes.',
-    es: 'SABOTAGE ha llevado su sonido electrónico a grabaciones de la escena industrial y de la música electrónica contemporánea. La banda también ha creado remezclas no oficiales de temas de GRAUZONE, ZAHO DE SAGAZAN, QUEEN, BONEY M., DORIS TROY, GRANDMASTER FLASH & FURIOUS FIVE y muchos otros artistas.',
+    en: 'SABOTAGE QCQC? has brought its electronic sound to recordings by artists across industrial and contemporary electronic music. The band has also created unofficial remixes of tracks by GRAUZONE, ZAHO DE SAGAZAN, QUEEN, BONEY M., DORIS TROY, GRANDMASTER FLASH & FURIOUS FIVE and many others.',
+    de: 'SABOTAGE QCQC? hat den eigenen elektronischen Sound in Aufnahmen aus der Industrial-Szene und der zeitgenössischen elektronischen Musik eingebracht. Die Band hat auch inoffizielle Remixes von Stücken von GRAUZONE, ZAHO DE SAGAZAN, QUEEN, BONEY M., DORIS TROY, GRANDMASTER FLASH & FURIOUS FIVE und vielen anderen gemacht.',
+    fr: 'SABOTAGE QCQC? a apporté son son électronique à des enregistrements issus de la scène industrielle et de l’électronique contemporaine. Le groupe a également réalisé des remixes non officiels de morceaux de GRAUZONE, ZAHO DE SAGAZAN, QUEEN, BONEY M., DORIS TROY, GRANDMASTER FLASH & FURIOUS FIVE et de bien d’autres artistes.',
+    es: 'SABOTAGE QCQC? ha llevado su sonido electrónico a grabaciones de la escena industrial y de la música electrónica contemporánea. La banda también ha creado remezclas no oficiales de temas de GRAUZONE, ZAHO DE SAGAZAN, QUEEN, BONEY M., DORIS TROY, GRANDMASTER FLASH & FURIOUS FIVE y muchos otros artistas.',
   }, entries: [
-    {title: 'KRIEG-B', copy: 'COLD FRAGMENTS — SABOTAGE remix'},
+    {title: 'KRIEG-B', copy: 'COLD FRAGMENTS — SABOTAGE QCQC? remix'},
     {title: 'ALMA MINUIT', copy: 'MON CŒUR — AUBE Mix\nMÉMÉ (feat. SALVA V.) — Dance Version\nPARIS N’EST PAS À VENDRE — ORAGE Remix'},
     {title: 'LACRIMOSA', copy: 'NOT EVERY PAIN HURTS — SABOTAGE QCQC? remix · DURCH NACHT UND FLUT (2002)'},
     {title: 'DISTORTED REALITY', copy: 'FEAR — SABOTAGE QCQC? remix (2003)'},
@@ -73,7 +73,7 @@ export const collaborations: Chapter[] = [
       es: 'Otras colaboraciones de remezcla. La edición y la versión exactas de INTELLIGENCE siguen pendientes de documentación.',
     }},
   ]},
-  {title: 'REMIXES OF SABOTAGE', entries: [
+  {title: 'REMIXES OF SABOTAGE QCQC?', entries: [
     {title: 'APOPTYGMA BERZERK / KMFDM / A SPLIT-SECOND', copy: {
       en: 'STEPHAN GROTH remixed WHO AM I? for ANNORLUNDA. LES ENFANTS SAUVAGES includes the KMFDM remix of TO BE (Stripped Down) and the A SPLIT-SECOND remix of LA PASSION (Split Version). SUB CULTURE RECORDS reissued both releases digitally in 2026.',
       de: 'STEPHAN GROTH remixte WHO AM I? für ANNORLUNDA. LES ENFANTS SAUVAGES enthält den KMFDM-Remix von TO BE (Stripped Down) und den A SPLIT-SECOND-Remix von LA PASSION (Split Version). SUB CULTURE RECORDS legte beide Veröffentlichungen 2026 digital neu auf.',

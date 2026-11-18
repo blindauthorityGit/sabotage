@@ -26,7 +26,7 @@ The flood is not a natural disaster.
 
 It is the moment when what has been held down refuses to stay there.
 
-This is part of the DNA of SABOTAGE: electronic music not as an escape from social reality, but as a force pushing against it.
+This is part of the DNA of SABOTAGE QCQC?: electronic music not as an escape from social reality, but as a force pushing against it.
 
 Physical.
 Confrontational.
@@ -57,7 +57,7 @@ SANS LE BAS, IL N’Y A PAS DE HAUT.
 
 L’inondation n’est pas une catastrophe naturelle. C’est le moment où ce qui a été maintenu en bas refuse d’y rester.
 
-C’est dans l’ADN de SABOTAGE : la musique électronique comme force qui bouscule la réalité sociale.
+C’est dans l’ADN de SABOTAGE QCQC? : la musique électronique comme force qui bouscule la réalité sociale.
 
 Physique.
 Frontale.
@@ -88,7 +88,7 @@ SIN LO DE ABAJO, NO HAY NADA ARRIBA.
 
 La inundación no es un desastre natural. Es el momento en que lo que se ha mantenido abajo se niega a quedarse ahí.
 
-Está en el ADN de SABOTAGE: la música electrónica como una fuerza que se enfrenta a la realidad social.
+Está en el ADN de SABOTAGE QCQC?: la música electrónica como una fuerza que se enfrenta a la realidad social.
 
 Física.
 Confrontativa.
@@ -161,7 +161,7 @@ The plan is to make the historic recordings available digitally in time for the 
 
 FIRST THE VINYL. THEN A BRAND-NEW ALBUM.
 
-On January 15, 2027, EMMO.BIZ Records will release NO BOTTOM - NO TOP, a limited-edition 12-inch vinyl EP featuring two brand-new compositions, THE FLOOD and IMPULS KONTAKT, alongside new interpretations of the SABOTAGE classics SOUVENIR and EWIGKEIT.
+On January 15, 2027, EMMO.BIZ Records will release NO BOTTOM - NO TOP, a limited-edition 12-inch vinyl EP featuring two brand-new compositions, THE FLOOD and IMPULS KONTAKT, alongside new interpretations of the SABOTAGE QCQC? classics SOUVENIR and EWIGKEIT.
 
 But this is only the beginning.
 

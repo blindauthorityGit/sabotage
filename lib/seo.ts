@@ -3,7 +3,8 @@ import {languageHref, languages, tr, type Language} from './language';
 import {credits} from '../app/archive/catalogue';
 
 export const siteUrl = 'https://www.sabotageqcqc.online';
-export const bandName = 'SABOTAGE QCQC?';
+import {bandName} from './band-name';
+export {bandName} from './band-name';
 export type SearchProps = {searchParams: Promise<{lang?: string}>};
 
 export const archiveNames = [...new Set(credits.flatMap(([name]) => name.split(' / ')))];

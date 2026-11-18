@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import LanguageSwitch from '../../components/LanguageSwitch';
+import SiteHeader from '../../components/SiteHeader';
 import {languageHref, readLanguage} from '../../lib/language';
 import {manifestoTitles} from './translations';
 import manifesto from './text.json';
@@ -22,11 +22,12 @@ export default async function Manifesto({searchParams}: {searchParams: Promise<{
   const silence = chapters[3].paragraphs.at(-1);
   const openingPull = chapters[0].paragraphs.at(-1);
   return (
+    <>
+    <SiteHeader lang={lang} path="/manifesto"/>
     <main className="site-content manifesto" lang={lang}>
       <header className="manifesto-header">
         <Link className="textlink" href={languageHref('/#about', lang)}>← SABOTAGE QCQC?</Link>
-        <LanguageSwitch lang={lang} path="/manifesto"/>
-        <p className="eyebrow">{copy.label}</p>
+          <p className="eyebrow">{copy.label}</p>
         <h1 lang="en">{copy.title} <em>{copy.accent}</em></h1>
         <img className="manifesto-symbol" src="/assets/sabotage-symbol.png" alt="" width={1920} height={1920}/>
         <p className="eyebrow">{manifesto.subtitle}</p>
@@ -87,5 +88,6 @@ export default async function Manifesto({searchParams}: {searchParams: Promise<{
         <Link className="textlink" href={languageHref('/#about', lang)}>← {manifestoTitles[lang].back}</Link>
       </footer>
     </main>
+    </>
   );
 }

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import LanguageSwitch from '../../components/LanguageSwitch';
+import SiteHeader from '../../components/SiteHeader';
 import {languageHref, readLanguage, tr} from '../../lib/language';
 
 import {siteMetadata, type SearchProps} from '../../lib/seo';
@@ -13,9 +13,10 @@ export default async function Impressum({searchParams}: {searchParams: Promise<{
   const text = (en: string, de: string, fr: string, es: string) => tr(lang, en, de, fr, es);
 
   return (
+    <>
+    <SiteHeader lang={lang} path="/impressum"/>
     <main className="legal-page" lang={lang}>
       <Link href={languageHref('/', lang)}>← SABOTAGE QCQC?</Link>
-      <LanguageSwitch lang={lang} path="/impressum"/>
       <h1>{text('Legal notice', 'Impressum', 'Mentions légales', 'Aviso legal')}</h1>
       <p>{text(
         'Information pursuant to section 5 of the German Digital Services Act (DDG) and section 18(1) of the Interstate Media Treaty (MStV).',
@@ -63,5 +64,6 @@ export default async function Impressum({searchParams}: {searchParams: Promise<{
         )}</p>
       </section>
     </main>
+    </>
   );
 }

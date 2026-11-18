@@ -10,13 +10,13 @@ export const subCultureNews: NewsItem = {
   imageHeight: 821,
   imageAlt: {en: 'CD covers of Annorlunda and Les Enfants Sauvages', de: 'CD-Cover von Annorlunda und Les Enfants Sauvages'},
   body: {
-    en: `We are pleased to announce that Sub Culture Records have signed a deal with Sabotage QCQC? for the digital release of their back catalogue. The two first releases will appear on Friday the 13th. November, and includes the 1994 EP «Annorlunda» and their 1995 full length album, «Les Enfants Sauvages. The EP includes the early and obscure Apoptygma Berzerk Remix of «Who Am I?» and the full lengther includes collabs with legends like Joachim Witt, Marc Ickx/A Split Second, Paolo Favati/Pankow and Sascha/KMFDM, as well as spearheading their industrial club classic, «Souvenir».
+    en: `We are pleased to announce that Sub Culture Records have signed a deal with SABOTAGE QCQC? for the digital release of their back catalogue. The two first releases will appear on Friday the 13th. November, and includes the 1994 EP «Annorlunda» and their 1995 full length album, «Les Enfants Sauvages. The EP includes the early and obscure Apoptygma Berzerk Remix of «Who Am I?» and the full lengther includes collabs with legends like Joachim Witt, Marc Ickx/A Split Second, Paolo Favati/Pankow and Sascha/KMFDM, as well as spearheading their industrial club classic, «Souvenir».
 
-Sabotage QCQC? (Isabelle/Marc/Detlef) and DJ Diva aka Gue Gamle Horst Sackreuter, were essential in getting Apoptygma Berzerk over for our very first gig in Germany in Gelsenkirchen (Dark Market/Kaue) 10th. April 1994, as well as on the November fall tour of 1994 where Sabotage was the support act on all these dates! That was our first German adventures and it set a tone and laid the grounds for what was later to become the #1 market for APOP. We are forever grateful, and to be working together again now after over 30 years is very cool!
+SABOTAGE QCQC? (Isabelle/Marc/Detlef) and DJ Diva aka Gue Gamle Horst Sackreuter, were essential in getting Apoptygma Berzerk over for our very first gig in Germany in Gelsenkirchen (Dark Market/Kaue) 10th. April 1994, as well as on the November fall tour of 1994 where SABOTAGE QCQC? was the support act on all these dates! That was our first German adventures and it set a tone and laid the grounds for what was later to become the #1 market for APOP. We are forever grateful, and to be working together again now after over 30 years is very cool!
 
 Some brilliant cover design here too from our favorite man, Halvor Bodin!
 
-Keep watching this space for more digital Sabotage!`,
+Keep watching this space for more digital SABOTAGE QCQC?!`,
   },
 };
 
@@ -32,25 +32,25 @@ export const emmoBizNews: NewsItem = {
     en: 'Cover, insert, red vinyl and merchandise for NO BOTTOM - NO TOP',
   },
   body: {
-    de: `**SABOTAGE IS BACK!**
+    de: `**SABOTAGE QCQC? IS BACK!**
 
 **NO BOTTOM - NO TOP | Limited Vinyl Edition | 15.01.2027**
 
 **Die Helden des elektronischen Undergrounds der 90er sind zurück. Und sie haben nichts von ihrer Energie verloren. Im Gegenteil.**
 
-Wer erinnert sich nicht an Clubklassiker wie **SOUVENIR, HEIDENANGST oder LES FLEURS DU MAL**? Mit ihrem eigenständigen Mix aus Electronic Body Music, Industrial und elektronischem Punk hinterließen SABOTAGE in den 90er-Jahren ihre Spuren auf den Tanzflächen der Szene.
+Wer erinnert sich nicht an Clubklassiker wie **SOUVENIR, HEIDENANGST oder LES FLEURS DU MAL**? Mit ihrem eigenständigen Mix aus Electronic Body Music, Industrial und elektronischem Punk hinterließen SABOTAGE QCQC? in den 90er-Jahren ihre Spuren auf den Tanzflächen der Szene.
 
 Auch danach blieb es alles andere als still. Es folgten Remixarbeiten für internationale Künstler, darunter Acts aus dem EMMO.BIZ-Umfeld wie **CALVA Y NADA und KRIEGB**, sowie musikalische Ausflüge in Werbung, Filmmusik und weitere Projekte wie NUDE.
 
-Jetzt kehren SABOTAGE zu ihren elektronischen Wurzeln zurück. Allerdings nicht, um die Vergangenheit zu wiederholen.
+Jetzt kehren SABOTAGE QCQC? zu ihren elektronischen Wurzeln zurück. Allerdings nicht, um die Vergangenheit zu wiederholen.
 
 **Der Sound von heute ist kompromissloser, druckvoller und tanzbarer denn je.** Treibende Sequencer, brachiale Beats, aggressive Synthesizer und hypnotische Bassläufe treffen auf die rohe Energie des frühen EBM und die Produktionsmöglichkeiten der Gegenwart. Zwischen Electro-Punk, Post-Industrial und Acid entsteht ein Sound, der gleichermaßen vertraut und radikal neu klingt.
 
-Und SABOTAGE haben etwas zu sagen. Ihre Musik ist nicht nur für die Tanzfläche gemacht, sondern auch als Ausdruck von Widerstand, gesellschaftlicher Kritik und dem Aufbegehren gegen Macht, Ungleichheit und autoritäre Strukturen.
+Und SABOTAGE QCQC? haben etwas zu sagen. Ihre Musik ist nicht nur für die Tanzfläche gemacht, sondern auch als Ausdruck von Widerstand, gesellschaftlicher Kritik und dem Aufbegehren gegen Macht, Ungleichheit und autoritäre Strukturen.
 
 **NO BOTTOM - NO TOP** bringt diese Haltung auf den Punkt.
 
-Die neue 12″-Vinyl-EP vereint mit **THE FLOOD** und **IMPULS KONTAKT** zwei brandneue Produktionen mit radikal überarbeiteten Versionen der SABOTAGE-Klassiker **SOUVENIR** und **EWIGKEIT**. Vier Tracks zwischen Vergangenheit und Zukunft, zwischen Clubkultur und Aufstand.
+Die neue 12″-Vinyl-EP vereint mit **THE FLOOD** und **IMPULS KONTAKT** zwei brandneue Produktionen mit radikal überarbeiteten Versionen der SABOTAGE QCQC?-Klassiker **SOUVENIR** und **EWIGKEIT**. Vier Tracks zwischen Vergangenheit und Zukunft, zwischen Clubkultur und Aufstand.
 
 **Tracklist**
 
@@ -61,7 +61,7 @@ B2 – EWIGKEIT (Reprise)
 
 Die Veröffentlichung erscheint am **15. Januar 2027** bei **EMMO.BIZ Records** als limitierte 12″-Vinyl-Edition in schwarzem und rotem Vinyl.
 
-**SABOTAGE IS BACK.**
+**SABOTAGE QCQC? IS BACK.**
 **LOUDER. HARDER. MORE RELEVANT THAN EVER.**`,
   },
 };
@@ -82,7 +82,7 @@ export const secretTracksNews: NewsItem = {
   },
   links: [{label: secretTracksUrl, url: secretTracksUrl, enabled: true}],
   body: {
-    en: `Not everything from **SABOTAGE** or **MARC2U** makes it onto an official release.
+    en: `Not everything from **SABOTAGE QCQC?** or **MARC2U** makes it onto an official release.
 
 Some tracks stay underground. Unreleased versions, remixes, experiments and unexpected musical discoveries.
 
@@ -100,23 +100,23 @@ ${secretTracksUrl}
 
 export const coldFragmentsNews: NewsItem = {
   _id: 'cold-fragments-remix-2026-10-10',
-  title: 'SABOTAGE × KRIEG B — REMIX COMPLETE!',
+  title: 'SABOTAGE QCQC? × KRIEG B — REMIX COMPLETE!',
   date: '2026-10-10',
   imageUrl: '/assets/cold-fragments-news.webp',
   imageWidth: 1122,
   imageHeight: 1402,
   imageAlt: {
-    en: 'Poster for the SABOTAGE remix of Cold Fragments by KRIEG B',
-    de: 'Poster zum SABOTAGE-Remix von Cold Fragments von KRIEG B',
+    en: 'Poster for the SABOTAGE QCQC? remix of Cold Fragments by KRIEG B',
+    de: 'Poster zum SABOTAGE QCQC?-Remix von Cold Fragments von KRIEG B',
   },
   body: {
     en: `We've just finished our remix of **KRIEG B's „COLD FRAGMENTS“!**
 
-We gave the original track a subtle SABOTAGE treatment — adding our signature electronic edge, a little more pressure and atmosphere, while keeping the character of the original intact.
+We gave the original track a subtle SABOTAGE QCQC? treatment — adding our signature electronic edge, a little more pressure and atmosphere, while keeping the character of the original intact.
 
 To make things even more interesting, **ISABELLE** contributed her distinctive vocals, bringing an additional dimension to the track.
 
-No radical reconstruction. Just a little SABOTAGE DNA injected into KRIEG B's sound.
+No radical reconstruction. Just a little SABOTAGE QCQC? DNA injected into KRIEG B's sound.
 
 The remix is now complete and will be featured on the forthcoming album **CONCRETE DOMINION**, to be released on EMMO.BIZ.
 
@@ -138,13 +138,13 @@ export const monCoeurNews: NewsItem = {
   body: {
     en: `Another remix completed!
 
-SABOTAGE has just finished a remix for French newcomer **ALMA MINUIT**, giving her track **“MON CŒUR”** a new electronic interpretation.
+SABOTAGE QCQC? has just finished a remix for French newcomer **ALMA MINUIT**, giving her track **“MON CŒUR”** a new electronic interpretation.
 
-The **AUBE Mix** blends Alma's warm, melancholic vocals with the unmistakable electronic pulse of SABOTAGE — adding darker textures, driving rhythms and a subtle industrial edge without losing the intimacy of the original.
+The **AUBE Mix** blends Alma's warm, melancholic vocals with the unmistakable electronic pulse of SABOTAGE QCQC? — adding darker textures, driving rhythms and a subtle industrial edge without losing the intimacy of the original.
 
 A meeting of French melancholy and German electronic underground.
 
-**MON CŒUR — AUBE Mix by SABOTAGE**
+**MON CŒUR — AUBE Mix by SABOTAGE QCQC?**
 
 ${monCoeurUrl}`,
   },
@@ -154,7 +154,7 @@ const memeUrl = 'https://music.apple.com/de/album/meme-single/6829049572';
 
 export const memeNews: NewsItem = {
   _id: 'meme-dance-mix-2026-10-16',
-  title: 'SABOTAGE × ALMA MINUIT — ANOTHER REMIX COMPLETE!',
+  title: 'SABOTAGE QCQC? × ALMA MINUIT — ANOTHER REMIX COMPLETE!',
   date: '2026-10-16',
   imageUrl: '/assets/meme-news.webp',
   imageWidth: 1254,
@@ -164,11 +164,11 @@ export const memeNews: NewsItem = {
   body: {
     en: `**MÉMÉ (feat. SALVA V.) — DANCE MIX**
 
-Following our AUBE Mix of “MON CŒUR”, SABOTAGE has completed another remix for French newcomer **ALMA MINUIT**.
+Following our AUBE Mix of “MON CŒUR”, SABOTAGE QCQC? has completed another remix for French newcomer **ALMA MINUIT**.
 
 This time, it's **“MÉMÉ” featuring SALVA V.** — reworked into a more dancefloor-oriented version.
 
-Driving electronic rhythms, a stronger groove and a touch of SABOTAGE's unmistakable underground energy give the track a new direction, while keeping its original French character intact.
+Driving electronic rhythms, a stronger groove and a touch of SABOTAGE QCQC?'s unmistakable underground energy give the track a new direction, while keeping its original French character intact.
 
 A little less melancholy. A little more movement.
 
@@ -201,7 +201,7 @@ export const orageRemixNews: NewsItem = {
 
 Another collaboration, another remix!
 
-SABOTAGE has created the **ORAGE REMIX** for French electronic newcomer **ALMA MINUIT** and her latest release, “PARIS N'EST PAS À VENDRE”.
+SABOTAGE QCQC? has created the **ORAGE REMIX** for French electronic newcomer **ALMA MINUIT** and her latest release, “PARIS N'EST PAS À VENDRE”.
 
 *Orage* means storm in French — and that's exactly where this remix takes us.
 
@@ -221,7 +221,7 @@ ${orageRemixUrl}
 
 export const enOrdreNews: NewsItem = {
   _id: 'en-ordre-2026-11-14',
-  title: 'SABOTAGE – EN ORDRE',
+  title: 'SABOTAGE QCQC? – EN ORDRE',
   date: '2026-11-14',
   imageUrl: '/assets/en-ordre-news.webp',
   imageWidth: 1254,
@@ -239,7 +239,7 @@ export const enOrdreNews: NewsItem = {
 
 Originally released on our debut *TUMULTE*, **EN ORDRE** returns more than three decades later — reconstructed, reinterpreted and pushed into new sonic territory.
 
-Three radically different interpretations of a SABOTAGE classic:
+Three radically different interpretations of a SABOTAGE QCQC? classic:
 
 **CLASH MIX** – Raw energy. Industrial aggression. Maximum impact.
 
@@ -251,7 +251,7 @@ And there's more.
 
 The release also features **THE FLOOD (RIOT MIX)** — an alternative interpretation of our brand-new track THE FLOOD.
 
-Four mixes. Two generations of SABOTAGE. One uncompromising attitude.
+Four mixes. Two generations of SABOTAGE QCQC?. One uncompromising attitude.
 
 We don't believe in nostalgia. We believe in evolution.
 
@@ -265,7 +265,7 @@ SOUND. RESISTANCE. DISORIENTATION. NO BORDERS.`,
 
 Ursprünglich auf unserem Debüt *TUMULTE* erschienen, kehrt **EN ORDRE** nach mehr als drei Jahrzehnten zurück — neu aufgebaut, neu interpretiert und klanglich weitergetrieben.
 
-Drei grundverschiedene Interpretationen eines SABOTAGE-Klassikers:
+Drei grundverschiedene Interpretationen eines SABOTAGE QCQC?-Klassikers:
 
 **CLASH MIX** – Rohe Energie. Industrielle Aggression. Maximale Wucht.
 
@@ -277,7 +277,7 @@ Und es gibt noch mehr.
 
 Mit dabei ist **THE FLOOD (RIOT MIX)** — eine alternative Interpretation unseres brandneuen Tracks THE FLOOD.
 
-Vier Mixe. Zwei Generationen SABOTAGE. Eine kompromisslose Haltung.
+Vier Mixe. Zwei Generationen SABOTAGE QCQC?. Eine kompromisslose Haltung.
 
 Wir glauben nicht an Nostalgie. Wir glauben an Weiterentwicklung.
 
@@ -291,7 +291,7 @@ SOUND. RESISTANCE. DISORIENTATION. NO BORDERS.`,
 
 Paru à l’origine sur notre premier album *TUMULTE*, **EN ORDRE** revient plus de trois décennies plus tard, reconstruit, réinterprété et poussé vers de nouveaux territoires sonores.
 
-Trois interprétations radicalement différentes d’un classique de SABOTAGE :
+Trois interprétations radicalement différentes d’un classique de SABOTAGE QCQC? :
 
 **CLASH MIX** – Énergie brute. Agressivité industrielle. Impact maximal.
 
@@ -303,7 +303,7 @@ Et ce n’est pas tout.
 
 La sortie comprend aussi **THE FLOOD (RIOT MIX)**, une autre interprétation de notre tout nouveau titre THE FLOOD.
 
-Quatre mixes. Deux générations de SABOTAGE. Une attitude sans compromis.
+Quatre mixes. Deux générations de SABOTAGE QCQC?. Une attitude sans compromis.
 
 Nous ne croyons pas à la nostalgie. Nous croyons à l’évolution.
 
@@ -317,7 +317,7 @@ SOUND. RESISTANCE. DISORIENTATION. NO BORDERS.`,
 
 Publicado originalmente en nuestro debut *TUMULTE*, **EN ORDRE** regresa más de tres décadas después, reconstruido, reinterpretado y llevado a nuevos territorios sonoros.
 
-Tres interpretaciones radicalmente distintas de un clásico de SABOTAGE:
+Tres interpretaciones radicalmente distintas de un clásico de SABOTAGE QCQC?:
 
 **CLASH MIX** – Energía cruda. Agresividad industrial. Máximo impacto.
 
@@ -329,7 +329,7 @@ Y hay más.
 
 El lanzamiento también incluye **THE FLOOD (RIOT MIX)**, una interpretación alternativa de nuestro nuevo tema THE FLOOD.
 
-Cuatro mezclas. Dos generaciones de SABOTAGE. Una actitud sin concesiones.
+Cuatro mezclas. Dos generaciones de SABOTAGE QCQC?. Una actitud sin concesiones.
 
 No creemos en la nostalgia. Creemos en la evolución.
 
@@ -368,7 +368,7 @@ One of the film's most striking images became the starting point for the song: w
 
 The same event. Two completely different realities.
 
-For SABOTAGE, this is more than a cinematic reference. It reflects a society in which wealth and power increasingly concentrate at the top, while those who keep the system running are too often ignored, exploited or left behind.
+For SABOTAGE QCQC?, this is more than a cinematic reference. It reflects a society in which wealth and power increasingly concentrate at the top, while those who keep the system running are too often ignored, exploited or left behind.
 
 **WE HOLD YOU UP. YOU KEEP US DOWN.**
 
@@ -404,7 +404,7 @@ Eines der eindrücklichsten Bilder des Films war der Ausgangspunkt für den Song
 
 Dasselbe Ereignis. Zwei völlig unterschiedliche Wirklichkeiten.
 
-Für SABOTAGE ist das mehr als eine filmische Referenz. Es steht für eine Gesellschaft, in der sich Reichtum und Macht zunehmend an der Spitze konzentrieren, während diejenigen, die das System am Laufen halten, allzu oft übersehen, ausgebeutet oder zurückgelassen werden.
+Für SABOTAGE QCQC? ist das mehr als eine filmische Referenz. Es steht für eine Gesellschaft, in der sich Reichtum und Macht zunehmend an der Spitze konzentrieren, während diejenigen, die das System am Laufen halten, allzu oft übersehen, ausgebeutet oder zurückgelassen werden.
 
 **WE HOLD YOU UP. YOU KEEP US DOWN.**
 
@@ -440,7 +440,7 @@ L’une des images les plus marquantes du film a donné naissance au morceau : u
 
 Un même événement. Deux réalités totalement différentes.
 
-Pour SABOTAGE, cette référence au cinéma traduit une réalité sociale : la richesse et le pouvoir se concentrent toujours plus au sommet, tandis que ceux qui font tourner le système sont trop souvent ignorés, exploités ou laissés pour compte.
+Pour SABOTAGE QCQC?, cette référence au cinéma traduit une réalité sociale : la richesse et le pouvoir se concentrent toujours plus au sommet, tandis que ceux qui font tourner le système sont trop souvent ignorés, exploités ou laissés pour compte.
 
 **WE HOLD YOU UP. YOU KEEP US DOWN.**
 
@@ -476,7 +476,7 @@ Una de las imágenes más impactantes de la película dio origen al tema: para l
 
 Un mismo suceso. Dos realidades completamente distintas.
 
-Para SABOTAGE, la referencia cinematográfica refleja una sociedad en la que la riqueza y el poder se concentran cada vez más arriba, mientras quienes sostienen el sistema quedan demasiadas veces ignorados, explotados o abandonados a su suerte.
+Para SABOTAGE QCQC?, la referencia cinematográfica refleja una sociedad en la que la riqueza y el poder se concentran cada vez más arriba, mientras quienes sostienen el sistema quedan demasiadas veces ignorados, explotados o abandonados a su suerte.
 
 **WE HOLD YOU UP. YOU KEEP US DOWN.**
 
@@ -529,13 +529,13 @@ Another chapter in the history of German electronic pioneers **SABOTAGE QCQC?** 
 
 On **November 20, 2026**, *GODDESS* is digitally re-released through **Sub Culture Records (Norway)**.
 
-Like *SEXPLOITATION CINEMA* and *SCHLAGER*, *GODDESS* emerged during a remarkable period in the band's history, when Belgian EBM pioneers **FRONT 242** had taken over the management of SABOTAGE.
+Like *SEXPLOITATION CINEMA* and *SCHLAGER*, *GODDESS* emerged during a remarkable period in the band's history, when Belgian EBM pioneers **FRONT 242** had taken over the management of SABOTAGE QCQC?.
 
 The recordings were produced in Belgium in close collaboration with **Daniel Bressanutti (FRONT 242)**, marking an important creative connection between the German and Belgian electronic music scenes.
 
 The visual concept continued the distinctive artistic approach of this period, featuring photography by **Wilfrid Moulin** and illustrations by **Mauro Chiarotto**. Guest contributors to this production era included Italian experimental musician **Teho Teardo**.
 
-The collaboration with Daniel Bressanutti would also have a lasting impact beyond SABOTAGE: it eventually led to the formation of **NUDE**, a subsequent electronic music project in which Bressanutti was involved during its early stages.
+The collaboration with Daniel Bressanutti would also have a lasting impact beyond SABOTAGE QCQC?: it eventually led to the formation of **NUDE**, a subsequent electronic music project in which Bressanutti was involved during its early stages.
 
 More than three decades later, *GODDESS* offers another opportunity to rediscover this fascinating period of European electronic music history.
 
@@ -546,13 +546,13 @@ Ein weiteres Kapitel aus der Geschichte der deutschen Elektronikpioniere **SABOT
 
 Am **20. November 2026** erscheint *GODDESS* digital bei **Sub Culture Records (Norwegen)**.
 
-Wie *SEXPLOITATION CINEMA* und *SCHLAGER* entstand *GODDESS* in einer besonderen Phase der Bandgeschichte, als die belgischen EBM-Pioniere **FRONT 242** das Management von SABOTAGE übernommen hatten.
+Wie *SEXPLOITATION CINEMA* und *SCHLAGER* entstand *GODDESS* in einer besonderen Phase der Bandgeschichte, als die belgischen EBM-Pioniere **FRONT 242** das Management von SABOTAGE QCQC? übernommen hatten.
 
 Die Aufnahmen wurden in Belgien in enger Zusammenarbeit mit **Daniel Bressanutti (FRONT 242)** produziert. Damit entstand eine wichtige kreative Verbindung zwischen der deutschen und der belgischen Elektronikszene.
 
 Das visuelle Konzept führte die eigenständige künstlerische Linie jener Zeit mit Fotografien von **Wilfrid Moulin** und Illustrationen von **Mauro Chiarotto** fort. Zu den Gästen dieser Produktionsphase gehörte der italienische Experimental-Musiker **Teho Teardo**.
 
-Die Zusammenarbeit mit Daniel Bressanutti wirkte über SABOTAGE hinaus. Aus ihr ging später das Elektronikprojekt **NUDE** hervor, an dem Bressanutti in der Anfangsphase mitwirkte.
+Die Zusammenarbeit mit Daniel Bressanutti wirkte über SABOTAGE QCQC? hinaus. Aus ihr ging später das Elektronikprojekt **NUDE** hervor, an dem Bressanutti in der Anfangsphase mitwirkte.
 
 Mehr als drei Jahrzehnte später bietet *GODDESS* die Gelegenheit, diese Phase der europäischen elektronischen Musikgeschichte wiederzuentdecken.
 
@@ -563,13 +563,13 @@ Un nouveau chapitre de l’histoire des pionniers allemands de la musique élect
 
 Le **20 novembre 2026**, *GODDESS* ressort en numérique chez **Sub Culture Records (Norvège)**.
 
-Comme *SEXPLOITATION CINEMA* et *SCHLAGER*, *GODDESS* est né à une époque marquante de l’histoire du groupe, quand les pionniers belges de l’EBM **FRONT 242** avaient repris le management de SABOTAGE.
+Comme *SEXPLOITATION CINEMA* et *SCHLAGER*, *GODDESS* est né à une époque marquante de l’histoire du groupe, quand les pionniers belges de l’EBM **FRONT 242** avaient repris le management de SABOTAGE QCQC?.
 
 Les enregistrements ont été produits en Belgique en étroite collaboration avec **Daniel Bressanutti (FRONT 242)**, créant un lien artistique important entre les scènes électroniques allemande et belge.
 
 Le concept visuel prolongeait la démarche artistique de cette période, avec des photographies de **Wilfrid Moulin** et des illustrations de **Mauro Chiarotto**. Le musicien expérimental italien **Teho Teardo** figurait parmi les invités de cette période de production.
 
-La collaboration avec Daniel Bressanutti a eu des effets durables au-delà de SABOTAGE. Elle a débouché sur la création de **NUDE**, un projet de musique électronique auquel Bressanutti a participé à ses débuts.
+La collaboration avec Daniel Bressanutti a eu des effets durables au-delà de SABOTAGE QCQC?. Elle a débouché sur la création de **NUDE**, un projet de musique électronique auquel Bressanutti a participé à ses débuts.
 
 Plus de trois décennies après, *GODDESS* offre l’occasion de redécouvrir cette période de l’histoire de la musique électronique européenne.
 
@@ -580,13 +580,13 @@ Otro capítulo de la historia de **SABOTAGE QCQC?**, pioneros alemanes de la mú
 
 El **20 de noviembre de 2026**, *GODDESS* se reedita en formato digital a través de **Sub Culture Records (Noruega)**.
 
-Como *SEXPLOITATION CINEMA* y *SCHLAGER*, *GODDESS* nació en una etapa singular de la historia de la banda, cuando los pioneros belgas del EBM **FRONT 242** habían asumido la representación de SABOTAGE.
+Como *SEXPLOITATION CINEMA* y *SCHLAGER*, *GODDESS* nació en una etapa singular de la historia de la banda, cuando los pioneros belgas del EBM **FRONT 242** habían asumido la representación de SABOTAGE QCQC?.
 
 Las grabaciones se produjeron en Bélgica en estrecha colaboración con **Daniel Bressanutti (FRONT 242)**, lo que estableció un vínculo creativo importante entre las escenas electrónicas alemana y belga.
 
 El concepto visual siguió la línea artística de aquella época, con fotografías de **Wilfrid Moulin** e ilustraciones de **Mauro Chiarotto**. Entre los invitados de aquella etapa de producción estaba el músico experimental italiano **Teho Teardo**.
 
-La colaboración con Daniel Bressanutti tuvo un impacto duradero más allá de SABOTAGE. Dio lugar a **NUDE**, un proyecto posterior de música electrónica en el que Bressanutti participó durante sus primeros pasos.
+La colaboración con Daniel Bressanutti tuvo un impacto duradero más allá de SABOTAGE QCQC?. Dio lugar a **NUDE**, un proyecto posterior de música electrónica en el que Bressanutti participó durante sus primeros pasos.
 
 Más de tres décadas después, *GODDESS* ofrece la oportunidad de redescubrir esta etapa de la historia de la música electrónica europea.
 
@@ -620,7 +620,7 @@ export const sexploitationCinemaNews: NewsItem = {
 
 On **November 23, 2026**, another chapter of European electronic music history returns: *SEXPLOITATION CINEMA* by **SABOTAGE QCQC?**, digitally re-released through **Sub Culture Records (Norway)**.
 
-The album originates from a particularly fascinating period in the band's history, when Belgian EBM pioneers **FRONT 242** had taken over the management of SABOTAGE.
+The album originates from a particularly fascinating period in the band's history, when Belgian EBM pioneers **FRONT 242** had taken over the management of SABOTAGE QCQC?.
 
 During this era, the band worked in Belgium alongside **Daniel Bressanutti (FRONT 242)**, producing *SEXPLOITATION CINEMA*, *GODDESS* and *SCHLAGER* — three releases reflecting the creative exchange between the German and Belgian electronic music scenes.
 
@@ -628,7 +628,7 @@ The visual identity was equally distinctive. As with *LES ENFANTS SAUVAGES*, pho
 
 The recordings also featured guest musicians, including Italian experimental artist **Teho Teardo**.
 
-Provocative, unconventional and rooted in the experimental spirit of the 1990s, *SEXPLOITATION CINEMA* documents an important period in SABOTAGE's musical evolution.
+Provocative, unconventional and rooted in the experimental spirit of the 1990s, *SEXPLOITATION CINEMA* documents an important period in SABOTAGE QCQC?'s musical evolution.
 
 More than three decades later, the album becomes available to a new generation of listeners.
 
@@ -639,7 +639,7 @@ ${sexploitationCinemaArticle.en}`,
 
 Am **23. November 2026** kehrt ein weiteres Kapitel europäischer Elektronikgeschichte zurück: *SEXPLOITATION CINEMA* von **SABOTAGE QCQC?** wird bei **Sub Culture Records (Norwegen)** digital wiederveröffentlicht.
 
-Das Album stammt aus einer besonderen Phase der Bandgeschichte, als die belgischen EBM-Pioniere **FRONT 242** das Management von SABOTAGE übernommen hatten.
+Das Album stammt aus einer besonderen Phase der Bandgeschichte, als die belgischen EBM-Pioniere **FRONT 242** das Management von SABOTAGE QCQC? übernommen hatten.
 
 In dieser Zeit arbeitete die Band in Belgien mit **Daniel Bressanutti (FRONT 242)** zusammen. Dabei entstanden *SEXPLOITATION CINEMA*, *GODDESS* und *SCHLAGER*. Die drei Veröffentlichungen spiegeln den kreativen Austausch zwischen der deutschen und der belgischen Elektronikszene wider.
 
@@ -647,7 +647,7 @@ Ebenso eigenständig war die visuelle Gestaltung. Wie bei *LES ENFANTS SAUVAGES*
 
 An den Aufnahmen wirkten auch Gastmusiker mit, darunter der italienische Experimental-Musiker **Teho Teardo**.
 
-Provokant, unkonventionell und im experimentellen Geist der 1990er verwurzelt, dokumentiert *SEXPLOITATION CINEMA* eine wichtige Phase in der musikalischen Entwicklung von SABOTAGE.
+Provokant, unkonventionell und im experimentellen Geist der 1990er verwurzelt, dokumentiert *SEXPLOITATION CINEMA* eine wichtige Phase in der musikalischen Entwicklung von SABOTAGE QCQC?.
 
 Mehr als drei Jahrzehnte später wird das Album einer neuen Generation von Hörerinnen und Hörern zugänglich.
 
@@ -658,7 +658,7 @@ ${sexploitationCinemaArticle.de}`,
 
 Le **23 novembre 2026**, un autre chapitre de l’histoire de la musique électronique européenne refait surface : *SEXPLOITATION CINEMA* de **SABOTAGE QCQC?** ressort en numérique chez **Sub Culture Records (Norvège)**.
 
-L’album remonte à une période marquante de l’histoire du groupe, quand les pionniers belges de l’EBM **FRONT 242** avaient repris le management de SABOTAGE.
+L’album remonte à une période marquante de l’histoire du groupe, quand les pionniers belges de l’EBM **FRONT 242** avaient repris le management de SABOTAGE QCQC?.
 
 À cette époque, le groupe a travaillé en Belgique aux côtés de **Daniel Bressanutti (FRONT 242)** pour produire *SEXPLOITATION CINEMA*, *GODDESS* et *SCHLAGER*. Ces trois sorties témoignent des échanges créatifs entre les scènes électroniques allemande et belge.
 
@@ -666,7 +666,7 @@ L’identité visuelle était tout aussi singulière. Comme pour *LES ENFANTS SA
 
 Les enregistrements ont également accueilli des musiciens invités, dont l’artiste expérimental italien **Teho Teardo**.
 
-Provocateur, atypique et ancré dans l’esprit expérimental des années 1990, *SEXPLOITATION CINEMA* témoigne d’une période importante dans l’évolution musicale de SABOTAGE.
+Provocateur, atypique et ancré dans l’esprit expérimental des années 1990, *SEXPLOITATION CINEMA* témoigne d’une période importante dans l’évolution musicale de SABOTAGE QCQC?.
 
 Plus de trois décennies plus tard, une nouvelle génération peut découvrir l’album.
 
@@ -677,7 +677,7 @@ ${sexploitationCinemaArticle.fr}`,
 
 El **23 de noviembre de 2026** regresa otro capítulo de la historia de la música electrónica europea: *SEXPLOITATION CINEMA*, de **SABOTAGE QCQC?**, se reedita en formato digital a través de **Sub Culture Records (Noruega)**.
 
-El álbum nació en una etapa singular de la historia de la banda, cuando los pioneros belgas del EBM **FRONT 242** habían asumido la representación de SABOTAGE.
+El álbum nació en una etapa singular de la historia de la banda, cuando los pioneros belgas del EBM **FRONT 242** habían asumido la representación de SABOTAGE QCQC?.
 
 En aquella época, la banda trabajó en Bélgica junto a **Daniel Bressanutti (FRONT 242)** en la producción de *SEXPLOITATION CINEMA*, *GODDESS* y *SCHLAGER*. Los tres lanzamientos reflejan el intercambio creativo entre las escenas electrónicas alemana y belga.
 
@@ -685,7 +685,7 @@ La identidad visual era igual de singular. Como en *LES ENFANTS SAUVAGES*, las f
 
 En las grabaciones también participaron músicos invitados, entre ellos el artista experimental italiano **Teho Teardo**.
 
-Provocador, poco convencional y arraigado en el espíritu experimental de los noventa, *SEXPLOITATION CINEMA* documenta una etapa importante en la evolución musical de SABOTAGE.
+Provocador, poco convencional y arraigado en el espíritu experimental de los noventa, *SEXPLOITATION CINEMA* documenta una etapa importante en la evolución musical de SABOTAGE QCQC?.
 
 Más de tres décadas después, el álbum queda al alcance de una nueva generación de oyentes.
 

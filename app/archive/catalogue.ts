@@ -12,8 +12,8 @@ export const roles: Record<string, Record<Language, string>> = {
   management: {en:'Management', de:'Management', fr:'Management', es:'Representación'},
   relatedRemix: {en:'Remix for a related project', de:'Remix für ein Folgeprojekt', fr:'Remix pour un projet associé', es:'Remezcla para un proyecto relacionado'},
   label: {en:'Record label', de:'Plattenlabel', fr:'Label discographique', es:'Sello discográfico'},
-  incoming: {en:'Remix for SABOTAGE', de:'Remix für SABOTAGE', fr:'Remix pour SABOTAGE', es:'Remix para SABOTAGE'},
-  outgoing: {en:'Remix by SABOTAGE', de:'Remix von SABOTAGE', fr:'Remix par SABOTAGE', es:'Remix de SABOTAGE'},
+  incoming: {en:'Remix for SABOTAGE QCQC?', de:'Remix für SABOTAGE QCQC?', fr:'Remix pour SABOTAGE QCQC?', es:'Remix para SABOTAGE QCQC?'},
+  outgoing: {en:'Remix by SABOTAGE QCQC?', de:'Remix von SABOTAGE QCQC?', fr:'Remix par SABOTAGE QCQC?', es:'Remix de SABOTAGE QCQC?'},
   production: {en:'Production', de:'Produktion', fr:'Production', es:'Producción'},
   tour: {en:'Shared tour', de:'Gemeinsame Tour', fr:'Tournée commune', es:'Gira conjunta'},
   open: {en:'Exact credit pending', de:'Genauer Credit offen', fr:'Crédit exact à préciser', es:'Crédito exacto por confirmar'},
@@ -31,7 +31,7 @@ export const roles: Record<string, Record<Language, string>> = {
 
 export const credits = [
   ['PAOLO FAVATI / MAURIZIO FASOLO / FEDERICO PANERO', 'TUMULTE · Florence', 'production'],
-  ['KRIEG-B', 'COLD FRAGMENTS — SABOTAGE REMIX', 'outgoing'],
+  ['KRIEG-B', 'COLD FRAGMENTS — SABOTAGE QCQC? REMIX', 'outgoing'],
   ['ALMA MINUIT', 'MON CŒUR — AUBE MIX', 'outgoing'],
   ['ALMA MINUIT / SALVA V.', 'MÉMÉ — DANCE VERSION', 'outgoing'],
   ['ALMA MINUIT', 'PARIS N’EST PAS À VENDRE — ORAGE REMIX', 'outgoing'],
@@ -55,7 +55,7 @@ export const credits = [
   ['BETON TAPES', '', 'tape'],
   ['FRONT 242 / ART & STRATEGY', 'SABOTAGE QCQC?', 'management'],
   ['FRONT 242 / DANIEL BRESSANUTTI / PATRICK CODENYS', 'SEXPLOITATION CINEMA', 'production'],
-  ['MEATHEAD / DIVE / TEMPLEBEAT / SABOTAGE', 'Ebola Is In Town', 'tour'],
+  ['MEATHEAD / DIVE / TEMPLEBEAT / SABOTAGE QCQC?', 'Ebola Is In Town', 'tour'],
   ['Teho Teardo / MEATHEAD', 'SEXPLOITATION CINEMA', 'guest'],
   ['CARLOS PERÓN', 'LIBERTINAGE', 'production'],
   ['AIBOFORCEN / Benoit Blanchart', '', 'open'],
@@ -82,5 +82,5 @@ export const credits = [
   ['Marco Casaglia', 'TUMULTE', 'editing'],
   ['Tim Kroker', 'ACOUSTIC COSTUMES', 'performance'],
   ['Andy Sutcliffe', 'ACOUSTIC COSTUMES', 'mastering'],
-  ['SABOTAGE', 'LE SABOMARCH (1995) · Souvenir / La Passion / My Presence', 'tape'],
+  ['SABOTAGE QCQC?', 'LE SABOMARCH (1995) · Souvenir / La Passion / My Presence', 'tape'],
 ];

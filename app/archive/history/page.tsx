@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import LanguageSwitch from '../../../components/LanguageSwitch';
+import SiteHeader from '../../../components/SiteHeader';
 import {languageHref, readLanguage, tr} from '../../../lib/language';
 import {archiveRarities} from '../catalogue';
 import {archiveFuture, collaborations, collaborationsIntro} from '../collaborations';
@@ -18,14 +18,16 @@ export async function generateMetadata({searchParams}: SearchProps) {
 export default async function History({searchParams}: {searchParams: Promise<{lang?: string}>}) {
   const lang = readLanguage((await searchParams).lang);
   const {releases} = await getDetails();
+  const tumulte = releases.get('tumulte');
   const historyReleases = ['tumulte', 'annorlunda', 'les-enfants-sauvages', 'sexploitation-cinema', 'goddess', 'schlager'];
 
   return (
+    <>
+    <SiteHeader lang={lang} path="/archive/history"/>
     <main className="site-content manifesto network-archive" lang={lang}>
       <header className="manifesto-header">
         <Link className="textlink" href={languageHref('/#archive', lang)}>← ARCHIVE GRID</Link>
-        <LanguageSwitch lang={lang} path="/archive/history"/>
-        <p className="eyebrow">SABOTAGE QCQC?</p>
+          <p className="eyebrow">SABOTAGE QCQC?</p>
         <h1>HISTORY</h1>
         <p>{tr(lang,
           'From the cassette underground to a European network of artists, producers and remixers.',
@@ -43,7 +45,7 @@ export default async function History({searchParams}: {searchParams: Promise<{la
           <p><small>{tr(lang, 'From the band’s account', 'Aus der Bandgeschichte', 'D’après le récit du groupe', 'Según el relato de la banda')}</small></p>
           {tapeHistory[lang].map(paragraph => <p key={paragraph}>{paragraph}</p>)}
           <p><strong>{tapeHistoryClosing[lang]}</strong></p>
-          <figure className="history-promocard">
+          <figure id="tumulte-promocard" className="history-promocard">
             <img src="/assets/tumulte-danse-macabre-promocard.webp" width={1448} height={1086} loading="lazy"
               alt={tr(lang,
                 'Black-and-white band portrait of Marc Werner, Isabelle Gernand and Detlef Weinreich, photographed by Bettina Walther.',
@@ -53,6 +55,9 @@ export default async function History({searchParams}: {searchParams: Promise<{la
               )}/>
             <figcaption lang="en">PromoCard Danse Macabre for TUMULTE release</figcaption>
           </figure>
+          {tumulte && <p><Link className="textlink" href={languageHref(releasePath(tumulte), lang)}>
+            {tr(lang, 'Explore TUMULTE', 'TUMULTE entdecken', 'Découvrir TUMULTE', 'Descubrir TUMULTE')} →
+          </Link></p>}
         </div>
       </section>
       <section className="manifesto-chapter" aria-labelledby="collaborations">
@@ -66,10 +71,18 @@ export default async function History({searchParams}: {searchParams: Promise<{la
           <section className="history-collaborations manifesto-prose" key={title}>
             <h3>{title}</h3>
             <dl>
-              {entries.map(({title, copy}) => (
-                <div key={title}>
+              {entries.map(({title, copy, id, releases: releaseSlugs}) => (
+                <div key={title} id={id}>
                   <dt>{title}</dt>
-                  <dd>{typeof copy === 'string' ? copy : copy[lang]}</dd>
+                  <dd>
+                    {typeof copy === 'string' ? copy : copy[lang]}
+                    {releaseSlugs?.map(slug => {
+                      const release = releases.get(slug);
+                      return release && <p key={slug}><Link className="textlink" href={languageHref(releasePath(release), lang)}>
+                        {normalizeReleaseTitle(release.title)} →
+                      </Link></p>;
+                    })}
+                  </dd>
                 </div>
               ))}
             </dl>
@@ -110,5 +123,6 @@ export default async function History({searchParams}: {searchParams: Promise<{la
       </section>
       <CreditSearch lang={lang}/>
     </main>
+    </>
   );
 }

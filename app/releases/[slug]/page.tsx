@@ -1,3 +1,4 @@
+import SiteHeader from '../../../components/SiteHeader';
 import {notFound} from 'next/navigation';
 import DetailHeader from '../../../components/DetailHeader';
 import StructuredData from '../../../components/StructuredData';
@@ -40,7 +41,7 @@ export default async function ReleasePage({params, searchParams}: Props) {
   const lang = readLanguage(requested);
   const path = releasePath(release);
   const title = normalizeReleaseTitle(release.title).toUpperCase();
-  const description = release.description?.[lang] || translateText(lang, release.description?.en || release.description?.de || '');
+  const description = normalizeReleaseTitle(release.description?.[lang] || translateText(lang, release.description?.en || release.description?.de || ''));
   const matchingCredits = releaseCredits(slug);
   const archiveTracks = archiveData.tracks.filter(track => contentSlug(track.release) === slug);
   const tracks = release.tracklist?.length ? release.tracklist : archiveTracks.map(track => ({
@@ -48,15 +49,33 @@ export default async function ReleasePage({params, searchParams}: Props) {
   }));
   const articles = Array.from(news).filter(([key]) => relatedReleases[key]?.includes(slug));
 
-  return <main className="site-content manifesto detail-page" lang={lang}>
+  const historyLinks = {
+    tumulte: {
+      anchor: 'tumulte-promocard',
+      label: tr(lang, 'Original TUMULTE promo card', 'Original-Promokarte zu TUMULTE',
+        'Carte promo originale de TUMULTE', 'Tarjeta promocional original de TUMULTE'),
+    },
+    pankow: {anchor: 'pankow', label: tr(lang, 'The sessions with PANKOW', 'Die Aufnahmen mit PANKOW',
+      'Les sessions avec PANKOW', 'Las sesiones con PANKOW')},
+    front242: {anchor: 'front-242', label: tr(lang, 'The collaboration with FRONT 242', 'Die Zusammenarbeit mit FRONT 242',
+      'La collaboration avec FRONT 242', 'La colaboración con FRONT 242')},
+  };
+  const historyLink = slug === 'tumulte' ? historyLinks.tumulte
+    : ['annorlunda', 'les-enfants-sauvages'].includes(slug) ? historyLinks.pankow
+    : ['sexploitation-cinema', 'sexploitation-cinema-limited-edition', 'goddess', 'schlager'].includes(slug) ? historyLinks.front242
+    : undefined;
+
+  return <>
+  <SiteHeader lang={lang} path={path}/>
+  <main className="site-content manifesto detail-page" lang={lang}>
     <StructuredData data={{
       '@type': 'MusicRelease', name: title, url: absoluteUrl(languageHref(path, lang)),
       image: release.coverUrl ? absoluteUrl(release.coverUrl) : undefined,
       datePublished: release.originalReleaseDate || release.digitalReReleaseDate,
       recordLabel: release.label ? {'@type': 'Organization', name: release.label} : undefined,
-      releaseOf: {'@type': 'MusicAlbum', name: title, byArtist: {'@type': 'MusicGroup', name: release.artist || bandName}},
+      releaseOf: {'@type': 'MusicAlbum', name: title, byArtist: {'@type': 'MusicGroup', name: normalizeReleaseTitle(release.artist || bandName)}},
     }}/>
-    <DetailHeader lang={lang} path={path} back={release.category === 'current' ? '/#current-releases' : '/#catalogue'}
+    <DetailHeader lang={lang} back={release.category === 'current' ? '/#current-releases' : '/#catalogue'}
       label={release.category === 'current' ? 'RELEASES' : 'BACK CATALOGUE'} title={title}/>
     <div className="manifesto-prose release-detail">
       {release.coverUrl && <img className="release-detail-cover" src={release.coverUrl} alt={title}/>}
@@ -70,8 +89,12 @@ export default async function ReleasePage({params, searchParams}: Props) {
       {!!matchingCredits.length && <section><h2>CREDITS</h2><ul>{matchingCredits.map(([name, work, role]) =>
         <li key={`${name}:${work}:${role}`}><strong>{name}</strong> · {roles[role][lang]}<br/>{work}</li>)}</ul></section>}
       {articles.length > 0 && <section><h2>NEWS</h2><ul>{articles.map(([key, item]) =>
-        <li key={key}><a className="textlink" href={languageHref(newsPath(item), lang)}>{item.title} →</a></li>)}</ul></section>}
+        <li key={key}><a className="textlink" href={languageHref(newsPath(item), lang)}>{normalizeReleaseTitle(item.title)} →</a></li>)}</ul></section>}
+      {historyLink && <p><a className="textlink" href={languageHref('/archive/history#' + historyLink.anchor, lang)}>
+        {historyLink.label} →
+      </a></p>}
       <p><a className="textlink" href={languageHref('/archive/history#credits', lang)}>ARCHIVE CREDITS →</a></p>
     </div>
-  </main>;
+  </main>
+  </>;
 }

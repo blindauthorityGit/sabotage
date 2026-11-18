@@ -2,7 +2,7 @@
 import {useEffect, useRef, useState} from 'react';
 import type {Page,Module,Release,Link,Localized,NewsItem,RandomItem} from '../lib/content';
 import {normalizeReleaseTitle, releaseArtworkKey} from '../lib/release-artwork';
-import LanguageSwitch from './LanguageSwitch';
+import SiteHeader from './SiteHeader';
 import {languageHref, locales, tr, type Language} from '../lib/language';
 import {translateText} from '../lib/translations';
 import {newsPath, releasePath} from '../lib/detail-paths';
@@ -60,7 +60,7 @@ function ReleaseEditions({release, lang}: {release: Release; lang: Language}) {
   );
 }
 
-function ReleaseCard({release,lang}:{release:Release;lang:Language}){const date=releaseDate(release);return <article className="release-card"><Art url={release.coverUrl} title={normalizeReleaseTitle(release.title)} lang={lang}/><div className="release-card-copy"><small>{release.artist||'SABOTAGE QCQC?'} / {translateText(lang, release.releaseStatus || 'pending')}{date?` / ${date}`:''}</small><h3><a href={languageHref(releasePath(release), lang)}>{normalizeReleaseTitle(release.title)}</a></h3><p>{release.labelUrl?<a href={release.labelUrl} target="_blank" rel="noopener noreferrer">{release.label} ↗</a>:release.label||''}</p><div className="inline-links">{release.links?.map((l,i)=><External key={i} item={l} lang={lang}/>)}</div></div></article>}
+function ReleaseCard({release,lang}:{release:Release;lang:Language}){const date=releaseDate(release);return <article className="release-card"><Art url={release.coverUrl} title={normalizeReleaseTitle(release.title)} lang={lang}/><div className="release-card-copy"><small>{normalizeReleaseTitle(release.artist || 'SABOTAGE QCQC?')} / {translateText(lang, release.releaseStatus || 'pending')}{date?` / ${date}`:''}</small><h3><a href={languageHref(releasePath(release), lang)}>{normalizeReleaseTitle(release.title)}</a></h3><p>{release.labelUrl?<a href={release.labelUrl} target="_blank" rel="noopener noreferrer">{release.label} ↗</a>:release.label||''}</p><div className="inline-links">{release.links?.map((l,i)=><External key={i} item={l} lang={lang}/>)}</div></div></article>}
 const emptyNews: NewsItem[] = [];
 
 function NewsSection({items, lang, header}: {
@@ -429,13 +429,4 @@ function ContactSection({lang}: {lang: Language}) {
   );
 }
 
-export default function Site({page,contactEmail,lang}:{page:Page;contactEmail:string;lang:Language}){const modules=page.modules.filter(m=>m.enabled!==false).sort((a,b)=>sectionPosition(a)-sectionPosition(b));return <div lang={lang} className="site-language"><header className="topbar"><a className="brand" href="#top" aria-label="SABOTAGE QCQC? home"><img src="/assets/sabotage-logo.png" alt="SABOTAGE QCQC?"/></a><nav>
-  <a href="#releases">RELEASES</a>
-  <a href="#catalogue">BACK CATALOGUE</a>
-  <a href="#archive">ARCHIVE</a>
-  <a href={languageHref('/archive/history', lang)}>HISTORY</a>
-  <a href="#news">NEWS</a>
-  <a href="#about">ABOUT</a>
-  <a href={languageHref('/manifesto',lang)}>MANIFESTO</a>
-  <a href="#connect">CONNECT</a>
-</nav><LanguageSwitch lang={lang} path="/"/></header><main className="site-content">{modules.map((m,i)=><Section key={m._key||i} module={m} index={i+1} lang={lang}/>)}<ContactSection lang={lang}/></main><footer><span>© {new Date().getFullYear()} SABOTAGE QCQC?</span><span>QU'EST-CE QUE C'EST?</span><a href={'mailto:'+contactEmail}>{contactEmail}</a><a href={languageHref("/impressum", lang)}>{tr(lang,'LEGAL NOTICE','IMPRESSUM','MENTIONS LÉGALES','AVISO LEGAL')}</a><a href={languageHref("/impressum#disclaimer", lang)}>{tr(lang,'DISCLAIMER','DISCLAIMER','RESPONSABILITÉ','RESPONSABILIDAD')}</a></footer></div>}
+export default function Site({page,contactEmail,lang}:{page:Page;contactEmail:string;lang:Language}){const modules=page.modules.filter(m=>m.enabled!==false).sort((a,b)=>sectionPosition(a)-sectionPosition(b));return <div lang={lang} className="site-language"><SiteHeader lang={lang} path="/"/><main className="site-content">{modules.map((m,i)=><Section key={m._key||i} module={m} index={i+1} lang={lang}/>)}<ContactSection lang={lang}/></main><footer><span>© {new Date().getFullYear()} SABOTAGE QCQC?</span><span>QU'EST-CE QUE C'EST?</span><a href={'mailto:'+contactEmail}>{contactEmail}</a><a href={languageHref("/impressum", lang)}>{tr(lang,'LEGAL NOTICE','IMPRESSUM','MENTIONS LÉGALES','AVISO LEGAL')}</a><a href={languageHref("/impressum#disclaimer", lang)}>{tr(lang,'DISCLAIMER','DISCLAIMER','RESPONSABILITÉ','RESPONSABILIDAD')}</a></footer></div>}

@@ -1,3 +1,4 @@
+import SiteHeader from '../../../components/SiteHeader';
 import {notFound} from 'next/navigation';
 import DetailHeader from '../../../components/DetailHeader';
 import NewsBody from '../../../components/NewsBody';
@@ -36,14 +37,16 @@ export default async function NewsPage({params, searchParams}: Props) {
   const date = newsDate(item);
   const validDate = date && !Number.isNaN(Date.parse(date)) ? date : undefined;
   const title = normalizeReleaseTitle(item.title);
-  return <main className="site-content manifesto detail-page" lang={lang}>
+  return <>
+  <SiteHeader lang={lang} path={path}/>
+  <main className="site-content manifesto detail-page" lang={lang}>
     <StructuredData data={{
       '@type': 'Article', headline: title, inLanguage: lang, datePublished: validDate,
       image: item.imageUrl ? absoluteUrl(item.imageUrl) : undefined,
       mainEntityOfPage: absoluteUrl(languageHref(path, lang)),
       publisher: {'@type': 'Organization', name: bandName, url: absoluteUrl('/')},
     }}/>
-    <DetailHeader lang={lang} path={path} back="/#news" label="NEWS" title={title}/>
+    <DetailHeader lang={lang} back="/#news" label="NEWS" title={title}/>
     <article className="manifesto-prose">
       {validDate && <time className="news-date" dateTime={validDate}>{new Intl.DateTimeFormat(locales[lang], {dateStyle: 'long', timeZone: 'UTC'}).format(new Date(validDate))}</time>}
       {item.imageUrl && <img className="news-image" src={item.imageUrl} alt={item.imageAlt?.[lang] || item.imageAlt?.en || title}
@@ -55,5 +58,6 @@ export default async function NewsPage({params, searchParams}: Props) {
       })}
       <p><a className="textlink" href={languageHref('/archive/history', lang)}>{tr(lang, 'Band history', 'Bandgeschichte', 'Histoire du groupe', 'Historia de la banda')} →</a></p>
     </article>
-  </main>;
+  </main>
+  </>;
 }

@@ -1,4 +1,5 @@
 import {cache} from 'react';
+import {normalizeBandName} from './band-name';
 import {getHome, getReleases, getSettings, type Link, type Module, type Page} from './content';
 import {additionalCatalogueReleases, currentReleasesModule, enOrdreRelease, fallbackPage, sampleReleases} from './fallback';
 import {coldFragmentsNews, emmoBizNews, enOrdreNews, goddessNews, memeNews, monCoeurNews, orageRemixNews, secretTracksNews, sexploitationCinemaNews, subCultureNews, theFloodNews} from './news';
@@ -125,7 +126,7 @@ function connectReleases(page: Page, releases: Awaited<ReturnType<typeof getRele
     const news = module.newsRefs ?? [];
     const localNews = [sexploitationCinemaNews, goddessNews, enOrdreNews, orageRemixNews, subCultureNews, emmoBizNews, theFloodNews, memeNews, monCoeurNews, coldFragmentsNews, secretTracksNews].filter(entry => !news.some(item =>
       item._id === entry._id || (item.date === entry.date &&
-        item.title.trim().replace(/:$/, '').toUpperCase() === entry.title.replace(/:$/, ''))
+        normalizeBandName(item.title.trim()).replace(/:$/, '').toUpperCase() === normalizeBandName(entry.title).replace(/:$/, '').toUpperCase())
     ));
     return {...module, newsRefs: [...news, ...localNews]};
   });

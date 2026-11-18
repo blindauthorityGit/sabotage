@@ -1,4 +1,5 @@
 import type {Release} from './content';
+import {normalizeBandName} from './band-name';
 
 const covers: Readonly<Record<string, string>> = {
   'no-bottom-no-top': 'no-bottom-no-top.png',
@@ -28,5 +29,5 @@ export function withCoverFallback(release: Release): Release {
 }
 
 export function normalizeReleaseTitle(text: string): string {
-  return text.replace(/\bNO BOTTOM\s*[-–—]\s*NO TOP[PZ]?\b/gi, 'NO BOTTOM - NO TOP');
+  return normalizeBandName(text).replace(/\bNO BOTTOM\s*[-–—]\s*NO TOP[PZ]?\b/gi, 'NO BOTTOM - NO TOP');
 }
