@@ -839,3 +839,34 @@ body > footer a {
   font-size: .875rem;
   text-transform: none;
 }
+
+.press-articles {
+  list-style: none;
+  padding: 0;
+  max-width: 75ch;
+}
+
+.press-articles li {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--muted);
+}
+
+.press-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem 1rem;
+  margin-bottom: .75rem;
+  font-size: .8rem;
+}
+
+.press-meta strong {
+  color: var(--red);
+}
+
+.press-articles .textlink {
+  line-height: 1.5;
+}
+
+.press-articles p {
+  font-size: .9rem;
+}

@@ -1,6 +1,7 @@
+import {pressArticles} from '../../../lib/press';
 import Link from 'next/link';
 import SiteHeader from '../../../components/SiteHeader';
-import {languageHref, readLanguage, tr} from '../../../lib/language';
+import {languageHref, locales, readLanguage, tr} from '../../../lib/language';
 import {archiveRarities} from '../catalogue';
 import {archiveFuture, collaborations, collaborationsIntro} from '../collaborations';
 import CreditSearch from '../CreditSearch';
@@ -35,6 +36,7 @@ export default async function History({searchParams}: {searchParams: Promise<{la
           'De la scène cassette underground à un réseau européen d’artistes, de producteurs et de remixeurs.',
           'De la escena underground del casete a una red europea de artistas, productores y remezcladores.'
         )}</p>
+        <a className="textlink" href="#press-coverage">PRESS COVERAGE ↓</a>
         <a className="btn primary" href="#credits">{tr(lang, 'Search the archive', 'Archiv durchsuchen', 'Rechercher dans les archives', 'Buscar en el archivo')}</a>
       </header>
       <section className="manifesto-chapter" aria-labelledby="tape-underground">
@@ -112,13 +114,21 @@ export default async function History({searchParams}: {searchParams: Promise<{la
       </section>
       <section className="manifesto-chapter" aria-labelledby="press-coverage">
         <h2 id="press-coverage">PRESS COVERAGE</h2>
-        <ul className="archive-credits">
-          <li><a className="textlink" lang="en" href="https://www.side-line.com/sabotage-qcqc-digital-reissues/">
-            SIDE-LINE · Sabotage Q.C.Q.C.? sets 1990s reissues and 2027 album ↗
-          </a></li>
-          <li><a className="textlink" lang="de" href="https://www.medienkonverter.de/artikel/sabotage-qcqc-holen-zwei-neunziger-veroeffentlichungen-ins-netz">
-            MEDIENKONVERTER · Sabotage Q.C.Q.C.? holen zwei Neunziger-Veröffentlichungen ins Netz ↗
-          </a></li>
+        <ul className="press-articles">
+          {pressArticles.map(article => (
+            <li key={article.url}>
+              <div className="press-meta">
+                <strong>{article.publication}</strong>
+                {article.date && <time dateTime={article.date}>{article.date.length === 4 ? article.date : new Intl.DateTimeFormat(locales[lang], {
+                  dateStyle: 'medium', timeZone: 'UTC',
+                }).format(new Date(article.date + 'T00:00:00Z'))}</time>}
+                <span>{article.language.toUpperCase()}</span>
+              </div>
+              <a className="textlink" lang={article.language} href={article.url}
+                target="_blank" rel="noopener noreferrer">{article.title} ↗</a>
+
+            </li>
+          ))}
         </ul>
       </section>
       <CreditSearch lang={lang}/>
