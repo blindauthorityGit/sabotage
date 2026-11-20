@@ -2,7 +2,7 @@ import {cache} from 'react';
 import {normalizeBandName} from './band-name';
 import {getHome, getReleases, getSettings, type Link, type Module, type Page} from './content';
 import {additionalCatalogueReleases, currentReleasesModule, enOrdreRelease, fallbackPage, sampleReleases} from './fallback';
-import {coldFragmentsNews, emmoBizNews, enOrdreNews, goddessNews, memeNews, monCoeurNews, orageRemixNews, secretTracksNews, sexploitationCinemaNews, subCultureNews, theFloodNews} from './news';
+import {coldFragmentsNews, emmoBizNews, enOrdreNews, goddessNews, memeNews, monCoeurNews, orageRemixNews, secretTracksNews, schlagerNews, sexploitationCinemaNews, subCultureNews, theFloodNews, tumulteNews} from './news';
 import {releaseArtworkKey, withCoverFallback} from './release-artwork';
 
 const catalogueStreaming: Readonly<Record<string, Link[]>> = {
@@ -85,6 +85,16 @@ function connectReleases(page: Page, releases: Awaited<ReturnType<typeof getRele
               }),
             };
           });
+          const catalogueOrder = [
+            'tumulte', 'annorlunda', 'les-enfants-sauvages', 'deutscher-herbst-77',
+            'goddess', 'schlager', 'sexploitation-cinema',
+            'sexploitation-cinema-limited-edition', 'acoustic-costumes',
+          ];
+          const orderOf = (release: (typeof releaseRefs)[number]) => {
+            const index = catalogueOrder.indexOf(releaseArtworkKey(release));
+            return index === -1 ? catalogueOrder.length : index;
+          };
+          releaseRefs.sort((a, b) => orderOf(a) - orderOf(b));
           return {...module, releaseRefs};
         }
         const isCurrentGrid = module._key === 'current-releases' || module.releaseCategory === 'current';
@@ -124,7 +134,7 @@ function connectReleases(page: Page, releases: Awaited<ReturnType<typeof getRele
     if (module._type !== 'module_newsGrid') return module;
 
     const news = module.newsRefs ?? [];
-    const localNews = [sexploitationCinemaNews, goddessNews, enOrdreNews, orageRemixNews, subCultureNews, emmoBizNews, theFloodNews, memeNews, monCoeurNews, coldFragmentsNews, secretTracksNews].filter(entry => !news.some(item =>
+    const localNews = [tumulteNews, schlagerNews, sexploitationCinemaNews, goddessNews, enOrdreNews, orageRemixNews, subCultureNews, emmoBizNews, theFloodNews, memeNews, monCoeurNews, coldFragmentsNews, secretTracksNews].filter(entry => !news.some(item =>
       item._id === entry._id || (item.date === entry.date &&
         normalizeBandName(item.title.trim()).replace(/:$/, '').toUpperCase() === normalizeBandName(entry.title).replace(/:$/, '').toUpperCase())
     ));

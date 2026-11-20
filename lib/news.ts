@@ -694,3 +694,249 @@ ${sexploitationCinemaReleaseDetails}
 ${sexploitationCinemaArticle.es}`,
   },
 };
+
+export const schlagerNews: NewsItem = {
+  _id: 'schlager-2026-11-26',
+  title: 'SABOTAGE QCQC? – SCHLAGER: THE TRACK THAT GAVE BIRTH TO NUDE',
+  date: '2026-11-26',
+  imageUrl: '/assets/schlager-news.webp',
+  imageWidth: 1122,
+  imageHeight: 1402,
+  imageAlt: {
+    en: 'SCHLAGER digital re-release poster, November 26, 2026',
+    de: 'Poster zur digitalen Wiederveröffentlichung von SCHLAGER am 26. November 2026',
+    fr: 'Affiche de la réédition numérique de SCHLAGER du 26 novembre 2026',
+    es: 'Cartel de la reedición digital de SCHLAGER del 26 de noviembre de 2026',
+  },
+  body: {
+    en: `**DIGITAL RE-RELEASE · NOVEMBER 26, 2026**
+
+A piece of EBM history returns.
+
+Recorded at the legendary ART & STRATEGY Studios and produced by **FRONT 242**, SCHLAGER marked a turning point in the musical evolution of SABOTAGE QCQC?.
+
+During production, a new musical direction began to emerge — one that would eventually move beyond SABOTAGE QCQC? and give birth to an entirely new project: **NUDE**.
+
+The original NUDE line-up brought together ISABELLE GERNAND, DANIEL BRESSANUTTI (FRONT 242) and MARC WERNER.
+
+Following DANIEL’s departure, JOHANNES BUCHNER, DAVID AHLUND and GEORGIE WEERATUNGA joined the project, helping shape its next chapter.
+
+SCHLAGER is more than a track from the archives. It captures the moment when one musical identity began transforming into another.
+
+On **November 26, 2026**, SUB CULTURE RECORDS brings this chapter of electronic music history back to life with the digital re-release of SCHLAGER.
+
+**THE PAST IS NOT DEAD. IT'S JUST GETTING LOUDER.**
+
+SABOTAGE QCQC? – SOUND. RESISTANCE. NO BORDERS.
+
+[www.sabotageqcqc.online](https://www.sabotageqcqc.online/)
+
+#SABOTAGEQCQC #SCHLAGER #NUDE #Front242 #DanielBressanutti #SubCultureRecords #EBM #ElectronicBodyMusic #IndustrialMusic #ElectroPunk #ReRelease`,
+    de: `**DIGITAL RE-RELEASE · 26. NOVEMBER 2026**
+
+Ein Stück EBM-Geschichte kehrt zurück.
+
+Aufgenommen in den legendären ART & STRATEGY Studios und produziert von **FRONT 242**, markierte SCHLAGER einen Wendepunkt in der musikalischen Entwicklung von SABOTAGE QCQC?.
+
+Während der Produktion zeichnete sich eine neue musikalische Richtung ab — eine, die schließlich über SABOTAGE QCQC? hinausführen und ein völlig neues Projekt hervorbringen sollte: **NUDE**.
+
+Zur ursprünglichen Besetzung von NUDE gehörten ISABELLE GERNAND, DANIEL BRESSANUTTI (FRONT 242) und MARC WERNER.
+
+Nach DANIELs Ausstieg kamen JOHANNES BUCHNER, DAVID AHLUND und GEORGIE WEERATUNGA hinzu und prägten das nächste Kapitel des Projekts mit.
+
+SCHLAGER ist mehr als ein Track aus dem Archiv. Er hält den Moment fest, in dem sich eine musikalische Identität in eine andere zu verwandeln begann.
+
+Am **26. November 2026** lässt SUB CULTURE RECORDS dieses Kapitel elektronischer Musikgeschichte mit der digitalen Wiederveröffentlichung von SCHLAGER wieder aufleben.
+
+**THE PAST IS NOT DEAD. IT'S JUST GETTING LOUDER.**
+
+SABOTAGE QCQC? – SOUND. RESISTANCE. NO BORDERS.
+
+[www.sabotageqcqc.online](https://www.sabotageqcqc.online/)
+
+#SABOTAGEQCQC #SCHLAGER #NUDE #Front242 #DanielBressanutti #SubCultureRecords #EBM #ElectronicBodyMusic #IndustrialMusic #ElectroPunk #ReRelease`,
+    fr: `**DIGITAL RE-RELEASE · 26 NOVEMBRE 2026**
+
+Un morceau de l’histoire de l’EBM revient.
+
+Enregistré dans les légendaires ART & STRATEGY Studios et produit par **FRONT 242**, SCHLAGER a marqué un tournant dans l’évolution musicale de SABOTAGE QCQC?.
+
+Pendant la production, une nouvelle direction musicale a commencé à se dessiner — une voie qui allait dépasser le cadre de SABOTAGE QCQC? pour donner naissance à un tout nouveau projet : **NUDE**.
+
+La formation originale de NUDE réunissait ISABELLE GERNAND, DANIEL BRESSANUTTI (FRONT 242) et MARC WERNER.
+
+Après le départ de DANIEL, JOHANNES BUCHNER, DAVID AHLUND et GEORGIE WEERATUNGA ont rejoint le projet, contribuant à façonner son chapitre suivant.
+
+SCHLAGER est bien plus qu’un titre sorti des archives. Il saisit l’instant où une identité musicale a commencé à se transformer en une autre.
+
+Le **26 novembre 2026**, SUB CULTURE RECORDS fait revivre ce chapitre de l’histoire de la musique électronique avec la réédition numérique de SCHLAGER.
+
+**THE PAST IS NOT DEAD. IT'S JUST GETTING LOUDER.**
+
+SABOTAGE QCQC? – SOUND. RESISTANCE. NO BORDERS.
+
+[www.sabotageqcqc.online](https://www.sabotageqcqc.online/)
+
+#SABOTAGEQCQC #SCHLAGER #NUDE #Front242 #DanielBressanutti #SubCultureRecords #EBM #ElectronicBodyMusic #IndustrialMusic #ElectroPunk #ReRelease`,
+    es: `**DIGITAL RE-RELEASE · 26 DE NOVIEMBRE DE 2026**
+
+Regresa un capítulo de la historia del EBM.
+
+Grabado en los legendarios ART & STRATEGY Studios y producido por **FRONT 242**, SCHLAGER marcó un punto de inflexión en la evolución musical de SABOTAGE QCQC?.
+
+Durante la producción comenzó a surgir una nueva dirección musical — una que acabaría trascendiendo SABOTAGE QCQC? y dando vida a un proyecto completamente nuevo: **NUDE**.
+
+La formación original de NUDE reunió a ISABELLE GERNAND, DANIEL BRESSANUTTI (FRONT 242) y MARC WERNER.
+
+Tras la salida de DANIEL, JOHANNES BUCHNER, DAVID AHLUND y GEORGIE WEERATUNGA se incorporaron al proyecto y contribuyeron a dar forma a su siguiente capítulo.
+
+SCHLAGER es más que un tema recuperado del archivo. Captura el momento en que una identidad musical comenzó a transformarse en otra.
+
+El **26 de noviembre de 2026**, SUB CULTURE RECORDS devuelve a la vida este capítulo de la historia de la música electrónica con la reedición digital de SCHLAGER.
+
+**THE PAST IS NOT DEAD. IT'S JUST GETTING LOUDER.**
+
+SABOTAGE QCQC? – SOUND. RESISTANCE. NO BORDERS.
+
+[www.sabotageqcqc.online](https://www.sabotageqcqc.online/)
+
+#SABOTAGEQCQC #SCHLAGER #NUDE #Front242 #DanielBressanutti #SubCultureRecords #EBM #ElectronicBodyMusic #IndustrialMusic #ElectroPunk #ReRelease`,
+  },
+};
+
+export const tumulteNews: NewsItem = {
+  _id: 'tumulte-2026-11-27',
+  title: 'SABOTAGE QCQC? – TUMULTE',
+  date: '2026-11-27',
+  imageUrl: '/assets/tumulte-news.webp',
+  imageWidth: 1122,
+  imageHeight: 1402,
+  imageAlt: {
+    en: 'TUMULTE digital re-release poster, November 27, 2026',
+    de: 'Poster zur digitalen Wiederveröffentlichung von TUMULTE am 27. November 2026',
+    fr: 'Affiche de la réédition numérique de TUMULTE du 27 novembre 2026',
+    es: 'Cartel de la reedición digital de TUMULTE del 27 de noviembre de 2026',
+  },
+  body: {
+    en: `**THE DEBUT ALBUM RETURNS!**
+
+**DIGITAL RE-RELEASE · NOVEMBER 27, 2026**
+**SUB CULTURE RECORDS**
+
+A piece of European electronic underground history returns.
+
+**TUMULTE**, the debut album by SABOTAGE QCQC?, was born out of friendship, creative experimentation and a shared passion for uncompromising electronic music.
+
+Following a joint tour through Germany, SABOTAGE QCQC? travelled to Florence, Italy, where the album was produced together with **PAOLO FAVATI, MAURIZIO FASOLO and FEDERICO PANERO**.
+
+The result was TUMULTE — a collision of musical influences, raw electronic energy and artistic freedom, originally released through **DANSE MACABRE**, the label associated with German darkwave pioneers DAS ICH.
+
+The album features the club hit **LES FLEURS DU MAL**, alongside tracks that continue to shape the musical identity of SABOTAGE QCQC? today.
+
+Among them is **EWIGKEIT**, soon to return in a newly reworked version — on vinyl through **EMMO.BIZ RECORDS** and digitally.
+
+Another original TUMULTE track, **EN ORDRE**, has recently been revisited and released in several new versions, already available across digital platforms.
+
+More than three decades later, TUMULTE remains a document of a time when musical boundaries were meant to be challenged, not respected.
+
+On **November 27, 2026**, SUB CULTURE RECORDS brings this remarkable debut album back to digital platforms, making another essential chapter of SABOTAGE QCQC? history available to a new generation.
+
+**THE PAST IS NOT DEAD. IT'S JUST GETTING LOUDER.**
+
+SABOTAGE QCQC? – SOUND. RESISTANCE. NO BORDERS.
+
+[www.sabotageqcqc.online](https://www.sabotageqcqc.online/)
+
+#SABOTAGEQCQC #TUMULTE #SubCultureRecords #DanseMacabre #DasIch #LesFleursDuMal #EBM #ElectronicBodyMusic #IndustrialMusic #Darkwave #ElectroPunk #ReRelease`,
+    de: `**THE DEBUT ALBUM RETURNS!**
+
+**DIGITAL RE-RELEASE · 27. NOVEMBER 2026**
+**SUB CULTURE RECORDS**
+
+Ein Stück europäischer elektronischer Underground-Geschichte kehrt zurück.
+
+**TUMULTE**, das Debütalbum von SABOTAGE QCQC?, entstand aus Freundschaft, kreativen Experimenten und einer gemeinsamen Leidenschaft für kompromisslose elektronische Musik.
+
+Nach einer gemeinsamen Tour durch Deutschland reisten SABOTAGE QCQC? nach Florenz, wo das Album zusammen mit **PAOLO FAVATI, MAURIZIO FASOLO und FEDERICO PANERO** produziert wurde.
+
+Das Ergebnis war TUMULTE — ein Zusammenprall musikalischer Einflüsse, roher elektronischer Energie und künstlerischer Freiheit. Ursprünglich erschien das Album bei **DANSE MACABRE**, dem Label der deutschen Darkwave-Pioniere DAS ICH.
+
+Das Album enthält den Clubhit **LES FLEURS DU MAL** sowie Stücke, die die musikalische Identität von SABOTAGE QCQC? bis heute prägen.
+
+Dazu gehört **EWIGKEIT**, das bald in einer neu überarbeiteten Version zurückkehrt — auf Vinyl bei **EMMO.BIZ RECORDS** und digital.
+
+Ein weiterer Originaltrack von TUMULTE, **EN ORDRE**, wurde kürzlich neu interpretiert und in mehreren neuen Versionen veröffentlicht, die bereits auf digitalen Plattformen verfügbar sind.
+
+Mehr als drei Jahrzehnte später bleibt TUMULTE ein Dokument einer Zeit, in der musikalische Grenzen herausgefordert und nicht respektiert werden sollten.
+
+Am **27. November 2026** bringt SUB CULTURE RECORDS dieses besondere Debütalbum zurück auf die digitalen Plattformen und macht damit ein weiteres wichtiges Kapitel der Geschichte von SABOTAGE QCQC? einer neuen Generation zugänglich.
+
+**THE PAST IS NOT DEAD. IT'S JUST GETTING LOUDER.**
+
+SABOTAGE QCQC? – SOUND. RESISTANCE. NO BORDERS.
+
+[www.sabotageqcqc.online](https://www.sabotageqcqc.online/)
+
+#SABOTAGEQCQC #TUMULTE #SubCultureRecords #DanseMacabre #DasIch #LesFleursDuMal #EBM #ElectronicBodyMusic #IndustrialMusic #Darkwave #ElectroPunk #ReRelease`,
+    fr: `**THE DEBUT ALBUM RETURNS!**
+
+**DIGITAL RE-RELEASE · 27 NOVEMBRE 2026**
+**SUB CULTURE RECORDS**
+
+Un pan de l’histoire de l’underground électronique européen revient.
+
+**TUMULTE**, le premier album de SABOTAGE QCQC?, est né de l’amitié, de l’expérimentation créative et d’une passion commune pour une musique électronique sans compromis.
+
+Après une tournée commune en Allemagne, SABOTAGE QCQC? s’est rendu à Florence, en Italie, où l’album a été produit avec **PAOLO FAVATI, MAURIZIO FASOLO et FEDERICO PANERO**.
+
+Le résultat : TUMULTE — une collision d’influences musicales, d’énergie électronique brute et de liberté artistique, sorti à l’origine chez **DANSE MACABRE**, le label associé aux pionniers allemands de la darkwave DAS ICH.
+
+L’album comprend le succès des clubs **LES FLEURS DU MAL**, ainsi que des titres qui continuent aujourd’hui de façonner l’identité musicale de SABOTAGE QCQC?.
+
+Parmi eux figure **EWIGKEIT**, qui reviendra bientôt dans une nouvelle version retravaillée — en vinyle chez **EMMO.BIZ RECORDS** et en numérique.
+
+Un autre titre original de TUMULTE, **EN ORDRE**, a récemment été revisité et publié dans plusieurs nouvelles versions, déjà disponibles sur les plateformes numériques.
+
+Plus de trois décennies après, TUMULTE reste le témoignage d’une époque où les frontières musicales étaient faites pour être bousculées, pas respectées.
+
+Le **27 novembre 2026**, SUB CULTURE RECORDS ramène ce remarquable premier album sur les plateformes numériques, rendant un autre chapitre essentiel de l’histoire de SABOTAGE QCQC? accessible à une nouvelle génération.
+
+**THE PAST IS NOT DEAD. IT'S JUST GETTING LOUDER.**
+
+SABOTAGE QCQC? – SOUND. RESISTANCE. NO BORDERS.
+
+[www.sabotageqcqc.online](https://www.sabotageqcqc.online/)
+
+#SABOTAGEQCQC #TUMULTE #SubCultureRecords #DanseMacabre #DasIch #LesFleursDuMal #EBM #ElectronicBodyMusic #IndustrialMusic #Darkwave #ElectroPunk #ReRelease`,
+    es: `**THE DEBUT ALBUM RETURNS!**
+
+**DIGITAL RE-RELEASE · 27 DE NOVIEMBRE DE 2026**
+**SUB CULTURE RECORDS**
+
+Regresa un capítulo de la historia del underground electrónico europeo.
+
+**TUMULTE**, el álbum de debut de SABOTAGE QCQC?, nació de la amistad, la experimentación creativa y una pasión compartida por la música electrónica sin concesiones.
+
+Tras una gira conjunta por Alemania, SABOTAGE QCQC? viajó a Florencia, Italia, donde el álbum se produjo junto a **PAOLO FAVATI, MAURIZIO FASOLO y FEDERICO PANERO**.
+
+El resultado fue TUMULTE — un choque de influencias musicales, energía electrónica en bruto y libertad artística, publicado originalmente por **DANSE MACABRE**, el sello asociado a los pioneros alemanes del darkwave DAS ICH.
+
+El álbum incluye el éxito de club **LES FLEURS DU MAL**, junto a temas que siguen definiendo la identidad musical de SABOTAGE QCQC? en la actualidad.
+
+Entre ellos está **EWIGKEIT**, que pronto regresará en una nueva versión reelaborada — en vinilo a través de **EMMO.BIZ RECORDS** y en formato digital.
+
+Otro tema original de TUMULTE, **EN ORDRE**, se ha revisitado recientemente y publicado en varias versiones nuevas, ya disponibles en plataformas digitales.
+
+Más de tres décadas después, TUMULTE sigue siendo el testimonio de una época en la que los límites musicales estaban para desafiarse, no para respetarse.
+
+El **27 de noviembre de 2026**, SUB CULTURE RECORDS devuelve este notable álbum de debut a las plataformas digitales y pone otro capítulo esencial de la historia de SABOTAGE QCQC? al alcance de una nueva generación.
+
+**THE PAST IS NOT DEAD. IT'S JUST GETTING LOUDER.**
+
+SABOTAGE QCQC? – SOUND. RESISTANCE. NO BORDERS.
+
+[www.sabotageqcqc.online](https://www.sabotageqcqc.online/)
+
+#SABOTAGEQCQC #TUMULTE #SubCultureRecords #DanseMacabre #DasIch #LesFleursDuMal #EBM #ElectronicBodyMusic #IndustrialMusic #Darkwave #ElectroPunk #ReRelease`,
+  },
+};

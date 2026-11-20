@@ -114,6 +114,16 @@ export const enOrdreRelease: Release = {
 };
 
 export const additionalCatalogueReleases: Release[] = [
+  {
+    _id: 'local-acoustic-costumes',
+    slug: 'acoustic-costumes',
+    title: 'ACOUSTIC COSTUMES',
+    artist: 'SABOTAGE QCQC?',
+    category: 'backCatalogue',
+    releaseStatus: 'pending',
+    label: 'SUB CULTURE RECORDS',
+    labelUrl: 'https://www.facebook.com/norwegiansubculture',
+  },
   { _id: 'local-schlager', slug: 'schlager', title: 'SCHLAGER', category: 'backCatalogue', releaseStatus: 'pending' },
   { _id: 'local-goddess', slug: 'goddess', title: 'GODDESS', category: 'backCatalogue', releaseStatus: 'pending' },
   {

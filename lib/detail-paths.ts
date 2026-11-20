@@ -23,6 +23,8 @@ export const releasePath = (release: Release) => '/releases/' + releaseSlug(rele
 export const relatedReleases: Record<string, readonly string[]> = {
   'sexploitation-cinema': ['sexploitation-cinema', 'sexploitation-cinema-limited-edition'],
   goddess: ['goddess'],
+  schlager: ['schlager'],
+  tumulte: ['tumulte', 'en-ordre', 'no-bottom-no-top'],
   'en-ordre': ['en-ordre'],
   'the-flood': ['the-flood'],
   'emmo-biz-records': ['no-bottom-no-top'],
